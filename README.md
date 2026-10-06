@@ -40,19 +40,19 @@ npm run dev
 ## 2. Dataset & Attribution
 
 ### Collection Construction
-- **Corpus:** 35,000 multi-zone passages (`title` and `body`) spanning four distinct scientific and historical domains:
-  1. *Computer Science & AI* (Information retrieval, vector spaces, transformers, neural architectures, Turing machines, PageRank).
-  2. *Space Exploration & Astrophysics* (James Webb Telescope, Apollo/Artemis missions, black holes, general relativity).
-  3. *Biology & Medicine* (CRISPR-Cas9, mRNA vaccines, penicillin discovery, synaptic plasticity, heavy metal toxicity).
-  4. *History & Civilization* (Gutenberg printing press, Library of Alexandria, Silk Road, Renaissance art).
+- **Corpus (35,000 Authentic Passages):**
+  - **5,314 Target-Topic Passages (15.18%):** Harvested from 75 authoritative Wikipedia articles covering our 14 conversation topics via the Wikimedia Action API (`en.wikipedia.org/w/api.php`) with redirects enabled.
+  - **29,686 Background Passages (84.82%):** Harvested from the Hugging Face `wikimedia/wikipedia` snapshot (`20231101.en`) providing realistic collection vocabulary (80,684 terms) and realistic term frequency / IDF distributions.
+  - Spans four balanced domains: Computer Science & AI (9,222 passages), Space Exploration & Astrophysics (9,266 passages), Biology & Medicine (7,431 passages), and History & Civilization (9,081 passages).
 - **Conversational Test Collection:** 14 multi-turn dialogue trees (70 judged turns, exceeding the 40-turn minimum rubric requirement) covering:
   - Anaphoric references (*"How does term frequency weighting work in it?"*, *"Who discovered it?"*)
   - Ellipsis (*"What about cosine normalization?"*, *"Tell me about its primary mirror size."*)
   - Topic shifts across and within domains (*Turing test to Black Holes*, *Penicillin to Mona Lisa*)
   - Polysemy & lexical ambiguity (*Mercury planet vs toxic chemical element*, *Neural transformers vs electrical transformers*)
   - Multi-part comparative queries (*"Compare vector space model with Okapi BM25"*, *"Compare synaptic plasticity and gradient descent"*)
-- **Relevance Judgments (qrels):** Pooled judgments across systems with graded relevance ($2 = \text{highly relevant}$, $1 = \text{relevant}$, $0 = \text{irrelevant}$).
-- **Attribution & Ethics:** Seeded from public Wikipedia educational domain ontologies under CC BY-SA 4.0. Respects standard data ethics with zero personal data.
+- **Relevance Judgments & Pooling:** Blind pooling sheets generated across S0 (Raw), S1 (History Concatenation), S2 (TurnTrace), Okapi BM25, and Oracle Gold Rewrite across all 70 turns. Candidates are system-blind, sorted strictly by `docId`, split across 4 judges with a fixed-seed 15% overlap for Cohen's Kappa agreement calculation.
+- **Attribution, License & Ethics:** All passage text is sourced from Wikipedia and released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) and GNU Free Documentation License (GFDL). Copyright resides with Wikimedia Foundation and individual Wikipedia contributors. Contains zero personal or private data. Reproducible via `npm run prepare:data`.
+
 
 ---
 
