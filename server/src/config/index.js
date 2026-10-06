@@ -19,6 +19,7 @@ export const CONFIG = Object.freeze({
     indexFile: path.join(projectRoot, 'data', 'index.json'),
     conversationsFile: path.join(projectRoot, 'data', 'conversations.json'),
     qrelsFile: path.join(projectRoot, 'data', 'qrels.json'),
+    splitsFile: path.join(projectRoot, 'data', 'splits.json'),
     evalOutputDir: path.join(projectRoot, 'eval', 'output')
   }),
 
