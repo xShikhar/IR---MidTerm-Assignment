@@ -27,7 +27,7 @@ export async function runEvaluation() {
   console.log(`[TurnTrace Eval] Loaded ${conversations.length} conversations, ${totalTurns} judged turns.`);
 
   console.log('[TurnTrace Eval] Running retrieval benchmark across Systems S0-S5 and Ablations A1-A4...');
-  const benchmarkResults = runEvaluationBenchmark(conversations, qrels, index);
+  const benchmarkResults = await runEvaluationBenchmark(conversations, qrels, index);
 
   // 1. Systems Comparison Table (Overall)
   console.log('\n------------------------------------------------------------------------');
