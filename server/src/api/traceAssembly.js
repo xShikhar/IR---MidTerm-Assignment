@@ -8,6 +8,7 @@
 import { performance } from 'node:perf_hooks';
 import { analyze, normalizeTokensWithPositions } from '../index/normalizer.js';
 import { tokenizeWithPositions } from '../index/tokenizer.js';
+import { evaluatePhraseQuery } from '../retrieval/phrase.js';
 import { detectTopicShift } from '../conversation/shiftDetector.js';
 import { rewriteQuery } from '../conversation/rewriter.js';
 import { decomposeAndRetrieve } from '../conversation/decomposer.js';
@@ -32,10 +33,26 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
   const topK = options.topK || CONFIG.retrieval.topK;
   const disableShift = options.disableShiftDetector || false;
 
-  // 1. Lexical Analysis
+  // 1. Lexical Analysis & Positional Phrase check
   const tLexStart = performance.now();
   const rawPositional = tokenizeWithPositions(rawQuery);
   const normalizedStems = analyze(rawQuery, true);
+
+  // Check for quoted phrase matching (e.g. "vector space model")
+  const phraseMatches = [];
+  const phraseRegex = /"([^"]+)"/g;
+  let pMatch;
+  while ((pMatch = phraseRegex.exec(rawQuery)) !== null) {
+    const phraseText = pMatch[1].trim();
+    if (phraseText) {
+      const phrasePostings = evaluatePhraseQuery(phraseText, index);
+      phraseMatches.push({
+        phrase: phraseText,
+        matchingDocCount: phrasePostings.length,
+        docIds: phrasePostings.slice(0, 10).map(p => p.docId)
+      });
+    }
+  }
   const lexMs = performance.now() - tLexStart;
 
   // 2. Topic Shift Detection
@@ -61,9 +78,14 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
   const rewriteResult = rewriteQuery(rawQuery, contextState, shiftDecision.decision);
   const rewriteMs = performance.now() - tRewriteStart;
 
-  // 4. Multi-Part Query Decomposition & Retrieval
+  // 4. Multi-Part Query Decomposition & Retrieval (routes through engine.js)
   const tRetStart = performance.now();
-  const decomposerResult = decomposeAndRetrieve(rewriteResult.rewrittenQuery, index, { topK });
+  const decomposerResult = decomposeAndRetrieve(rewriteResult.rewrittenQuery, index, {
+    topK,
+    useChampionLists: options.useChampionLists,
+    applyIndexElimination: options.applyIndexElimination,
+    model: options.model
+  });
   const retMs = performance.now() - tRetStart;
 
   const activeResults = options.disableFusion
@@ -102,6 +124,13 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
       turn: contextState.turnCounter,
       rawQuery,
       normalizedTokens: normalizedStems,
+      positionalTokens: rawPositional,
+      phraseMatches,
+      retrievalExecution: {
+        model: options.model || 'cosine',
+        championLists: Boolean(options.useChampionLists),
+        indexElimination: options.applyIndexElimination !== false
+      },
       shiftDecision: {
         decision: shiftDecision.decision,
         cosineSimilarity: shiftDecision.cosineSimilarity,

@@ -17,6 +17,7 @@ import { CONFIG } from '../config/index.js';
  * @param {Object} index - Inverted index
  * @param {Object} [options]
  * @param {number} [options.topK=CONFIG.retrieval.topK] - Ranking depth
+ * @param {boolean} [options.useChampionLists=false] - Whether to restrict candidates to champion lists
  * @param {number} [options.k1=CONFIG.retrieval.bm25.k1] - TF saturation parameter
  * @param {number} [options.b=CONFIG.retrieval.bm25.b] - Document length normalization penalty
  * @param {number} [options.titleZoneWeight=CONFIG.retrieval.zones.titleWeight]
@@ -25,6 +26,7 @@ import { CONFIG } from '../config/index.js';
  */
 export function scoreBM25(queryTerms, index, options = {}) {
   const topK = options.topK || CONFIG.retrieval.topK;
+  const useChampionLists = options.useChampionLists || false;
   const k1 = options.k1 ?? CONFIG.retrieval.bm25.k1;
   const b = options.b ?? CONFIG.retrieval.bm25.b;
   const titleWeight = options.titleZoneWeight ?? CONFIG.retrieval.zones.titleWeight;
@@ -45,8 +47,11 @@ export function scoreBM25(queryTerms, index, options = {}) {
     if (!entry) continue;
 
     const bm25Idf = entry.bm25Idf;
+    const postingsToScan = useChampionLists && index.championLists && index.championLists[term]
+      ? index.championLists[term]
+      : entry.postings;
 
-    for (const posting of entry.postings) {
+    for (const posting of postingsToScan) {
       const docId = posting.docId;
       const docMeta = index.docs[docId];
       if (!docMeta) continue;
@@ -74,6 +79,11 @@ export function scoreBM25(queryTerms, index, options = {}) {
         termScore: Number(termScore.toFixed(4))
       });
     }
+  }
+
+  // Fallback: If champion lists yielded too few results, re-run with full postings
+  if (useChampionLists && docAccumulator.size < topK) {
+    return scoreBM25(queryTerms, index, { ...options, useChampionLists: false });
   }
 
   // Top-K selection via binary min-heap

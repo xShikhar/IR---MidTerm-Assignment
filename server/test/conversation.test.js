@@ -195,5 +195,30 @@ describe('End-to-End Trace Assembly', () => {
     assert.ok(response.trace.shiftDecision);
     assert.ok(response.trace.rewriter);
     assert.ok(response.trace.decomposition);
+    assert.ok(Array.isArray(response.trace.positionalTokens));
+    assert.ok(Array.isArray(response.trace.phraseMatches));
+    assert.equal(response.trace.retrievalExecution.championLists, false);
+    assert.equal(response.trace.retrievalExecution.indexElimination, true);
+  });
+
+  it('detects exact quoted phrase matches using positional index', async () => {
+    const context = new ContextState();
+    const phraseResp = await executeConversationalTurn('Tell me about "Vector Space Model"', context, index);
+
+    assert.equal(phraseResp.trace.phraseMatches.length, 1);
+    assert.equal(phraseResp.trace.phraseMatches[0].phrase, 'Vector Space Model');
+    assert.equal(phraseResp.trace.phraseMatches[0].matchingDocCount, 1);
+    assert.equal(phraseResp.trace.phraseMatches[0].docIds[0], 'doc_1');
+  });
+
+  it('honors useChampionLists and custom retrieval parameters online', async () => {
+    const context = new ContextState();
+    const champResp = await executeConversationalTurn('vector space', context, index, {
+      useChampionLists: true,
+      model: 'bm25'
+    });
+
+    assert.equal(champResp.trace.retrievalExecution.championLists, true);
+    assert.equal(champResp.trace.retrievalExecution.model, 'bm25');
   });
 });

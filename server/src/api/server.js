@@ -75,7 +75,7 @@ app.post('/api/reset', (req, res) => {
 
 // 4. Conversational Search Turn
 app.post('/api/chat', async (req, res) => {
-  const { query, sessionId = 'default', reset = false } = req.body || {};
+  const { query, sessionId = 'default', reset = false, useChampionLists, applyIndexElimination, model } = req.body || {};
 
   if (!query || typeof query !== 'string' || query.trim().length === 0) {
     return res.status(400).json({ error: 'Field "query" is required and must be non-empty.' });
@@ -91,7 +91,11 @@ app.post('/api/chat', async (req, res) => {
   }
 
   try {
-    const response = await executeConversationalTurn(query.trim(), contextState, index);
+    const response = await executeConversationalTurn(query.trim(), contextState, index, {
+      useChampionLists,
+      applyIndexElimination,
+      model
+    });
     res.json(response);
   } catch (err) {
     console.error('[TurnTrace Server Error]', err);

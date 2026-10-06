@@ -9,7 +9,7 @@
  */
 
 import { analyze } from '../index/normalizer.js';
-import { scoreCosineLncLtc } from '../retrieval/cosine.js';
+import { executeRetrieval } from '../retrieval/engine.js';
 import { evaluateEntityConstraints } from '../retrieval/boolean.js';
 import { reciprocalRankFusion, scoreSumFusion } from '../retrieval/fusion.js';
 import { CONFIG } from '../config/index.js';
@@ -69,13 +69,18 @@ export function decomposeAndRetrieve(query, index, options = {}) {
   const topK = options.topK || CONFIG.retrieval.topK;
 
   if (!isMultiPartQuery(query)) {
-    const singleTerms = analyze(query, true);
-    const results = scoreCosineLncLtc(singleTerms, index, { topK });
+    const retRes = executeRetrieval(query, index, {
+      topK,
+      model: options.model || 'cosine',
+      useChampionLists: options.useChampionLists,
+      applyIndexElimination: options.applyIndexElimination
+    });
     return {
       isDecomposed: false,
-      subQueries: [{ query, type: 'vector_primary', resultsCount: results.length }],
-      fusedResultsRrf: results,
-      fusedResultsScoreSum: results
+      subQueries: [{ query, type: 'vector_primary', resultsCount: retRes.results.length }],
+      fusedResultsRrf: retRes.results,
+      fusedResultsScoreSum: retRes.results,
+      eliminatedTerms: retRes.trace?.eliminatedTerms || []
     };
   }
 
@@ -86,13 +91,19 @@ export function decomposeAndRetrieve(query, index, options = {}) {
   // 1. Vector sub-query per clause
   for (const part of parts) {
     const partTerms = analyze(part, true);
-    const partResults = scoreCosineLncLtc(partTerms, index, { topK: topK * 2 });
-    candidateLists.push(partResults);
+    const partRes = executeRetrieval(part, index, {
+      topK: topK * 2,
+      model: options.model || 'cosine',
+      useChampionLists: options.useChampionLists,
+      applyIndexElimination: options.applyIndexElimination
+    });
+    candidateLists.push(partRes.results);
     subQueriesTrace.push({
       subQuery: part,
       type: 'vector_clause',
       terms: partTerms,
-      returnedCount: partResults.length
+      returnedCount: partRes.results.length,
+      eliminatedTerms: partRes.trace?.eliminatedTerms || []
     });
   }
 
