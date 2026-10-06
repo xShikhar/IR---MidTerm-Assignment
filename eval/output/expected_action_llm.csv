@@ -1,0 +1,71 @@
+conversationId,turnIndex,turnId,queryId,split,query,expectedAction,rationale
+conv_01,1,turn_01,conv_01_turn_01,dev,What is the vector space model in information retrieval?,carry,Initial turn establishes quantum computing topic.
+conv_01,2,turn_02,conv_01_turn_02,dev,How does term frequency weighting work in it?,carry,Mechanistic follow-up on qubit superposition.
+conv_01,3,turn_03,conv_01_turn_03,dev,What about cosine normalization?,carry,Mechanism follow-up on quantum entanglement.
+conv_01,4,turn_04,conv_01_turn_04,dev,Why is document length normalization needed?,carry,Computational speedup inquiry on quantum systems.
+conv_01,5,turn_05,conv_01_turn_05,dev,Compare it with Okapi BM25 scoring.,carry,Physical stability inquiry on quantum decoherence.
+conv_02,1,turn_01,conv_02_turn_01,dev,How does the PageRank algorithm rank web pages?,carry,Initial turn establishes relational databases.
+conv_02,2,turn_02,conv_02_turn_02,dev,Who invented the algorithm at Stanford?,carry,Key constraint follow-up on primary keys.
+conv_02,3,turn_03,conv_02_turn_03,dev,What is the random surfer model?,carry,Relational integrity follow-up on foreign keys.
+conv_02,4,turn_04,conv_02_turn_04,dev,How does it handle dead ends and spider traps?,carry,Schema normalization follow-up on normal forms.
+conv_02,5,turn_05,conv_02_turn_05,dev,What is the standard damping factor value?,carry,Transactional guarantee follow-up on ACID properties.
+conv_03,1,turn_01,conv_03_turn_01,test,What is the James Webb Space Telescope?,carry,Initial turn establishes JWST observatory.
+conv_03,2,turn_02,conv_03_turn_02,test,Where is its orbit located in space?,carry,Pronoun follow-up on JWST orbit location.
+conv_03,3,turn_03,conv_03_turn_03,test,Tell me about its primary mirror size.,carry,Pronoun follow-up on primary mirror size.
+conv_03,4,turn_04,conv_03_turn_04,test,What instruments does it carry for infrared astronomy?,carry,Thermal instrument protection follow-up on sunshield.
+conv_03,5,turn_05,conv_03_turn_05,test,Compare NIRCam and MIRI instruments.,carry,Pronoun/aspect follow-up on infrared observation.
+conv_04,1,turn_01,conv_04_turn_01,test,When did the Apollo 11 mission land on the Moon?,carry,Initial turn establishes Apollo 11 mission.
+conv_04,2,turn_02,conv_04_turn_02,test,Who were the astronauts on board?,carry,Spacecraft nomenclature follow-up on lunar module.
+conv_04,3,turn_03,conv_04_turn_03,test,What rocket launched them into space?,carry,Landing geography follow-up on Sea of Tranquility.
+conv_04,4,turn_04,conv_04_turn_04,test,How long did they spend on the lunar surface?,carry,Pronoun follow-up on surface stay duration.
+conv_04,5,turn_05,conv_04_turn_05,test,Where did the command module splash down?,carry,Mission recovery follow-up on command module splashdown.
+conv_05,1,turn_01,conv_05_turn_01,dev,What is CRISPR Cas9 genome editing?,carry,Initial turn establishes CRISPR-Cas9 genome editing.
+conv_05,2,turn_02,conv_05_turn_02,dev,How does the guide RNA locate target DNA sequences?,carry,Mechanistic targeting follow-up on guide RNA.
+conv_05,3,turn_03,conv_05_turn_03,dev,Who received the Nobel Prize for its development?,carry,Pronoun follow-up on Nobel Prize laureates.
+conv_05,4,turn_04,conv_05_turn_04,dev,What ethical concerns surround human germline editing?,carry,Societal and ethical follow-up on human germline editing.
+conv_05,5,turn_05,conv_05_turn_05,dev,Compare somatic and germline gene therapies.,carry,Comparative therapeutic follow-up on somatic vs germline therapy.
+conv_06,1,turn_01,conv_06_turn_01,test,How do mRNA vaccines work against viruses?,carry,Initial turn establishes mRNA vaccines.
+conv_06,2,turn_02,conv_06_turn_02,test,What role do lipid nanoparticles play in delivery?,carry,Delivery vehicle follow-up on lipid nanoparticles.
+conv_06,3,turn_03,conv_06_turn_03,test,How does the cell produce the spike protein from it?,carry,Pronoun follow-up on cellular spike protein translation.
+conv_06,4,turn_04,conv_06_turn_04,test,What immune response do they trigger?,carry,Pronoun follow-up on immune antibody response.
+conv_06,5,turn_05,conv_06_turn_05,test,How does storage temperature affect stability?,carry,Storage stability follow-up on ultra-cold temperatures.
+conv_07,1,turn_01,conv_07_turn_01,dev,Who invented the movable type printing press in Europe?,carry,Initial turn establishes European movable type press.
+conv_07,2,turn_02,conv_07_turn_02,dev,Where was his first print shop established?,carry,Pronoun follow-up on Gutenberg first print shop in Mainz.
+conv_07,3,turn_03,conv_07_turn_03,dev,What was the first major book printed?,carry,Publication history follow-up on first major printed book.
+conv_07,4,turn_04,conv_07_turn_04,dev,How did it influence the Protestant Reformation?,carry,Pronoun follow-up on Protestant Reformation influence.
+conv_07,5,turn_05,conv_07_turn_05,dev,What were the broader impacts on European literacy rates?,carry,Societal consequence follow-up on European literacy rates.
+conv_08,1,turn_01,conv_08_turn_01,test,Where was the ancient Library of Alexandria located?,carry,Initial turn establishes Library of Alexandria.
+conv_08,2,turn_02,conv_08_turn_02,test,Who founded it and when?,carry,Pronoun follow-up on Ptolemaic royal founders.
+conv_08,3,turn_03,conv_08_turn_03,test,How many scrolls was it estimated to hold?,carry,Pronoun follow-up on papyrus scroll capacity.
+conv_08,4,turn_04,conv_08_turn_04,test,How was the library destroyed according to historians?,carry,Historical inquiry follow-up on library destruction.
+conv_08,5,turn_05,conv_08_turn_05,test,Which scholars worked there as chief librarians?,carry,Intellectual leadership follow-up on chief librarians.
+conv_09,1,turn_01,conv_09_turn_01,test,What was Alan Turing formulation of the imitation game?,carry,Initial turn establishes Alan Turing imitation game.
+conv_09,2,turn_02,conv_09_turn_02,test,What paper did he introduce it in?,carry,Pronoun follow-up on 1950 Mind paper.
+conv_09,3,turn_03,conv_09_turn_03,test,What are the common criticisms of the imitation game?,carry,Philosophical objections follow-up on imitation game.
+conv_09,4,turn_04,conv_09_turn_04,test,What is the event horizon of an astrophysical black hole?,reset,Abrupt topic shift to astrophysical black holes with zero context overlap.
+conv_09,5,turn_05,conv_09_turn_05,test,Can light escape from inside it?,carry,Pronoun follow-up on black hole event horizon.
+conv_10,1,turn_01,conv_10_turn_01,dev,How did Alexander Fleming discover penicillin?,carry,Initial turn establishes Alexander Fleming penicillin.
+conv_10,2,turn_02,conv_10_turn_02,dev,What mould produced the antibiotic substance?,carry,Biological origin follow-up on Penicillium mould.
+conv_10,3,turn_03,conv_10_turn_03,dev,Who purified it for mass production in Oxford?,carry,Pronoun follow-up on Oxford purification team.
+conv_10,4,turn_04,conv_10_turn_04,dev,Who painted the Mona Lisa in Florence?,reset,Abrupt topic shift to Mona Lisa painting in Florence with zero context overlap.
+conv_10,5,turn_05,conv_10_turn_05,dev,What museum is it exhibited in today?,carry,Pronoun follow-up on Louvre Museum exhibition.
+conv_11,1,turn_01,conv_11_turn_01,dev,What is Mercury in our Solar System?,carry,Initial turn establishes astronomical planet Mercury.
+conv_11,2,turn_02,conv_11_turn_02,dev,How close is it to the Sun?,carry,Pronoun follow-up on orbital perihelion distance to Sun.
+conv_11,3,turn_03,conv_11_turn_03,dev,What are the extreme temperature variations on the surface?,carry,Physical property follow-up on surface temperature swings.
+conv_11,4,turn_04,conv_11_turn_04,dev,Tell me about mercury toxicity and environmental exposure.,entity_switch,"Pivots from astronomical planet to toxic heavy metal element while retaining lexical term ""mercury""."
+conv_11,5,turn_05,conv_11_turn_05,dev,What organs does the toxic metal damage?,carry,Target organ damage follow-up on toxic heavy metal mercury.
+conv_12,1,turn_01,conv_12_turn_01,test,How does the Transformer architecture use self-attention?,carry,Initial turn establishes Transformer neural network architecture.
+conv_12,2,turn_02,conv_12_turn_02,test,What is multi-head attention?,carry,Sub-mechanism follow-up on multi-head attention.
+conv_12,3,turn_03,conv_12_turn_03,test,What are positional encodings used for in it?,carry,Pronoun/aspect follow-up on positional encodings.
+conv_12,4,turn_04,conv_12_turn_04,test,How do electrical power transformers step down voltage?,entity_switch,"Pivots from neural network architecture to electrical power transformer while retaining lexical term ""transformer""."
+conv_12,5,turn_05,conv_12_turn_05,test,What magnetic core materials do they use?,carry,Pronoun follow-up on electrical transformer magnetic core materials.
+conv_13,1,turn_01,conv_13_turn_01,test,How do artificial neural networks differ from biological brains?,carry,Initial turn establishes comparative neural network inquiry.
+conv_13,2,turn_02,conv_13_turn_02,test,What is the backpropagation algorithm?,carry,Training mechanism follow-up on backpropagation.
+conv_13,3,turn_03,conv_13_turn_03,test,Why is biological plausibility debated for it?,carry,Pronoun follow-up on biological plausibility debate.
+conv_13,4,turn_04,conv_13_turn_04,test,Compare synaptic plasticity and gradient descent.,carry,Comparative follow-up on synaptic plasticity vs gradient descent.
+conv_13,5,turn_05,conv_13_turn_05,test,How does spike-timing-dependent plasticity work?,carry,Mechanistic follow-up on spike-timing-dependent plasticity (STDP).
+conv_14,1,turn_01,conv_14_turn_01,test,What is Claude Shannon information entropy formula?,carry,Initial turn establishes Claude Shannon information entropy.
+conv_14,2,turn_02,conv_14_turn_02,test,What base logarithm did he use for bit units?,carry,Pronoun follow-up on base-2 logarithm for bits.
+conv_14,3,turn_03,conv_14_turn_03,test,How does it relate to thermodynamic entropy in physics?,carry,Bridge follow-up connecting informational entropy to statistical physics.
+conv_14,4,turn_04,conv_14_turn_04,test,Is entropy always conserved in physical processes?,carry,Physical law follow-up on entropy non-conservation.
+conv_14,5,turn_05,conv_14_turn_05,test,What does the second law of thermodynamics state about it?,carry,Pronoun follow-up on the second law of thermodynamics.

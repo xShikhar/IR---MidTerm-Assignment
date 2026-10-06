@@ -38,3 +38,12 @@
 - Qrels ingestion: 70/70 turns complete (2,297 judged pairs) ingested into `data/qrels.json`; Grade distribution: Grade 0: 710 (30.9%), Grade 1: 1028 (44.8%), Grade 2: 559 (24.3%).
 - Unjudged top-10 fraction: 0.00% across all systems S0-S5 and A0-A6.
 - Spot-check: created `eval/output/spot_check_sheet.csv` (100 rows, blank grades), `eval/output/spot_check_key.csv` (reference key), and `server/scripts/evaluateSpotCheck.js`.
+
+## Phase 4: Expected-Action Labeling
+- **Date:** 2026-10-06T20:45Z
+- **Status:** PASS
+- Labeled all 70 turns based strictly on dialogue context; exported to `eval/output/expected_action_llm.csv` and imported into `data/conversations.json`.
+- Counts overall (all 70): carry=66, reset=2, entity_switch=2.
+- Multi-turn transitions (excluding Turn 1, n=56): DEV (n=24): carry=22, reset=1, entity_switch=1; TEST (n=32): carry=30, reset=1, entity_switch=1.
+- DEV decision metrics: Legacy Cosine accuracy=0.5000, macroF1=0.2698 (11 false resets); New Decision Detector accuracy=0.7500, macroF1=0.2857 (false resets reduced to 4).
+- Tests: 77/77 pass; frozen files unchanged.

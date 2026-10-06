@@ -11,7 +11,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -20,7 +20,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -29,7 +29,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -38,7 +38,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -47,7 +47,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": true,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -63,7 +63,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -72,7 +72,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -81,7 +81,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -90,7 +90,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -99,7 +99,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -115,7 +115,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -124,7 +124,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -133,7 +133,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -142,7 +142,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -151,7 +151,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": true,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -167,7 +167,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -176,7 +176,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -185,7 +185,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -194,7 +194,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -203,7 +203,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -219,7 +219,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -228,7 +228,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -237,7 +237,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -246,7 +246,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -255,7 +255,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": true,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -271,7 +271,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -280,7 +280,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -289,7 +289,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -298,7 +298,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -307,7 +307,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -323,7 +323,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -332,7 +332,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -341,7 +341,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -350,7 +350,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -359,7 +359,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -375,7 +375,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -384,7 +384,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -393,7 +393,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -402,7 +402,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -411,7 +411,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -427,7 +427,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -436,7 +436,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -445,7 +445,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -454,7 +454,7 @@
         "isShift": true,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "reset"
       },
       {
         "turnId": "turn_05",
@@ -463,7 +463,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -479,7 +479,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -488,7 +488,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -497,7 +497,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -506,7 +506,7 @@
         "isShift": true,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "reset"
       },
       {
         "turnId": "turn_05",
@@ -515,7 +515,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -531,7 +531,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -540,7 +540,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -549,7 +549,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -558,7 +558,7 @@
         "isShift": true,
         "isAmbiguous": true,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "entity_switch"
       },
       {
         "turnId": "turn_05",
@@ -567,7 +567,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -583,7 +583,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -592,7 +592,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -601,7 +601,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -610,7 +610,7 @@
         "isShift": true,
         "isAmbiguous": true,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "entity_switch"
       },
       {
         "turnId": "turn_05",
@@ -619,7 +619,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -635,7 +635,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -644,7 +644,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -653,7 +653,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -662,7 +662,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": true,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -671,7 +671,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   },
@@ -687,7 +687,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_02",
@@ -696,7 +696,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_03",
@@ -705,7 +705,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_04",
@@ -714,7 +714,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       },
       {
         "turnId": "turn_05",
@@ -723,7 +723,7 @@
         "isShift": false,
         "isAmbiguous": false,
         "isDecomposable": false,
-        "expectedAction": null
+        "expectedAction": "carry"
       }
     ]
   }
