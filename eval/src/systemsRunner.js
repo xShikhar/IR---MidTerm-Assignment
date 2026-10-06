@@ -89,15 +89,15 @@ async function evaluateSession(conv, qrels, index, systemId) {
         disableFusion: true
       });
       rankedList = convRes.results;
-    } else if (systemId === 'A5') {
-      // Ablation A5: Champion Lists ON (speed optimization)
+    } else if (systemId === 'R1') {
+      // Ablation R1: Champion Lists ON (speed optimization)
       const convRes = executeConversationalTurnSync(turn.query, contextState, index, {
         topK: 20,
         useChampionLists: true
       });
       rankedList = convRes.results;
-    } else if (systemId === 'A6') {
-      // Ablation A6: Index Elimination ON (low-IDF pruning)
+    } else if (systemId === 'R2') {
+      // Ablation R2: Index Elimination ON (low-IDF pruning)
       const convRes = executeConversationalTurnSync(turn.query, contextState, index, {
         topK: 20,
         applyIndexElimination: true
@@ -239,7 +239,7 @@ function aggregateMetrics(records) {
  * @returns {Object} Full evaluation results
  */
 export async function runEvaluationBenchmark(conversations, qrels, index) {
-  const systems = ['S0', 'S1', 'S2', 'S3', 'S5', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
+  const systems = ['S0', 'S1', 'S2', 'S3', 'S5', 'A1', 'A2', 'A3', 'A4', 'R1', 'R2'];
   const resultsBySystem = {};
 
   for (const sysId of systems) {

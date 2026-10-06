@@ -44,8 +44,8 @@ export function exportEvaluationArtifacts(benchmarkResults, outputDir = CONFIG.p
     { id: 'A2', name: 'Ablation A2: Topic-Shift Detector OFF' },
     { id: 'A3', name: 'Ablation A3: Exponential Context Decay OFF (lambda=1.0)' },
     { id: 'A4', name: 'Ablation A4: Decomposer Rank Fusion OFF' },
-    { id: 'A5', name: 'Ablation A5: Champion Lists ON' },
-    { id: 'A6', name: 'Ablation A6: Index Elimination ON' }
+    { id: 'R1', name: 'Ablation R1: Champion Lists ON' },
+    { id: 'R2', name: 'Ablation R2: Index Elimination ON' }
   ];
 
   let ablationsCsv = 'Ablation_ID,Configuration,P@5,P@10,Recall@20,MRR,nDCG@10\n';
