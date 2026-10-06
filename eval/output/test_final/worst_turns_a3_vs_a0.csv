@@ -1,0 +1,6 @@
+Rank,Turn_Key,Conversation_ID,Turn_ID,Query,A0_nDCG10,A3_nDCG10,Delta_nDCG10,Failure_Mode,Root_Cause
+1,"conv_04_turn_03","conv_04",turn_03,"What rocket launched them into space?",0.6173,0,-0.6173,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
+2,"conv_14_turn_05","conv_14",turn_05,"What does the second law of thermodynamics state about it?",0.9432,0.3901,-0.5531,"Vocabulary drift / Polysemy","Entropy crossed information theory into physics; title constraint restricted corpus"
+3,"conv_04_turn_05","conv_04",turn_05,"Where did the command module splash down?",0.6113,0.1243,-0.4869,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
+4,"conv_04_turn_04","conv_04",turn_04,"How long did they spend on the lunar surface?",0.5745,0.1243,-0.4502,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
+5,"conv_14_turn_04","conv_14",turn_04,"Is entropy always conserved in physical processes?",0.8257,0.3775,-0.4482,"Vocabulary drift / Polysemy","Entropy crossed information theory into physics; title constraint restricted corpus"

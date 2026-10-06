@@ -1,0 +1,15 @@
+System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10,Novelty@10,Bootstrap_p_vs_A0,Wilcoxon_p_vs_A0,Sample_Size_n
+S0,"S0: Raw Query Only (lnc.ltc Cosine)",0.835,0.7975,0.4775,0.95,0.6732,0.9250,0.5170,0.9519,40
+S1,"S1: Naive Concatenation of Dialogue History",0.94,0.9425,0.6058,0.9446,0.6572,0.4500,0.4455,0.5765,40
+S2,"S2: TurnTrace Legacy Baseline (Decayed Bag, Cosine)",0.89,0.865,0.5424,0.9875,0.6875,0.8175,1.0000,1.0000,40
+S3,"S3: TurnTrace Full Headline (Lock + Aspect + Penalty)",0.905,0.8325,0.4834,0.9563,0.6324,0.7600,-,-,40
+S5,"S5: Oracle Gold Rewrite (Upper Bound)",0.995,0.9925,0.5986,1,0.7723,0.7125,0.0045,0.0069,40
+A0,"A0: Legacy Decayed Context Bag (S2 Equivalent)",0.89,0.865,0.5424,0.9875,0.6875,0.8175,-,-,40
+A1,"A1: Entity Soft Boost + Aspect Replacement",0.955,0.9325,0.5926,1,0.6974,0.6975,0.7035,0.7800,40
+A2,"A2: Hard Lock + Aspect Accumulation",0.87,0.8475,0.52,0.8775,0.5959,0.5250,0.0245,0.0980,40
+A3,"A3: Hard Lock + Aspect Replacement (Headline Core)",0.915,0.88,0.5274,0.9563,0.6317,0.6250,0.1325,0.2358,40
+A4,"A4: A3 + Seen-Passage Penalty (beta=0.30)",0.905,0.8325,0.4834,0.9563,0.6324,0.7600,0.1630,0.2659,40
+A5,"A5: A3 with Forced CARRY (Decision Isolation)",0.95,0.94,0.5235,0.95,0.6589,0.5850,0.5635,0.9022,40
+A6,"A6: A3 with Forced RESET (Decision Isolation)",0.83,0.7825,0.433,0.9187,0.6577,0.9275,0.2745,0.5017,40
+R1,"R1: Retrieval Efficiency - Champion Lists ON (r=50)",0.81,0.7025,0.4033,0.9363,0.5229,0.5900,0.0000,0.0007,40
+R2,"R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)",0.91,0.875,0.5267,0.9563,0.6308,0.6275,0.1260,0.2579,40

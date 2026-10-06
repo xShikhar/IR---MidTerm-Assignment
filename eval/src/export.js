@@ -20,7 +20,7 @@ import { CONFIG } from '../../server/src/config/index.js';
  * @param {Object} qrels - Judged query relevance map
  * @param {string} [outputDir=CONFIG.paths.evalOutputDir]
  */
-export function exportEvaluationArtifacts(benchmarkResults, conversations = [], qrels = {}, outputDir = CONFIG.paths.evalOutputDir) {
+export function exportEvaluationArtifacts(benchmarkResults, conversations = [], qrels = {}, outputDir = CONFIG.paths.evalOutputDir, extraData = {}) {
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
@@ -43,16 +43,19 @@ export function exportEvaluationArtifacts(benchmarkResults, conversations = [], 
     { id: 'R2', name: 'R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)' }
   ];
 
-  let systemsCsv = 'System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10,Novelty@10\n';
+  let systemsCsv = 'System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10,Novelty@10,Bootstrap_p_vs_A0,Wilcoxon_p_vs_A0,Sample_Size_n\n';
+  const sigMap = extraData.systemSignificanceMap || {};
+
   for (const sys of allSystems) {
     const res = benchmarkResults[sys.id]?.overall;
     const raw = benchmarkResults[sys.id]?.turnRecords || [];
     const avgNovelty = raw.length > 0
       ? (raw.reduce((a, b) => a + (b.novelty10 || 0), 0) / raw.length).toFixed(4)
       : '0.0000';
+    const sigInfo = sigMap[sys.id] || { bootP: '-', wilcP: '-', n: raw.length };
 
     if (res) {
-      systemsCsv += `${sys.id},"${sys.name}",${res.p5},${res.p10},${res.recall20},${res.mrr},${res.ndcg10},${avgNovelty}\n`;
+      systemsCsv += `${sys.id},"${sys.name}",${res.p5},${res.p10},${res.recall20},${res.mrr},${res.ndcg10},${avgNovelty},${sigInfo.bootP},${sigInfo.wilcP},${sigInfo.n}\n`;
     }
   }
   fs.writeFileSync(path.join(outputDir, 'systems_comparison.csv'), systemsCsv, 'utf-8');
@@ -113,11 +116,56 @@ export function exportEvaluationArtifacts(benchmarkResults, conversations = [], 
   }
   fs.writeFileSync(path.join(outputDir, 'turn_breakdown.csv'), turnCsv, 'utf-8');
 
-  // 5. Generate SVG Chart for Headline Systems
-  const svgChart = generateSvgChart(benchmarkResults);
-  fs.writeFileSync(path.join(outputDir, 'metrics_chart.svg'), svgChart, 'utf-8');
+  // 5. Significance Tests CSV
+  if (Array.isArray(extraData.significanceRows) && extraData.significanceRows.length > 0) {
+    let sigCsv = 'Comparison,Metric,Delta,Bootstrap_pValue,95_CI_Lower,95_CI_Upper,Wilcoxon_pValue,W_stat,NonZero_Pairs,Sample_Size_n,Is_Significant\n';
+    for (const row of extraData.significanceRows) {
+      sigCsv += `"${row.comparison}","${row.metric}",${row.delta},${row.bootstrapP},${row.ciLower},${row.ciUpper},${row.wilcoxonP},${row.wStat},${row.nonZeroPairs},${row.n},${row.isSignificant}\n`;
+    }
+    fs.writeFileSync(path.join(outputDir, 'significance_tests.csv'), sigCsv, 'utf-8');
+  }
 
-  console.log(`[TurnTrace Exporter] Successfully exported evaluation CSVs and SVG chart to ${outputDir}`);
+  // 6. Decision Metrics CSV
+  if (Array.isArray(extraData.decisionRows) && extraData.decisionRows.length > 0) {
+    let decCsv = 'Detector,Class,Precision,Recall,F1,Support,Macro_F1,Accuracy\n';
+    for (const r of extraData.decisionRows) {
+      decCsv += `"${r.detector}","${r.cls}",${r.precision},${r.recall},${r.f1},${r.support},${r.macroF1},${r.accuracy}\n`;
+    }
+    fs.writeFileSync(path.join(outputDir, 'decision_metrics.csv'), decCsv, 'utf-8');
+  }
+
+  // 7. Clarifier Metrics CSV
+  if (Array.isArray(extraData.clarifierRows) && extraData.clarifierRows.length > 0) {
+    let clarCsv = 'Method,Total_Turns,Fired_Count,Fired_Pct,False_Positive_Rate,Description\n';
+    for (const r of extraData.clarifierRows) {
+      clarCsv += `"${r.method}",${r.totalTurns},${r.firedCount},${r.firedPct},${r.fpRate},"${r.description}"\n`;
+    }
+    fs.writeFileSync(path.join(outputDir, 'clarifier_metrics.csv'), clarCsv, 'utf-8');
+  }
+
+  // 8. 5 Worst A3-vs-A0 Turns CSV
+  if (Array.isArray(extraData.worstTurns) && extraData.worstTurns.length > 0) {
+    let worstCsv = 'Rank,Turn_Key,Conversation_ID,Turn_ID,Query,A0_nDCG10,A3_nDCG10,Delta_nDCG10,Failure_Mode,Root_Cause\n';
+    for (const w of extraData.worstTurns) {
+      const qClean = (w.query || '').replace(/"/g, '""');
+      const failClean = (w.failureMode || '').replace(/"/g, '""');
+      const rootClean = (w.rootCause || '').replace(/"/g, '""');
+      worstCsv += `${w.rank},"${w.turnKey}","${w.convId}",${w.turnId},"${qClean}",${w.a0Ndcg10},${w.a3Ndcg10},${w.deltaNdcg10},"${failClean}","${rootClean}"\n`;
+    }
+    fs.writeFileSync(path.join(outputDir, 'worst_turns_a3_vs_a0.csv'), worstCsv, 'utf-8');
+  }
+
+  // 9. Generate SVG Charts
+  const svgMetricsChart = generateSvgChart(benchmarkResults);
+  fs.writeFileSync(path.join(outputDir, 'metrics_chart.svg'), svgMetricsChart, 'utf-8');
+
+  const svgRetrievalTradeoffs = generateRetrievalTradeoffsSvg(benchmarkResults);
+  fs.writeFileSync(path.join(outputDir, 'retrieval_tradeoffs.svg'), svgRetrievalTradeoffs, 'utf-8');
+
+  const svgNoveltyTradeoff = generateNoveltyTradeoffSvg(recordsA3, recordsA4, a3Nov, a4Nov, a3P10, a4P10);
+  fs.writeFileSync(path.join(outputDir, 'novelty_tradeoff.svg'), svgNoveltyTradeoff, 'utf-8');
+
+  console.log(`[TurnTrace Exporter] Successfully exported evaluation CSVs and SVG charts to ${outputDir}`);
 }
 
 /**
@@ -198,6 +246,130 @@ function generateSvgChart(results) {
 
   <!-- Bars -->
   ${barsSvg}
+</svg>
+  `.trim();
+}
+
+/**
+ * Generates an SVG scatter/bubble plot for Retrieval Trade-Offs (P@10 vs Novelty@10).
+ */
+function generateRetrievalTradeoffsSvg(results) {
+  const systems = ['S0', 'S1', 'S2', 'S5', 'A0', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'R1', 'R2'];
+  const width = 880;
+  const height = 500;
+  const margin = { top: 60, right: 60, bottom: 60, left: 70 };
+  const chartW = width - margin.left - margin.right;
+  const chartH = height - margin.top - margin.bottom;
+
+  let pointsSvg = '';
+
+  systems.forEach(sysId => {
+    const raw = results[sysId]?.turnRecords || [];
+    const avgNov = raw.length > 0 ? raw.reduce((a, b) => a + (b.novelty10 || 0), 0) / raw.length : 0;
+    const p10 = results[sysId]?.overall?.p10 || 0;
+    const ndcg = results[sysId]?.overall?.ndcg10 || 0;
+
+    // Coordinate mapping: Novelty [0.5, 1.0] -> X; P@10 [0.0, 1.0] -> Y
+    const xNorm = Math.max(0, Math.min(1, (avgNov - 0.50) / 0.50));
+    const cx = margin.left + xNorm * chartW;
+    const cy = margin.top + chartH - (p10 * chartH);
+
+    // Color code by system family
+    let fill = '#6366f1';
+    if (sysId.startsWith('S')) fill = '#475569';
+    if (sysId === 'S5') fill = '#10b981';
+    if (sysId === 'A3') fill = '#2563eb';
+    if (sysId === 'A4') fill = '#7c3aed';
+    if (sysId.startsWith('R')) fill = '#f59e0b';
+
+    pointsSvg += `
+      <g>
+        <circle cx="${cx}" cy="${cy}" r="9" fill="${fill}" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>${sysId}: Novelty=${avgNov.toFixed(3)}, P@10=${p10.toFixed(3)}, nDCG@10=${ndcg.toFixed(3)}</title>
+        </circle>
+        <text x="${cx}" y="${cy - 13}" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">${sysId}</text>
+      </g>
+    `;
+  });
+
+  return `
+<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family: Inter, system-ui, sans-serif;">
+  <text x="${width / 2}" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#111827">Retrieval Trade-Offs: Precision@10 vs. Novelty@10 Discovery</text>
+  
+  <!-- Axes and Grid -->
+  <line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top + chartH}" stroke="#9ca3af" stroke-width="1.5" />
+  <line x1="${margin.left}" y1="${margin.top + chartH}" x2="${margin.left + chartW}" y2="${margin.top + chartH}" stroke="#9ca3af" stroke-width="1.5" />
+
+  <!-- Y-Axis labels (P@10) -->
+  <text x="${margin.left - 45}" y="${margin.top + chartH / 2}" font-size="13" font-weight="600" fill="#374151" transform="rotate(-90 ${margin.left - 45} ${margin.top + chartH / 2})" text-anchor="middle">Precision@10</text>
+  <text x="${margin.left - 10}" y="${margin.top + 5}" font-size="11" text-anchor="end" fill="#6b7280">1.0</text>
+  <text x="${margin.left - 10}" y="${margin.top + chartH * 0.5 + 5}" font-size="11" text-anchor="end" fill="#6b7280">0.5</text>
+  <text x="${margin.left - 10}" y="${margin.top + chartH + 5}" font-size="11" text-anchor="end" fill="#6b7280">0.0</text>
+
+  <!-- X-Axis labels (Novelty@10) -->
+  <text x="${margin.left + chartW / 2}" y="${margin.top + chartH + 45}" font-size="13" font-weight="600" fill="#374151" text-anchor="middle">Novelty@10 (Fresh Passages Ratio)</text>
+  <text x="${margin.left}" y="${margin.top + chartH + 20}" font-size="11" text-anchor="middle" fill="#6b7280">0.50</text>
+  <text x="${margin.left + chartW * 0.5}" y="${margin.top + chartH + 20}" font-size="11" text-anchor="middle" fill="#6b7280">0.75</text>
+  <text x="${margin.left + chartW}" y="${margin.top + chartH + 20}" font-size="11" text-anchor="middle" fill="#6b7280">1.00</text>
+
+  <!-- Horizontal Gridlines -->
+  <line x1="${margin.left}" y1="${margin.top + chartH * 0.25}" x2="${margin.left + chartW}" y2="${margin.top + chartH * 0.25}" stroke="#f1f5f9" stroke-dasharray="3" />
+  <line x1="${margin.left}" y1="${margin.top + chartH * 0.50}" x2="${margin.left + chartW}" y2="${margin.top + chartH * 0.50}" stroke="#f1f5f9" stroke-dasharray="3" />
+  <line x1="${margin.left}" y1="${margin.top + chartH * 0.75}" x2="${margin.left + chartW}" y2="${margin.top + chartH * 0.75}" stroke="#f1f5f9" stroke-dasharray="3" />
+
+  <!-- Data Points -->
+  ${pointsSvg}
+</svg>
+  `.trim();
+}
+
+/**
+ * Generates an SVG bar chart visualizing the Novelty vs Precision Trade-Off (A3 vs A4).
+ */
+function generateNoveltyTradeoffSvg(recordsA3, recordsA4, a3Nov, a4Nov, a3P10, a4P10) {
+  const width = 720;
+  const height = 380;
+  const margin = { top: 60, right: 40, bottom: 60, left: 60 };
+  const chartW = width - margin.left - margin.right;
+  const chartH = height - margin.top - margin.bottom;
+
+  const novA3Num = parseFloat(a3Nov) || 0;
+  const novA4Num = parseFloat(a4Nov) || 0;
+  const p10A3Num = parseFloat(a3P10) || 0;
+  const p10A4Num = parseFloat(a4P10) || 0;
+
+  return `
+<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family: Inter, system-ui, sans-serif;">
+  <text x="${width / 2}" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#111827">Seen-Passage Penalty Trade-Off: A3 (Beta=0) vs. A4 (Beta=0.30)</text>
+
+  <!-- Group A3 -->
+  <g transform="translate(${margin.left + chartW * 0.15}, 0)">
+    <text x="80" y="${margin.top + chartH + 25}" font-size="13" font-weight="600" text-anchor="middle" fill="#1e293b">A3: Headline (No Penalty)</text>
+    <!-- Novelty Bar -->
+    <rect x="20" y="${margin.top + chartH - (novA3Num * chartH)}" width="50" height="${novA3Num * chartH}" fill="#3b82f6" rx="4" />
+    <text x="45" y="${margin.top + chartH - (novA3Num * chartH) - 8}" font-size="11" font-weight="600" text-anchor="middle" fill="#1e40af">${novA3Num.toFixed(3)}</text>
+    <text x="45" y="${margin.top + chartH + 42}" font-size="10" text-anchor="middle" fill="#64748b">Novelty@10</text>
+    <!-- P@10 Bar -->
+    <rect x="90" y="${margin.top + chartH - (p10A3Num * chartH)}" width="50" height="${p10A3Num * chartH}" fill="#10b981" rx="4" />
+    <text x="115" y="${margin.top + chartH - (p10A3Num * chartH) - 8}" font-size="11" font-weight="600" text-anchor="middle" fill="#065f46">${p10A3Num.toFixed(3)}</text>
+    <text x="115" y="${margin.top + chartH + 42}" font-size="10" text-anchor="middle" fill="#64748b">P@10</text>
+  </g>
+
+  <!-- Group A4 -->
+  <g transform="translate(${margin.left + chartW * 0.58}, 0)">
+    <text x="80" y="${margin.top + chartH + 25}" font-size="13" font-weight="600" text-anchor="middle" fill="#1e293b">A4: Seen-Penalty (Beta=0.30)</text>
+    <!-- Novelty Bar -->
+    <rect x="20" y="${margin.top + chartH - (novA4Num * chartH)}" width="50" height="${novA4Num * chartH}" fill="#8b5cf6" rx="4" />
+    <text x="45" y="${margin.top + chartH - (novA4Num * chartH) - 8}" font-size="11" font-weight="600" text-anchor="middle" fill="#5b21b6">${novA4Num.toFixed(3)}</text>
+    <text x="45" y="${margin.top + chartH + 42}" font-size="10" text-anchor="middle" fill="#64748b">Novelty@10</text>
+    <!-- P@10 Bar -->
+    <rect x="90" y="${margin.top + chartH - (p10A4Num * chartH)}" width="50" height="${p10A4Num * chartH}" fill="#10b981" rx="4" />
+    <text x="115" y="${margin.top + chartH - (p10A4Num * chartH) - 8}" font-size="11" font-weight="600" text-anchor="middle" fill="#065f46">${p10A4Num.toFixed(3)}</text>
+    <text x="115" y="${margin.top + chartH + 42}" font-size="10" text-anchor="middle" fill="#64748b">P@10</text>
+  </g>
+
+  <!-- Y-Axis Baseline -->
+  <line x1="${margin.left}" y1="${margin.top + chartH}" x2="${margin.left + chartW}" y2="${margin.top + chartH}" stroke="#9ca3af" stroke-width="1.5" />
 </svg>
   `.trim();
 }
