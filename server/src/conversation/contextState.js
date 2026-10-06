@@ -60,6 +60,7 @@ export class ContextState {
    * Clears context state (used upon topic shift RESET or manual reset).
    */
   reset() {
+    this.turnCounter = 0;
     this.entityTerms.clear();
     this.aspectTerms.clear();
     this.terms.clear();

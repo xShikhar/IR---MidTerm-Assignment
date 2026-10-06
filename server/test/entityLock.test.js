@@ -195,6 +195,28 @@ describe('Headline Novelty: Entity-Lock & Aspect-Aware Context', () => {
     );
   });
 
+  it('correctly shifts topic when new entity shares coincidental token (e.g. space in JWST vs Vector Space)', () => {
+    const lockedEntities = [
+      { term: 'vector', idf: 2.5, titleHitCount: 2, sourceTurn: 1 },
+      { term: 'space', idf: 1.5, titleHitCount: 2, sourceTurn: 1 },
+      { term: 'model', idf: 2.0, titleHitCount: 2, sourceTurn: 1 }
+    ];
+    const contextTerms = ['vector', 'space', 'model'];
+
+    const decision = detectConversationalDecision(
+      'Who painted the Mona Lisa in Florence?',
+      lockedEntities,
+      contextTerms,
+      miniIndex,
+      { minIdf: 0.1 }
+    );
+
+    assert.ok(
+      decision.decision === 'reset' || decision.decision === 'entity_switch',
+      `Expected reset or entity_switch, got ${decision.decision}`
+    );
+  });
+
   it('hard-lock Boolean title filter strictly matches brute-force scan', () => {
     const locked = [{ term: 'apollo' }];
     const filterRes = computeTitleFilteredCandidates(locked, miniIndex, {

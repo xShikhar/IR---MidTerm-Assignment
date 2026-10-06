@@ -75,19 +75,7 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     };
   }
 
-  // 3. Guard 3: Query contains any term from the currently locked entity
-  const lockedTermsSet = new Set(lockedEntities.map(e => e.term));
-  const matchedLockedTerms = queryStems.filter(s => lockedTermsSet.has(s));
-  if (matchedLockedTerms.length > 0) {
-    return {
-      decision: 'CARRY',
-      entityCandidates: [],
-      guardsTriggered: ['locked_entity_token'],
-      reason: `Locked entity guard triggered: query references locked entity terms (${matchedLockedTerms.join(', ')}).`
-    };
-  }
-
-  // 4. Extract new entity candidates from the query (must have title hits in top 3)
+  // 3. Extract new entity candidates from the query (must have title hits in top 3)
   const queryEntityCandidates = extractEntityCandidates(rawQuery, index, {
     topN: CONFIG.novelty.entity.topN,
     minTitleHits: CONFIG.novelty.entity.minTitleHits,
@@ -95,8 +83,21 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     ...options
   });
 
-  // If query contains no entity candidate satisfying title-hit threshold in top 3, carry by default
+  const lockedTermsSet = new Set(lockedEntities.map(e => e.term));
+
+  // If query contains no entity candidate satisfying title-hit threshold in top 3,
+  // check for locked entity reference or default to aspect carry
   if (queryEntityCandidates.length === 0) {
+    const matchedLockedTerms = queryStems.filter(s => lockedTermsSet.has(s));
+    if (matchedLockedTerms.length > 0) {
+      return {
+        decision: 'CARRY',
+        entityCandidates: [],
+        guardsTriggered: ['locked_entity_token'],
+        reason: `Locked entity guard triggered: query references locked entity terms (${matchedLockedTerms.join(', ')}).`
+      };
+    }
+
     return {
       decision: 'CARRY',
       entityCandidates: [],
@@ -105,11 +106,15 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     };
   }
 
-  // 5. Check disjointness between query entity candidates and locked entity
+  // 4. Query introduces entity candidate(s). Determine whether it continues the same entity or introduces a distinct new entity.
   const candidateTerms = queryEntityCandidates.map(c => c.term);
-  const isDisjoint = candidateTerms.every(term => !lockedTermsSet.has(term));
+  const matchingCandidateTerms = candidateTerms.filter(term => lockedTermsSet.has(term));
+  const newCandidateTerms = candidateTerms.filter(term => !lockedTermsSet.has(term));
 
-  if (!isDisjoint) {
+  // If candidate terms are predominantly matching the locked entity (or no new entity terms introduced), maintain continuity:
+  const isSameEntity = newCandidateTerms.length === 0 || (matchingCandidateTerms.length / candidateTerms.length >= 0.5);
+
+  if (isSameEntity) {
     return {
       decision: 'CARRY',
       entityCandidates: queryEntityCandidates,
@@ -118,21 +123,22 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     };
   }
 
-  // 6. Differentiate ENTITY_SWITCH vs RESET based on lexical context overlap
+  // 5. Query introduces a distinct new entity (majority new terms / low overlap with locked entity).
+  // Differentiate ENTITY_SWITCH vs RESET based on lexical context overlap with preceding discourse (excluding coincidental candidate terms).
   const contextTermSet = new Set(
     Array.isArray(contextTerms)
       ? contextTerms.map(t => (typeof t === 'string' ? t : t.term))
       : Array.from(contextTerms || [])
   );
 
-  const overlappingContextTerms = queryStems.filter(stem => contextTermSet.has(stem));
+  const overlappingContextTerms = queryStems.filter(stem => contextTermSet.has(stem) && !matchingCandidateTerms.includes(stem));
 
   if (overlappingContextTerms.length > 0) {
     return {
       decision: 'entity_switch',
       entityCandidates: queryEntityCandidates,
       guardsTriggered: [],
-      reason: `Entity switch: new entity candidate [${candidateTerms.join(', ')}] disjoint from locked entity, but shares lexical context tokens (${overlappingContextTerms.join(', ')}).`
+      reason: `Entity switch: new entity candidate [${candidateTerms.join(', ')}] distinct from locked entity, but shares lexical context tokens (${overlappingContextTerms.join(', ')}).`
     };
   }
 
@@ -140,6 +146,6 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     decision: 'reset',
     entityCandidates: queryEntityCandidates,
     guardsTriggered: [],
-    reason: `Topic reset: new entity candidate [${candidateTerms.join(', ')}] is disjoint from locked entity with zero lexical context overlap.`
+    reason: `Topic reset: new entity candidate [${candidateTerms.join(', ')}] is distinct from locked entity with zero lexical context overlap.`
   };
 }
