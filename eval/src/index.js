@@ -70,14 +70,6 @@ export async function runEvaluation() {
       'nDCG@10': benchmarkResults.S3.overall.ndcg10
     },
     {
-      System: 'S4 (Declared LLM Rewriter)',
-      'P@5': benchmarkResults.S4.overall.p5,
-      'P@10': benchmarkResults.S4.overall.p10,
-      'Recall@20': benchmarkResults.S4.overall.recall20,
-      MRR: benchmarkResults.S4.overall.mrr,
-      'nDCG@10': benchmarkResults.S4.overall.ndcg10
-    },
-    {
       System: 'S5 (Oracle Gold Rewrite)',
       'P@5': benchmarkResults.S5.overall.p5,
       'P@10': benchmarkResults.S5.overall.p10,

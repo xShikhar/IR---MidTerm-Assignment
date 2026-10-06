@@ -9,7 +9,6 @@ import { ContextState } from '../../server/src/conversation/contextState.js';
 import { executeRetrieval } from '../../server/src/retrieval/engine.js';
 import { executeConversationalTurn } from '../../server/src/api/traceAssembly.js';
 import { computePrecisionAtK, computeRecallAtK, computeReciprocalRank, computeNdcgAtK } from './metrics.js';
-import { rewriteWithLLM } from '../../server/src/conversation/llmAdapter.js';
 import { CONFIG } from '../../server/src/config/index.js';
 
 /**
@@ -18,7 +17,7 @@ import { CONFIG } from '../../server/src/config/index.js';
  * @param {Object} conv - Conversation definition
  * @param {Record<string, Record<string, number>>} qrels - Relevance judgments
  * @param {Object} index - Inverted index
- * @param {string} systemId - Target system (S0, S1, S2, S3, S4, S5, A1, A2, A3, A4)
+ * @param {string} systemId - Target system (S0, S1, S2, S3, S5, A1, A2, A3, A4)
  * @returns {Promise<Array<Object>>} Per-turn evaluation records
  */
 async function evaluateSession(conv, qrels, index, systemId) {
@@ -60,12 +59,6 @@ async function evaluateSession(conv, qrels, index, systemId) {
       const convRes = executeConversationalTurnSync(turn.query, contextState, index, { topK: 20 });
       rankedList = convRes.results;
       clarifyingFired = convRes.trace.clarification?.fired || false;
-    } else if (systemId === 'S4') {
-      // S4: Declared LLM Adapter (external LLM rewriter or pure IR fallback; never touches goldRewrite)
-      const historyTurns = historyQueries.map(q => ({ role: 'user', content: q }));
-      const llmResult = await rewriteWithLLM(turn.query, historyTurns, { forceEnabled: true });
-      const res = executeRetrieval(llmResult.rewrittenQuery, index, { topK: 20 });
-      rankedList = res.results;
     } else if (systemId === 'S5') {
       // S5: Oracle Gold Rewrite (ONLY system permitted to read goldRewrite)
       const res = executeRetrieval(turn.goldRewrite, index, { topK: 20 });
@@ -222,7 +215,7 @@ function aggregateMetrics(records) {
  * @returns {Object} Full evaluation results
  */
 export async function runEvaluationBenchmark(conversations, qrels, index) {
-  const systems = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'A1', 'A2', 'A3', 'A4'];
+  const systems = ['S0', 'S1', 'S2', 'S3', 'S5', 'A1', 'A2', 'A3', 'A4'];
   const resultsBySystem = {};
 
   for (const sysId of systems) {

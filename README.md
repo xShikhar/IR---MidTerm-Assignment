@@ -117,7 +117,6 @@ All metrics are produced directly from running `npm run eval` on the 70 judged t
 | **S1** | Naive Concatenation of History | 0.3086 | 0.1900 | 0.9500 | 0.6704 | 0.7349 |
 | **S2** | TurnTrace Rewriter (Decayed Context, Cosine) | 0.3714 | 0.1914 | 0.9571 | 0.8702 | 0.8852 |
 | **S3** | TurnTrace Full System (Rewriter + Decompose + RRF) | 0.3686 | 0.1914 | 0.9571 | 0.8631 | 0.8822 |
-| **S4** | Declared LLM Adapter | 0.3886 | 0.1957 | 0.9786 | 1.0000 | 0.9867 |
 | **S5** | Oracle Gold Rewrite | 0.3857 | 0.1943 | 0.9714 | 1.0000 | 0.9804 |
 
 ### Table 2: Component Ablation Study (S2 Baseline)

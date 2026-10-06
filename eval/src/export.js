@@ -25,7 +25,6 @@ export function exportEvaluationArtifacts(benchmarkResults, outputDir = CONFIG.p
     { id: 'S1', name: 'S1: Naive Concatenation of All History' },
     { id: 'S2', name: 'S2: TurnTrace Rewriter (Decayed Context, Cosine)' },
     { id: 'S3', name: 'S3: TurnTrace Full (Rewriter + Decompose + RRF)' },
-    { id: 'S4', name: 'S4: Declared LLM Adapter' },
     { id: 'S5', name: 'S5: Oracle Gold Rewrite' }
   ];
 
@@ -79,8 +78,8 @@ export function exportEvaluationArtifacts(benchmarkResults, outputDir = CONFIG.p
  * Generates an SVG bar chart comparing nDCG@10 and MRR across systems S0 through S5.
  */
 function generateSvgChart(results) {
-  const systems = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5'];
-  const labels = ['S0 (Raw)', 'S1 (Concat)', 'S2 (Rewriter)', 'S3 (TurnTrace)', 'S4 (LLM)', 'S5 (Oracle)'];
+  const systems = ['S0', 'S1', 'S2', 'S3', 'S5'];
+  const labels = ['S0 (Raw)', 'S1 (Concat)', 'S2 (Rewriter)', 'S3 (TurnTrace)', 'S5 (Oracle)'];
   const ndcgValues = systems.map(s => results[s]?.overall.ndcg10 || 0);
   const mrrValues = systems.map(s => results[s]?.overall.mrr || 0);
 

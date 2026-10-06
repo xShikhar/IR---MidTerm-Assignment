@@ -33,7 +33,7 @@ This checklist mirrors every grading rubric requirement for CSD358 (Information 
 
 ### 3. Evaluation & Experimental Benchmark (15 Points)
 - [x] **Real Judged Dataset:** 14 multi-turn conversations (70 judged turns, exceeding the 40-turn requirement) with pooled relevance judgments (qrels) and gold rewrites across 35,000 passages.
-- [x] **Systems S0 through S5:** Direct comparison of Raw Query (S0), Naive Concat (S1), TurnTrace Rewriter (S2), Full System (S3), Declared LLM (S4), and Oracle Gold (S5).
+- [x] **Systems S0 through S5:** Direct comparison of Raw Query (S0), Naive Concat (S1), TurnTrace Rewriter (S2), Full System (S3), and Oracle Gold (S5). S4 (unsupported external LLM) removed to preserve 100% academic integrity and offline reproducibility.
 - [x] **Systematic Ablations:** `lnc.ltc` vs BM25, Topic-Shift OFF, Exponential Decay OFF ($\lambda=1.0$), Decomposer Fusion OFF.
 - [x] **Standard IR Metrics:** P@5, P@10, Recall@20, MRR, nDCG@10, and Clarification Precision.
 - [x] **One-Command Reproduction:** `npm run eval` computes all tables, outputs CSV files, and generates an SVG comparison chart.

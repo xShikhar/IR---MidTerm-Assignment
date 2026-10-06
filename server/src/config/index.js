@@ -84,12 +84,6 @@ export const CONFIG = Object.freeze({
       scoreMarginThreshold: 0.065, // Trigger clarifying question if top margin is below this
       minClusterSize: 2,
       discriminatingTermsCount: 2
-    }),
-    // Optional LLM Adapter
-    llm: Object.freeze({
-      enabled: process.env.ENABLE_LLM === 'true',
-      provider: 'generic',
-      cacheResponses: true
     })
   }),
 

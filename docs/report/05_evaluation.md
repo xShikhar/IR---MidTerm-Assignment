@@ -11,7 +11,6 @@ We evaluate six distinct systems across all 70 judged conversational turns:
 - **S1 (Naive Concatenation):** Concatenates all previous turns and current query into one string.
 - **S2 (TurnTrace Rewriter):** Core index-driven rewriter using decayed context term weights ($\lambda=0.75$) and SMART `lnc.ltc` cosine similarity.
 - **S3 (TurnTrace Full):** S2 augmented with multi-part decomposition and Reciprocal Rank Fusion (RRF).
-- **S4 (Declared LLM Rewriter):** Compares an external rewritten query baseline.
 - **S5 (Oracle Gold Rewrite):** Standalone manual rewrite representing the theoretical upper bound.
 
 ### Table 1: Official System Evaluation Metrics (70 Judged Turns)
@@ -21,7 +20,6 @@ We evaluate six distinct systems across all 70 judged conversational turns:
 | **S1** | Naive History Concatenation | 0.3086 | 0.1900 | 0.9500 | 0.6704 | 0.7349 |
 | **S2** | TurnTrace Rewriter (Cosine) | 0.3714 | 0.1914 | 0.9571 | 0.8702 | **0.8852** |
 | **S3** | TurnTrace Full (+ RRF Fusion) | 0.3686 | 0.1914 | 0.9571 | 0.8631 | **0.8822** |
-| **S4** | Declared LLM Adapter | 0.3886 | 0.1957 | 0.9786 | 1.0000 | 0.9867 |
 | **S5** | Oracle Gold Rewrite | 0.3857 | 0.1943 | 0.9714 | 1.0000 | 0.9804 |
 
 ---
