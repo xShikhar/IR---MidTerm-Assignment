@@ -10,7 +10,8 @@
         "goldRewrite": "What is the vector space model in information retrieval?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -18,7 +19,8 @@
         "goldRewrite": "How does term frequency weighting work in the vector space model?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -26,7 +28,8 @@
         "goldRewrite": "What is cosine normalization in the vector space model?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -34,7 +37,8 @@
         "goldRewrite": "Why is document length normalization needed in the vector space model?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -42,7 +46,8 @@
         "goldRewrite": "Compare vector space model with Okapi BM25 scoring.",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": true
+        "isDecomposable": true,
+        "expectedAction": null
       }
     ]
   },
@@ -57,7 +62,8 @@
         "goldRewrite": "How does the PageRank algorithm rank web pages?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -65,7 +71,8 @@
         "goldRewrite": "Who invented the PageRank algorithm at Stanford?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -73,7 +80,8 @@
         "goldRewrite": "What is the random surfer model in PageRank?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -81,7 +89,8 @@
         "goldRewrite": "How does PageRank handle dead ends and spider traps?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -89,7 +98,8 @@
         "goldRewrite": "What is the standard damping factor value used in PageRank?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -104,7 +114,8 @@
         "goldRewrite": "What is the James Webb Space Telescope?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -112,7 +123,8 @@
         "goldRewrite": "Where is the James Webb Space Telescope orbit located in space?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -120,7 +132,8 @@
         "goldRewrite": "What is the primary mirror size and material of the James Webb Space Telescope?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -128,7 +141,8 @@
         "goldRewrite": "What instruments does James Webb Space Telescope carry for infrared astronomy?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -136,7 +150,8 @@
         "goldRewrite": "Compare NIRCam and MIRI instruments on the James Webb Space Telescope.",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": true
+        "isDecomposable": true,
+        "expectedAction": null
       }
     ]
   },
@@ -151,7 +166,8 @@
         "goldRewrite": "When did the Apollo 11 mission land on the Moon?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -159,7 +175,8 @@
         "goldRewrite": "Who were the astronauts on board the Apollo 11 mission?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -167,7 +184,8 @@
         "goldRewrite": "What rocket launched the Apollo 11 astronauts into space?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -175,7 +193,8 @@
         "goldRewrite": "How long did Apollo 11 astronauts spend on the lunar surface?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -183,7 +202,8 @@
         "goldRewrite": "Where did the Apollo 11 command module Columbia splash down on Earth?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -198,7 +218,8 @@
         "goldRewrite": "What is CRISPR Cas9 genome editing technology in molecular biology?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -206,7 +227,8 @@
         "goldRewrite": "How does guide RNA locate target DNA sequences in CRISPR Cas9?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -214,7 +236,8 @@
         "goldRewrite": "Who received the Nobel Prize in Chemistry for CRISPR Cas9 development?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -222,7 +245,8 @@
         "goldRewrite": "What ethical concerns surround human germline gene editing using CRISPR?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -230,7 +254,8 @@
         "goldRewrite": "Compare somatic gene therapies and germline gene therapies in medicine.",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": true
+        "isDecomposable": true,
+        "expectedAction": null
       }
     ]
   },
@@ -245,7 +270,8 @@
         "goldRewrite": "How do mRNA vaccines work against viruses in the human immune system?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -253,7 +279,8 @@
         "goldRewrite": "What role do lipid nanoparticles play in delivering mRNA vaccines into cells?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -261,7 +288,8 @@
         "goldRewrite": "How does the human cell ribosome produce viral spike protein from mRNA?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -269,7 +297,8 @@
         "goldRewrite": "What immune response do mRNA vaccines trigger in the human body?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -277,7 +306,8 @@
         "goldRewrite": "How does ultra-cold storage temperature affect mRNA vaccine stability?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -292,7 +322,8 @@
         "goldRewrite": "Who invented the movable type printing press in Europe?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -300,7 +331,8 @@
         "goldRewrite": "Where was Johannes Gutenberg first print shop established in Mainz?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -308,7 +340,8 @@
         "goldRewrite": "What was the first major book printed by Gutenberg?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -316,7 +349,8 @@
         "goldRewrite": "How did the Gutenberg printing press influence the Protestant Reformation?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -324,7 +358,8 @@
         "goldRewrite": "What were the impacts of the printing press on European literacy rates?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -339,7 +374,8 @@
         "goldRewrite": "Where was the ancient Royal Library of Alexandria located in Egypt?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -347,7 +383,8 @@
         "goldRewrite": "Who founded the Library of Alexandria and during which century?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -355,7 +392,8 @@
         "goldRewrite": "How many papyrus scrolls was the Library of Alexandria estimated to hold?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -363,7 +401,8 @@
         "goldRewrite": "How was the ancient Library of Alexandria destroyed according to historical evidence?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -371,7 +410,8 @@
         "goldRewrite": "Which famous Hellenistic scholars worked as chief librarians at Alexandria?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -386,7 +426,8 @@
         "goldRewrite": "What was Alan Turing formulation of the imitation game in his 1950 paper?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -394,7 +435,8 @@
         "goldRewrite": "What landmark philosophical paper introduced the Turing test imitation game?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -402,7 +444,8 @@
         "goldRewrite": "What are the common philosophical objections to Alan Turing imitation game?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -410,7 +453,8 @@
         "goldRewrite": "What is the Schwarzschild event horizon of an astrophysical black hole in general relativity?",
         "isShift": true,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -418,7 +462,8 @@
         "goldRewrite": "Can light escape from within the Schwarzschild radius of an astrophysical black hole?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -433,7 +478,8 @@
         "goldRewrite": "How did Alexander Fleming accidentally discover penicillin at St Mary Hospital in 1928?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -441,7 +487,8 @@
         "goldRewrite": "What fungus or mould species produced the antibacterial substance penicillin?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -449,7 +496,8 @@
         "goldRewrite": "Who purified penicillin for mass pharmaceutical production in Oxford during World War II?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -457,7 +505,8 @@
         "goldRewrite": "Who painted the Mona Lisa Renaissance oil portrait in Florence?",
         "isShift": true,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -465,7 +514,8 @@
         "goldRewrite": "What art museum displays the original Leonardo da Vinci Mona Lisa in Paris today?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -480,7 +530,8 @@
         "goldRewrite": "What is the planet Mercury in our Solar System and its orbital characteristics?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -488,7 +539,8 @@
         "goldRewrite": "How close is the planet Mercury to the Sun at perihelion?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -496,7 +548,8 @@
         "goldRewrite": "What are the extreme surface temperatures on planet Mercury between day and night?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -504,7 +557,8 @@
         "goldRewrite": "What are the health risks and environmental toxicity of the heavy metal chemical element mercury?",
         "isShift": true,
         "isAmbiguous": true,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -512,7 +566,8 @@
         "goldRewrite": "What human organs and neurological systems does toxic methylmercury exposure damage?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -527,7 +582,8 @@
         "goldRewrite": "How does the Transformer deep learning architecture use multi-head self-attention mechanisms?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -535,7 +591,8 @@
         "goldRewrite": "What is multi-head attention in transformer neural network models?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -543,7 +600,8 @@
         "goldRewrite": "What are positional encodings used for in transformer sequence models?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -551,7 +609,8 @@
         "goldRewrite": "How do electrical electromagnetic power transformers step down AC voltage using induction coils?",
         "isShift": true,
         "isAmbiguous": true,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -559,7 +618,8 @@
         "goldRewrite": "What laminated magnetic core materials do electrical power transformers use?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -574,7 +634,8 @@
         "goldRewrite": "How do artificial neural networks differ from biological neural architectures in the brain?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -582,7 +643,8 @@
         "goldRewrite": "What is the backpropagation algorithm for training artificial neural networks?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -590,7 +652,8 @@
         "goldRewrite": "Why is the biological plausibility of backpropagation debated in neuroscience?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -598,7 +661,8 @@
         "goldRewrite": "Compare biological synaptic plasticity with artificial neural gradient descent optimization.",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": true
+        "isDecomposable": true,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -606,7 +670,8 @@
         "goldRewrite": "How does spike-timing-dependent plasticity work in biological synapses?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   },
@@ -621,7 +686,8 @@
         "goldRewrite": "What is Claude Shannon mathematical formula for information entropy in bits?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_02",
@@ -629,7 +695,8 @@
         "goldRewrite": "What base logarithm did Claude Shannon use to define bit units of entropy?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_03",
@@ -637,7 +704,8 @@
         "goldRewrite": "How does Claude Shannon information entropy relate to thermodynamic entropy in statistical physics?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_04",
@@ -645,7 +713,8 @@
         "goldRewrite": "Is thermodynamic entropy conserved or increasing according to physical laws?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       },
       {
         "turnId": "turn_05",
@@ -653,7 +722,8 @@
         "goldRewrite": "What does the second law of thermodynamics state about isolated systems and entropy increase?",
         "isShift": false,
         "isAmbiguous": false,
-        "isDecomposable": false
+        "isDecomposable": false,
+        "expectedAction": null
       }
     ]
   }
