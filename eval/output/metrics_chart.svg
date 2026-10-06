@@ -1,0 +1,100 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family: Inter, system-ui, sans-serif;">
+  <text x="400" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#111827">TurnTrace Retrieval Performance Benchmark (70 Judged Turns)</text>
+  
+  <!-- Legend -->
+  <rect x="520" y="20" width="14" height="14" fill="#4f46e5" rx="2" />
+  <text x="540" y="32" font-size="12" fill="#374151">nDCG@10</text>
+  <rect x="630" y="20" width="14" height="14" fill="#059669" rx="2" />
+  <text x="650" y="32" font-size="12" fill="#374151">MRR</text>
+
+  <!-- Y-Axis Gridlines -->
+  <line x1="60" y1="60" x2="760" y2="60" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="64" font-size="11" text-anchor="end" fill="#6b7280">1.0</text>
+  
+  <line x1="60" y1="137.5" x2="760" y2="137.5" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="141.5" font-size="11" text-anchor="end" fill="#6b7280">0.75</text>
+
+  <line x1="60" y1="215" x2="760" y2="215" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="219" font-size="11" text-anchor="end" fill="#6b7280">0.50</text>
+
+  <line x1="60" y1="292.5" x2="760" y2="292.5" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="296.5" font-size="11" text-anchor="end" fill="#6b7280">0.25</text>
+
+  <line x1="60" y1="370" x2="760" y2="370" stroke="#9ca3af" stroke-width="1.5" />
+  <text x="50" y="374" font-size="11" text-anchor="end" fill="#6b7280">0.0</text>
+
+  <!-- Bars -->
+  
+      <rect x="70" y="67.28499999999997" width="40.833333333333336" height="302.71500000000003" fill="#4f46e5" rx="3">
+        <title>S0 nDCG@10: 0.9765</title>
+      </rect>
+      <text x="90.41666666666667" y="61.28499999999997" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.98</text>
+    
+      <rect x="115.83333333333334" y="60" width="40.833333333333336" height="310" fill="#059669" rx="3">
+        <title>S0 MRR: 1</title>
+      </rect>
+      <text x="136.25" y="54" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">1.00</text>
+    
+      <text x="118.33333333333334" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S0 (Raw)</text>
+    
+      <rect x="186.66666666666669" y="142.181" width="40.833333333333336" height="227.819" fill="#4f46e5" rx="3">
+        <title>S1 nDCG@10: 0.7349</title>
+      </rect>
+      <text x="207.08333333333334" y="136.181" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.73</text>
+    
+      <rect x="232.50000000000003" y="162.176" width="40.833333333333336" height="207.824" fill="#059669" rx="3">
+        <title>S1 MRR: 0.6704</title>
+      </rect>
+      <text x="252.91666666666669" y="156.176" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.67</text>
+    
+      <text x="235.00000000000003" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S1 (Concat)</text>
+    
+      <rect x="303.33333333333337" y="95.58800000000002" width="40.833333333333336" height="274.412" fill="#4f46e5" rx="3">
+        <title>S2 nDCG@10: 0.8852</title>
+      </rect>
+      <text x="323.75000000000006" y="89.58800000000002" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.89</text>
+    
+      <rect x="349.1666666666667" y="100.238" width="40.833333333333336" height="269.762" fill="#059669" rx="3">
+        <title>S2 MRR: 0.8702</title>
+      </rect>
+      <text x="369.58333333333337" y="94.238" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.87</text>
+    
+      <text x="351.6666666666667" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S2 (Rewriter)</text>
+    
+      <rect x="420" y="96.51800000000003" width="40.833333333333336" height="273.48199999999997" fill="#4f46e5" rx="3">
+        <title>S3 nDCG@10: 0.8822</title>
+      </rect>
+      <text x="440.4166666666667" y="90.51800000000003" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.88</text>
+    
+      <rect x="465.8333333333333" y="102.43900000000002" width="40.833333333333336" height="267.561" fill="#059669" rx="3">
+        <title>S3 MRR: 0.8631</title>
+      </rect>
+      <text x="486.25" y="96.43900000000002" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.86</text>
+    
+      <text x="468.3333333333333" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S3 (TurnTrace)</text>
+    
+      <rect x="536.6666666666667" y="64.12299999999999" width="40.833333333333336" height="305.877" fill="#4f46e5" rx="3">
+        <title>S4 nDCG@10: 0.9867</title>
+      </rect>
+      <text x="557.0833333333334" y="58.12299999999999" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.99</text>
+    
+      <rect x="582.5000000000001" y="60" width="40.833333333333336" height="310" fill="#059669" rx="3">
+        <title>S4 MRR: 1</title>
+      </rect>
+      <text x="602.9166666666667" y="54" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">1.00</text>
+    
+      <text x="585.0000000000001" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S4 (LLM)</text>
+    
+      <rect x="653.3333333333334" y="66.07599999999996" width="40.833333333333336" height="303.92400000000004" fill="#4f46e5" rx="3">
+        <title>S5 nDCG@10: 0.9804</title>
+      </rect>
+      <text x="673.75" y="60.075999999999965" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.98</text>
+    
+      <rect x="699.1666666666667" y="60" width="40.833333333333336" height="310" fill="#059669" rx="3">
+        <title>S5 MRR: 1</title>
+      </rect>
+      <text x="719.5833333333334" y="54" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">1.00</text>
+    
+      <text x="701.6666666666667" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S5 (Oracle)</text>
+    
+</svg>

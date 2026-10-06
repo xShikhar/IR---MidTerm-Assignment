@@ -1,0 +1,15 @@
+{
+  "name": "turntrace-eval",
+  "version": "1.0.0",
+  "description": "TurnTrace Evaluation Harness and Metrics Benchmark",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "run": "node src/index.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "dependencies": {
+    "turntrace-server": "*"
+  }
+}

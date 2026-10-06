@@ -1,0 +1,7 @@
+System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10
+S0,"S0: Raw Query Only (No Context)",0.38,0.1914,0.9571,1,0.9765
+S1,"S1: Naive Concatenation of All History",0.3086,0.19,0.95,0.6704,0.7349
+S2,"S2: TurnTrace Rewriter (Decayed Context, Cosine)",0.3714,0.1914,0.9571,0.8702,0.8852
+S3,"S3: TurnTrace Full (Rewriter + Decompose + RRF)",0.3686,0.1914,0.9571,0.8631,0.8822
+S4,"S4: Declared LLM Adapter",0.3886,0.1957,0.9786,1,0.9867
+S5,"S5: Oracle Gold Rewrite",0.3857,0.1943,0.9714,1,0.9804
