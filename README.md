@@ -325,6 +325,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 .
 ├── client/                     # Vite + React Trace Inspector frontend
 │   ├── src/App.jsx             # Interactive dialogue & unredacted IR Trace Inspector
+│   ├── src/components/         # Reusable UI components (trace, modals, cards, navbar)
 │   ├── src/index.css           # Styling and layout
 │   └── vite.config.js          # Client dev server with /api proxy to backend
 ├── data/                       # Dataset, conversations, and evaluation splits

@@ -6,6 +6,7 @@
 
 import express from 'express';
 import cors from 'cors';
+import fs from 'node:fs';
 import { loadIndex } from '../index/serializer.js';
 import { ContextState } from '../conversation/contextState.js';
 import { SeenPassageTracker } from '../retrieval/seenPenalty.js';
@@ -57,12 +58,21 @@ app.get('/api/stats', (req, res) => {
   }
   res.json({
     metadata: index.metadata,
+    domains: {
+      cs_ai: 9222,
+      space_physics: 9266,
+      history_civilization: 9081,
+      biology_medicine: 7431
+    },
     config: {
       scoringModel: 'SMART lnc.ltc Cosine with length normalization',
       decayLambda: CONFIG.conversation.context.decayLambda,
       shiftCosineThreshold: CONFIG.conversation.shift.cosineThreshold,
       topK: CONFIG.retrieval.topK,
-      topMExpansionTerms: CONFIG.conversation.rewriter.topMExpansionTerms
+      topMExpansionTerms: CONFIG.conversation.rewriter.topMExpansionTerms,
+      zones: CONFIG.retrieval.zones,
+      bm25: CONFIG.retrieval.bm25,
+      novelty: CONFIG.novelty
     }
   });
 });
@@ -80,7 +90,16 @@ app.post('/api/reset', (req, res) => {
 
 // 4. Conversational Search Turn
 app.post('/api/chat', async (req, res) => {
-  const { query, sessionId = 'default', reset = false, useChampionLists, applyIndexElimination, model } = req.body || {};
+  const {
+    query,
+    sessionId = 'default',
+    reset = false,
+    useChampionLists,
+    applyIndexElimination,
+    model,
+    lockMode,
+    applySeenPenalty
+  } = req.body || {};
 
   if (!query || typeof query !== 'string' || query.trim().length === 0) {
     return res.status(400).json({ error: 'Field "query" is required and must be non-empty.' });
@@ -99,12 +118,29 @@ app.post('/api/chat', async (req, res) => {
     const response = await executeConversationalTurn(query.trim(), contextState, index, {
       useChampionLists,
       applyIndexElimination,
-      model
+      model,
+      lockMode,
+      applySeenPenalty
     });
     res.json(response);
   } catch (err) {
     console.error('[TurnTrace Server Error]', err);
     res.status(500).json({ error: 'Internal retrieval error', details: err.message });
+  }
+});
+
+// 5. Benchmark Dialogue Scenarios
+app.get('/api/conversations', (req, res) => {
+  try {
+    const raw = JSON.parse(fs.readFileSync(CONFIG.paths.conversationsFile, 'utf8'));
+    const sanitized = raw.map(c => ({
+      id: c.id,
+      domain: c.domain,
+      turns: (c.turns || []).map(t => ({ turnId: t.turnId, query: t.query }))
+    }));
+    res.json(sanitized);
+  } catch (err) {
+    res.status(500).json({ error: 'Unable to load benchmark conversations', details: err.message });
   }
 });
 

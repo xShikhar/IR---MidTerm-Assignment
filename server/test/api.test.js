@@ -69,4 +69,32 @@ describe('Express REST API Endpoints', () => {
     const data = await res.json();
     assert.equal(data.success, true);
   });
+
+  it('GET /api/conversations returns benchmark dialogues', async () => {
+    const res = await fetch(`${baseUrl}/api/conversations`);
+    assert.equal(res.status, 200);
+    const data = await res.json();
+    assert.ok(Array.isArray(data));
+    assert.ok(data.length > 0);
+    assert.ok(data[0].turns.length > 0);
+  });
+
+  it('POST /api/chat supports model, lockMode, and seenPenalty options', async () => {
+    const res = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: 'What is Okapi BM25?',
+        sessionId: 'test_session_2',
+        model: 'bm25',
+        lockMode: 'soft',
+        applySeenPenalty: true
+      })
+    });
+
+    assert.equal(res.status, 200);
+    const data = await res.json();
+    assert.equal(data.trace.retrievalExecution.model, 'bm25');
+    assert.equal(data.trace.seenPassagePenalty.enabled, true);
+  });
 });
