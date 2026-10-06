@@ -37,7 +37,7 @@ export function executeRetrieval(rawQuery, index, options = {}) {
   let eliminatedTerms = [];
 
   if (applyElimination) {
-    const eliminationResult = eliminateLowIdfTerms(rawTerms, index.dictionary);
+    const eliminationResult = eliminateLowIdfTerms(rawTerms, index.dictionary, options.minIdf);
     effectiveTerms = eliminationResult.retainedTerms;
     eliminatedTerms = eliminationResult.eliminatedTerms;
   }
@@ -56,9 +56,9 @@ export function executeRetrieval(rawQuery, index, options = {}) {
   // 4. Score execution
   let results = [];
   if (model === 'bm25') {
-    results = scoreBM25(effectiveTerms, index, { topK, useChampionLists });
+    results = scoreBM25(effectiveTerms, index, { topK, useChampionLists, topR: options.topR });
   } else {
-    results = scoreCosineLncLtc(effectiveTerms, index, { topK, useChampionLists });
+    results = scoreCosineLncLtc(effectiveTerms, index, { topK, useChampionLists, topR: options.topR });
   }
 
   return {

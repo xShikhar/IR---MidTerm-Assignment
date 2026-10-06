@@ -78,9 +78,20 @@ export function scoreCosineLncLtc(queryTerms, index, options = {}) {
     const entry = index.dictionary[term];
     if (!entry) continue;
 
-    const postingsToScan = useChampionLists && index.championLists[term]
-      ? index.championLists[term]
-      : entry.postings;
+    let postingsToScan = entry.postings;
+    if (useChampionLists) {
+      const topR = options.topR || CONFIG.retrieval.championLists.topR;
+      if (topR === 50 && index.championLists && index.championLists[term]) {
+        postingsToScan = index.championLists[term];
+      } else {
+        if (!entry._championCache) entry._championCache = {};
+        if (!entry._championCache[topR]) {
+          const sorted = [...entry.postings].sort((a, b) => (b.tf || 0) - (a.tf || 0));
+          entry._championCache[topR] = sorted.slice(0, topR);
+        }
+        postingsToScan = entry._championCache[topR];
+      }
+    }
 
     for (const posting of postingsToScan) {
       const docId = posting.docId;
