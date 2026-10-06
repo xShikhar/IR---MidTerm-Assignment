@@ -52,6 +52,7 @@ npm run dev
   - Multi-part comparative queries (*"Compare vector space model with Okapi BM25"*, *"Compare synaptic plasticity and gradient descent"*)
 - **Relevance Judgments & Pooling:** Blind pooling sheets generated across S0 (Raw), S1 (History Concatenation), S2 (TurnTrace), Okapi BM25, and Oracle Gold Rewrite across all 70 turns. Candidates are system-blind, sorted strictly by `docId`, split across 4 judges with a fixed-seed 15% overlap for Cohen's Kappa agreement calculation.
 - **Attribution, License & Ethics:** All passage text is sourced from Wikipedia and released under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) and GNU Free Documentation License (GFDL). Copyright resides with Wikimedia Foundation and individual Wikipedia contributors. Contains zero personal or private data. Reproducible via `npm run prepare:data`.
+- **Corpus Freeze & Documented Limitation:** The corpus (35,000 authentic passages) and inverted index (`data/index.json`) are permanently **frozen** to preserve the integrity of docId references across the 4 human pooling sheets (`eval/output/pooling/judge_*_pool.csv`). A SHA-256 hash check identifies 39 duplicate passages (0.11% duplicate rate across the 35,000 collection, resulting from minor cross-article Wikipedia section overlap). These passages are intentionally retained without deduplication to guarantee zero docId drift for human judges.
 
 
 ---

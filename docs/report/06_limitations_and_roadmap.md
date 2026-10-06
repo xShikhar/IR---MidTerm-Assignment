@@ -20,6 +20,7 @@ In accordance with academic rigor and the grading rubric, we document real archi
 1. **Unigram Bag-of-Words Rewriter:** Context expansion currently operates on unigram stems. Phrases (e.g. *"vector space"* or *"lipid nanoparticle"*) are expanded as individual unigrams rather than bound compound phrases.
 2. **Fixed Exponential Decay Factor:** The decay rate $\lambda = 0.75$ is constant across all parts of speech. Nouns, verbs, and entity names decay at the identical rate, even though named entities typically remain topical longer than general verbs.
 3. **Lexical Ambiguity Granularity:** The cluster-pruning clarifier relies on lexical Jaccard overlap among top candidates. Highly subtle polysemy without distinct surface tokens cannot always be discriminated into clean clusters.
+4. **Frozen Corpus Section Overlap:** A cryptographic SHA-256 hash audit reveals 39 duplicate passages (0.11% duplicate rate across the 35,000 passage collection) caused by shared lead sections across related Wikipedia articles. The corpus and docIds are strictly frozen without deduplication to prevent invalidating generated judging pools.
 
 ## 6.3 Future Roadmap
 1. **Entity-Aware Selective Decay:** Integrate lightweight POS/Named Entity weighting so that proper nouns (people, spacecraft, scientific laws) decay with $\lambda = 0.90$, while general terms decay with $\lambda = 0.50$.
