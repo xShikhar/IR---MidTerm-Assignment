@@ -99,8 +99,9 @@ export function normalizeTokensWithPositions(positionalTokens, filterStopwords =
  */
 export function analyze(text, filterStopwords = true) {
   if (!text || typeof text !== 'string') return [];
-  // Tokenize regex
-  const words = text
+  // Normalize diacritics and tokenize
+  const clean = removeDiacritics(text);
+  const words = clean
     .toLowerCase()
     .replace(/[^\w\s]/g, ' ')
     .split(/\s+/)

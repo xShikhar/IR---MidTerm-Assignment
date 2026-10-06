@@ -28,6 +28,14 @@ describe('Indexing Engine: Tokenizer & Positional Offsets', () => {
     assert.equal(positional[4].cleanToken, 'indexes');
     assert.equal(positional[4].position, 4);
   });
+
+  it('tokenizes words with diacritics without splitting characters', () => {
+    const text = 'café résumé';
+    const tokens = tokenize(text);
+    assert.deepEqual(tokens, ['cafe', 'resume']);
+    const analyzed = analyze(text);
+    assert.deepEqual(analyzed, ['cafe', 'resum']);
+  });
 });
 
 describe('Indexing Engine: Normalizer & Porter Stemmer', () => {

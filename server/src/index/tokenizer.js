@@ -23,6 +23,9 @@ export function tokenizeWithPositions(text) {
     return [];
   }
 
+  // Normalize diacritics first so accented characters are not treated as delimiters
+  const cleanText = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
   // Regex matching words, numbers, and alphanumeric identifiers
   // Strips peripheral punctuation while preserving internal word structure
   const wordRegex = /[a-zA-Z0-9]+(?:'[a-zA-Z0-9]+)?/g;
@@ -30,7 +33,7 @@ export function tokenizeWithPositions(text) {
   let match;
   let position = 0;
 
-  while ((match = wordRegex.exec(text)) !== null) {
+  while ((match = wordRegex.exec(cleanText)) !== null) {
     const rawToken = match[0];
     const cleanToken = rawToken.toLowerCase().replace(/^'+|'+$/g, '');
     if (cleanToken.length > 0) {
