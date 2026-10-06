@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-06T15:05:24.745Z",
+  "masterPoolRecords": 1676,
+  "totalIncrementalRecords": 621,
+  "systems": {
+    "A1": {
+      "totalTop10": 700,
+      "newRows": 146,
+      "unjudgedFraction": 0.2086,
+      "unjudgedPercent": 20.86
+    },
+    "A2": {
+      "totalTop10": 700,
+      "newRows": 224,
+      "unjudgedFraction": 0.32,
+      "unjudgedPercent": 32
+    },
+    "A3": {
+      "totalTop10": 700,
+      "newRows": 253,
+      "unjudgedFraction": 0.3614,
+      "unjudgedPercent": 36.14
+    },
+    "A4": {
+      "totalTop10": 700,
+      "newRows": 295,
+      "unjudgedFraction": 0.4214,
+      "unjudgedPercent": 42.14
+    },
+    "A5": {
+      "totalTop10": 700,
+      "newRows": 222,
+      "unjudgedFraction": 0.3171,
+      "unjudgedPercent": 31.71
+    },
+    "A6": {
+      "totalTop10": 700,
+      "newRows": 91,
+      "unjudgedFraction": 0.13,
+      "unjudgedPercent": 13
+    }
+  }
+}
