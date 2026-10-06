@@ -67,4 +67,28 @@ describe('Integrity & Data Leakage Gate: No Oracle Gold Rewrite Access', () => {
       `Non-oracle evaluation system illegally references goldRewrite at: ${JSON.stringify(leakingLines)}`
     );
   });
+
+  it('strictly ensures across eval/src/ that only S5 and fidelity.js reference goldRewrite', () => {
+    const evalSrcDir = path.resolve(__dirname, '../../eval/src');
+    const evalFiles = scanSourceFiles(evalSrcDir);
+    const violations = [];
+
+    for (const file of evalFiles) {
+      const rel = path.relative(evalSrcDir, file).replace(/\\/g, '/');
+      // Only systemsRunner.js (S5), fidelity.js (fidelity evaluation metric), and index.js (pipeline wiring) may reference goldRewrite
+      if (rel === 'systemsRunner.js' || rel === 'metrics/fidelity.js' || rel === 'index.js') {
+        continue;
+      }
+      const content = fs.readFileSync(file, 'utf-8');
+      if (content.includes('goldRewrite')) {
+        violations.push(rel);
+      }
+    }
+
+    assert.equal(
+      violations.length,
+      0,
+      `Illegal goldRewrite reference in eval modules: ${violations.join(', ')}`
+    );
+  });
 });

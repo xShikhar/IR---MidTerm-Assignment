@@ -8,6 +8,7 @@ import express from 'express';
 import cors from 'cors';
 import { loadIndex } from '../index/serializer.js';
 import { ContextState } from '../conversation/contextState.js';
+import { SeenPassageTracker } from '../retrieval/seenPenalty.js';
 import { executeConversationalTurn } from './traceAssembly.js';
 import { CONFIG } from '../config/index.js';
 
@@ -33,7 +34,9 @@ try {
  */
 function getSessionContext(sessionId = 'default') {
   if (!SESSIONS.has(sessionId)) {
-    SESSIONS.set(sessionId, new ContextState());
+    const ctx = new ContextState();
+    ctx.seenTracker = new SeenPassageTracker();
+    SESSIONS.set(sessionId, ctx);
   }
   return SESSIONS.get(sessionId);
 }
@@ -68,7 +71,9 @@ app.get('/api/stats', (req, res) => {
 app.post('/api/reset', (req, res) => {
   const sessionId = req.body?.sessionId || 'default';
   if (SESSIONS.has(sessionId)) {
-    SESSIONS.get(sessionId).reset();
+    const ctx = SESSIONS.get(sessionId);
+    ctx.reset();
+    ctx.seenTracker?.reset();
   }
   res.json({ success: true, message: `Context for session '${sessionId}' reset successfully.` });
 });

@@ -56,9 +56,9 @@ export function executeRetrieval(rawQuery, index, options = {}) {
   // 4. Score execution
   let results = [];
   if (model === 'bm25') {
-    results = scoreBM25(effectiveTerms, index, { topK, useChampionLists, topR: options.topR });
+    results = scoreBM25(effectiveTerms, index, { topK, useChampionLists, topR: options.topR, allowedDocIds: options.allowedDocIds });
   } else {
-    results = scoreCosineLncLtc(effectiveTerms, index, { topK, useChampionLists, topR: options.topR });
+    results = scoreCosineLncLtc(effectiveTerms, index, { topK, useChampionLists, topR: options.topR, allowedDocIds: options.allowedDocIds });
   }
 
   return {

@@ -87,6 +87,31 @@ export const CONFIG = Object.freeze({
     })
   }),
 
+  // Headline Novelty: Entity-Lock & Aspect-Aware Context Tracking
+  // NOTE: All thresholds below are initial untuned baselines awaiting human qrels
+  novelty: Object.freeze({
+    entity: Object.freeze({
+      minIdf: 2.50,        // [Untuned Initial] Minimum collection IDF for an entity candidate
+      minTitleHits: 1,     // [Untuned Initial] Minimum title hits in top-3 candidates
+      topN: 3              // [Untuned Initial] Depth of top results inspected for title-zone entity hits
+    }),
+    aspect: Object.freeze({
+      minIdf: 1.80,        // [Untuned Initial] Minimum collection IDF for an aspect term
+      decayLambda: 0.75,   // [Untuned Initial] Exponential decay multiplier for accumulated aspects
+      additiveCues: Object.freeze([
+        'also', 'and', 'as well', 'too', 'additionally', 'plus', 'furthermore'
+      ])
+    }),
+    lock: Object.freeze({
+      mode: 'hard',        // [Untuned Initial] 'hard' (Boolean title filter) | 'soft' (score boost)
+      entityBoost: 2.0,    // [Untuned Initial] Multiplier for locked entity terms in soft mode
+      minCandidates: 10    // [Untuned Initial] Fallback to soft if fewer than 10 candidates survive
+    }),
+    seen: Object.freeze({
+      penalty: 0.30        // [Untuned Initial] Score penalty: (1 - 0.30) for previously shown docs
+    })
+  }),
+
   server: Object.freeze({
     port: parseInt(process.env.PORT || '3001', 10),
     host: '127.0.0.1'

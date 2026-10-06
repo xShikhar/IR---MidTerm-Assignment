@@ -64,6 +64,7 @@ export function scoreBM25(queryTerms, index, options = {}) {
 
     for (const posting of postingsToScan) {
       const docId = posting.docId;
+      if (options.allowedDocIds && !options.allowedDocIds.has(docId)) continue;
       const docMeta = index.docs[docId];
       if (!docMeta) continue;
 
