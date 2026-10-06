@@ -243,51 +243,145 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Topic Shift Detector */}
+              {/* Transition Decision & Entity Lock */}
               <div className="trace-section">
-                <div className="trace-section-header">2. Topic Shift Detector</div>
+                <div className="trace-section-header">2. Transition Decision & Guards</div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                   <span>Decision:</span>
-                  <span className={activeTrace.shiftDecision.decision === 'CARRY' ? 'badge-carry' : 'badge-reset'}>
-                    {activeTrace.shiftDecision.decision}
-                  </span>
+                  {activeTrace.entityLock ? (
+                    <span className={
+                      activeTrace.entityLock.decision === 'CARRY'
+                        ? 'badge-carry'
+                        : activeTrace.entityLock.decision === 'entity_switch'
+                          ? 'badge-switch'
+                          : 'badge-reset'
+                    }>
+                      {activeTrace.entityLock.decision}
+                    </span>
+                  ) : (
+                    <span className={activeTrace.shiftDecision?.decision === 'CARRY' ? 'badge-carry' : 'badge-reset'}>
+                      {activeTrace.shiftDecision?.decision}
+                    </span>
+                  )}
                 </div>
-                <div style={{ fontSize: '12px', color: '#94a3b8', marginBottom: '6px' }}>
-                  Cosine: <strong style={{ color: '#f8fafc' }}>{activeTrace.shiftDecision.cosineSimilarity}</strong> (Threshold: {activeTrace.shiftDecision.threshold})
-                </div>
+
+                {activeTrace.entityLock?.guardsTriggered?.length > 0 && (
+                  <div style={{ marginBottom: '6px' }}>
+                    {activeTrace.entityLock.guardsTriggered.map((g, idx) => (
+                      <span key={idx} className="guard-pill">Guard: {g}</span>
+                    ))}
+                  </div>
+                )}
+
                 <div style={{ fontSize: '11px', color: '#cbd5e1', fontStyle: 'italic' }}>
-                  Reason: {activeTrace.shiftDecision.reason}
+                  Reason: {activeTrace.entityLock?.decisionReason || activeTrace.shiftDecision?.reason}
                 </div>
               </div>
 
+              {/* Entity Lock & Title Zone Enforcement */}
+              {activeTrace.entityLock && (
+                <div className="trace-section">
+                  <div className="trace-section-header">3. Entity Lock & Title-Zone Filtering</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                    <span className="badge-mode">Mode: {activeTrace.entityLock.lockMode}</span>
+                    {activeTrace.entityLock.fallback && (
+                      <span className="badge-fallback">⚠️ Fallback to Soft Boost (&lt;10 matches)</span>
+                    )}
+                  </div>
+                  <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '8px' }}>
+                    Title Matches: <strong>{activeTrace.entityLock.candidateCounts?.survivingTitleCandidates ?? 'N/A'}</strong> | Returned: <strong>{activeTrace.entityLock.candidateCounts?.finalRetrievedCount ?? 'N/A'}</strong>
+                  </div>
+
+                  {activeTrace.entityLock.lockedEntities?.length > 0 ? (
+                    <table className="trace-table">
+                      <thead>
+                        <tr>
+                          <th>Locked Entity</th>
+                          <th>IDF</th>
+                          <th>Title Hits (Top 3)</th>
+                          <th>Locked Turn</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {activeTrace.entityLock.lockedEntities.map((e, idx) => (
+                          <tr key={idx}>
+                            <td style={{ color: '#f59e0b', fontWeight: '600' }}>{e.term}</td>
+                            <td>{e.idf}</td>
+                            <td>{e.titleHitCount} / 3</td>
+                            <td>Turn {e.sourceTurn}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ) : (
+                    <div style={{ fontSize: '11px', color: '#64748b' }}>No persistent entity locked on this turn.</div>
+                  )}
+                </div>
+              )}
+
+              {/* Aspect-Aware Context Tracking */}
+              {activeTrace.entityLock && (
+                <div className="trace-section">
+                  <div className="trace-section-header">4. Aspect-Aware Context Tracking</div>
+                  {activeTrace.entityLock.aspectTerms?.length > 0 ? (
+                    <table className="trace-table">
+                      <thead>
+                        <tr>
+                          <th>Active Aspect</th>
+                          <th>Weight</th>
+                          <th>IDF</th>
+                          <th>Intro Turn</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {activeTrace.entityLock.aspectTerms.map((a, idx) => (
+                          <tr key={idx}>
+                            <td style={{ color: '#38bdf8', fontWeight: '500' }}>{a.term}</td>
+                            <td style={{ color: '#34d399', fontFamily: 'monospace' }}>{a.weight}</td>
+                            <td>{a.idf}</td>
+                            <td>Turn {a.sourceTurn}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ) : (
+                    <div style={{ fontSize: '11px', color: '#64748b' }}>No active aspect terms.</div>
+                  )}
+                </div>
+              )}
+
               {/* Query Rewriter with Provenance */}
               <div className="trace-section">
-                <div className="trace-section-header">3. Query Rewriting & Provenance</div>
+                <div className="trace-section-header">5. Query Rewriting & Provenance</div>
                 <div style={{ fontSize: '12px', marginBottom: '6px' }}>
-                  Mode: <strong style={{ color: '#38bdf8' }}>{activeTrace.rewriter.mode}</strong>
+                  Rewriter Mode: <strong style={{ color: '#38bdf8' }}>{activeTrace.rewriter.mode}</strong>
                 </div>
                 <div className="code-box" style={{ marginBottom: '8px' }}>
                   {activeTrace.rewriter.rewrittenQuery}
                 </div>
-                {activeTrace.rewriter.addedTerms?.length > 0 && (
+                {activeTrace.rewriter.provenance?.length > 0 && (
                   <div>
-                    <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>Added Context Terms:</div>
+                    <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>Term Provenance Breakdown:</div>
                     <table className="trace-table">
                       <thead>
                         <tr>
                           <th>Term</th>
-                          <th>Source Turn</th>
-                          <th>Raw Wt</th>
-                          <th>Effective Wt</th>
+                          <th>Role</th>
+                          <th>Source</th>
+                          <th>Weight</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {activeTrace.rewriter.addedTerms.map((t, idx) => (
+                        {activeTrace.rewriter.provenance.map((p, idx) => (
                           <tr key={idx}>
-                            <td style={{ color: '#38bdf8' }}>{t.term}</td>
-                            <td>Turn {t.sourceTurn}</td>
-                            <td>{t.rawWeight}</td>
-                            <td style={{ color: '#34d399' }}>{t.currentWeight}</td>
+                            <td style={{ color: '#f8fafc', fontWeight: '500' }}>{p.term}</td>
+                            <td>
+                              <span className={`role-pill role-${p.role}`}>
+                                {p.role}
+                              </span>
+                            </td>
+                            <td>Turn {p.sourceTurn}</td>
+                            <td style={{ color: '#34d399', fontFamily: 'monospace' }}>{p.weight}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -296,42 +390,41 @@ export default function App() {
                 )}
               </div>
 
-              {/* Decayed Context Vector */}
-              <div className="trace-section">
-                <div className="trace-section-header">4. Context State (Decayed Weights)</div>
-                {activeTrace.contextTerms?.length === 0 ? (
-                  <div style={{ fontSize: '12px', color: '#64748b' }}>Context vector is empty.</div>
-                ) : (
-                  <div style={{ maxHeight: '180px', overflowY: 'auto' }}>
+              {/* Seen Passage Penalty */}
+              {activeTrace.seenPassagePenalty?.enabled && (
+                <div className="trace-section">
+                  <div className="trace-section-header">6. Seen Passage Penalty (Novelty Discovery)</div>
+                  <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '6px' }}>
+                    Demotion Factor: <strong>{(activeTrace.seenPassagePenalty.penalty * 100).toFixed(0)}%</strong> (Multiplier: {(1 - activeTrace.seenPassagePenalty.penalty).toFixed(2)})
+                  </div>
+                  {activeTrace.seenPassagePenalty.demotedPassages?.length > 0 ? (
                     <table className="trace-table">
                       <thead>
                         <tr>
-                          <th>Stem</th>
-                          <th>Origin</th>
-                          <th>Age</th>
-                          <th>Decay λ^t</th>
-                          <th>Current Wt</th>
+                          <th>Demoted DocId</th>
+                          <th>Raw Score</th>
+                          <th>Penalized Score</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {activeTrace.contextTerms.slice(0, 8).map((t, idx) => (
+                        {activeTrace.seenPassagePenalty.demotedPassages.map((dp, idx) => (
                           <tr key={idx}>
-                            <td style={{ color: '#e2e8f0', fontWeight: '500' }}>{t.term}</td>
-                            <td>{t.sourceType}</td>
-                            <td>{t.age}</td>
-                            <td>{t.decayFactor.toFixed(3)}</td>
-                            <td style={{ color: '#10b981', fontFamily: 'monospace' }}>{t.currentWeight}</td>
+                            <td style={{ color: '#fb7185' }}>{dp.docId}</td>
+                            <td style={{ color: '#94a3b8' }}>{dp.originalScore.toFixed(4)}</td>
+                            <td style={{ color: '#f43f5e', fontWeight: '600' }}>{dp.penalizedScore.toFixed(4)}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
-                  </div>
-                )}
-              </div>
+                  ) : (
+                    <div style={{ fontSize: '11px', color: '#64748b' }}>No previously viewed passages appeared in this ranking.</div>
+                  )}
+                </div>
+              )}
 
               {/* Postings Statistics */}
               <div className="trace-section">
-                <div className="trace-section-header">5. Postings Statistics Used</div>
+                <div className="trace-section-header">7. Postings Statistics Used</div>
                 <table className="trace-table">
                   <thead>
                     <tr>
@@ -357,7 +450,7 @@ export default function App() {
               {/* Sub-Query Decomposition */}
               {activeTrace.decomposition?.isDecomposed && (
                 <div className="trace-section">
-                  <div className="trace-section-header">6. Multi-Part Decomposition & Fusion</div>
+                  <div className="trace-section-header">8. Multi-Part Decomposition & Fusion</div>
                   <div style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '6px' }}>Sub-Queries Evaluated:</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     {activeTrace.decomposition.subQueries.map((sq, idx) => (
