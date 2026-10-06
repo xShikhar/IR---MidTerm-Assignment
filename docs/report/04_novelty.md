@@ -96,7 +96,7 @@ In multi-turn search, returning the identical passage across consecutive turns f
 - At each turn, documents displayed in the top-10 ranked results are recorded in the session set $\mathcal{S}_{\text{seen}}$.
 - On subsequent turns, if document $d \in \mathcal{S}_{\text{seen}}$ appears in the candidate ranking, its final retrieval score is discounted by the penalty parameter $\beta = 0.30$:
 $$\text{Score}'(d) = \text{Score}(d) \cdot (1 - \beta) = \text{Score}(d) \cdot 0.70$$
-- **Empirical Trade-Off:** In benchmark evaluation, the seen-passage penalty increases **Novelty@10 from 0.7029 (A3) to 0.8943 (A4)**, discovering 27.2% more unread relevant evidence while preserving top relevance if no alternative document surpasses the threshold.
+- **Empirical Trade-Off:** In benchmark evaluation on the TEST split, the seen-passage penalty increases **Novelty@10 from 0.6250 (A3) to 0.7600 (A4)**, discovering **+21.6% relative novel evidence** while preserving top relevance if no alternative document surpasses the threshold.
 
 ---
 

@@ -1,7 +1,7 @@
 Detector,Class,Precision,Recall,F1,Support,Macro_F1,Accuracy
 "Legacy Cosine Rule","carry",1,0.6667,0.8,30,0.3179,0.6563
-"New Decision Detector","carry",0.963,0.8667,0.9123,30,0.4152,0.8438
+"New Decision Detector","carry",1,0.8667,0.9286,30,0.4048,0.8438
 "Legacy Cosine Rule","entity_switch",0,0,0,1,0.3179,0.6563
-"New Decision Detector","entity_switch",0,0,0,1,0.4152,0.8438
+"New Decision Detector","entity_switch",0,0,0,1,0.4048,0.8438
 "Legacy Cosine Rule","reset",0.0833,1,0.1538,1,0.3179,0.6563
-"New Decision Detector","reset",0.2,1,0.3333,1,0.4152,0.8438
+"New Decision Detector","reset",0.1667,1,0.2858,1,0.4048,0.8438

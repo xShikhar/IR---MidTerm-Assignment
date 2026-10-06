@@ -19,7 +19,8 @@
     "dev": "node scripts/dev.js",
     "verify:data": "node scripts/verifyFrozenData.js",
     "unpack:data": "node scripts/verifyFrozenData.js --unpack",
-    "eval": "npm run run --workspace=eval"
+    "eval": "npm run run --workspace=eval",
+    "build:report": "node scripts/buildReportPdf.js"
   },
   "keywords": [
     "information-retrieval",

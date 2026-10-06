@@ -16,10 +16,10 @@ The table below outlines the primary functional divisions of the TurnTrace archi
 ## 7.2 Corpus Provenance & Data Sources
 
 The 35,000-passage multi-domain evaluation corpus was constructed exclusively from authentic English Wikipedia articles across four balanced domains:
-1. **Computer Science & Artificial Intelligence** (8,750 passages)
-2. **Physics & Space Exploration** (8,750 passages)
-3. **History & Inventions** (8,750 passages)
-4. **Biology & Medicine** (8,750 passages)
+1. **Computer Science & Artificial Intelligence** (9,222 passages, 26.35%)
+2. **Physics & Space Exploration** (9,266 passages, 26.47%)
+3. **History & Inventions** (9,081 passages, 25.95%)
+4. **Biology & Medicine** (7,431 passages, 21.23%)
 
 **Data Collection Sources:**
 - **Primary Live Source:** Wikipedia Action API (`https://en.wikipedia.org/w/api.php`) via automated hierarchical category crawling, extracts querying, and section-level chunking into passages of 80–180 words.

@@ -7,7 +7,7 @@ This checklist mirrors every grading rubric requirement for CSD358 (Information 
 - **Hackathon Track:** Track T2 (Conversational and Agentic Search)
 - **Repository URL:** `https://github.com/xShikhar/IR---MidTerm-Assignment`
 - **Video Demonstration URL:** `[To be recorded using docs/video-script.md]`
-- **Report Document (PDF):** `docs/report/` (7 Chapters ready for export)
+- **Report Document (PDF):** `TurnTrace_Report.pdf` (Compiled, verified at exactly 8 pages matching assignment specifications)
 
 ---
 

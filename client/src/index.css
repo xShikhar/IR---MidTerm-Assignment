@@ -2163,3 +2163,19 @@ input, textarea {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .controls-ribbon {
+    gap: 10px;
+    padding: 8px 12px;
+  }
+  .controls-group {
+    flex-wrap: wrap;
+  }
+  .navbar {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+

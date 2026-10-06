@@ -60,31 +60,31 @@
       </g>
     
       <g>
-        <circle cx="366.24999999999983" cy="85.64999999999998" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>A1: Novelty=0.697, P@10=0.932, nDCG@10=0.697</title>
+        <circle cx="369.99999999999994" cy="85.64999999999998" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A1: Novelty=0.700, P@10=0.932, nDCG@10=0.698</title>
         </circle>
-        <text x="366.24999999999983" y="72.64999999999998" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A1</text>
+        <text x="369.99999999999994" y="72.64999999999998" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A1</text>
       </g>
     
       <g>
-        <circle cx="107.49999999999986" cy="117.94999999999999" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>A2: Novelty=0.525, P@10=0.848, nDCG@10=0.596</title>
+        <circle cx="148.75" cy="107.5" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A2: Novelty=0.552, P@10=0.875, nDCG@10=0.617</title>
         </circle>
-        <text x="107.49999999999986" y="104.94999999999999" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A2</text>
+        <text x="148.75" y="94.5" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A2</text>
       </g>
     
       <g>
-        <circle cx="257.49999999999983" cy="105.60000000000002" r="9" fill="#2563eb" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>A3: Novelty=0.625, P@10=0.880, nDCG@10=0.632</title>
+        <circle cx="261.2499999999999" cy="105.60000000000002" r="9" fill="#2563eb" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A3: Novelty=0.627, P@10=0.880, nDCG@10=0.632</title>
         </circle>
-        <text x="257.49999999999983" y="92.60000000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A3</text>
+        <text x="261.2499999999999" y="92.60000000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A3</text>
       </g>
     
       <g>
-        <circle cx="460" cy="123.64999999999998" r="9" fill="#7c3aed" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>A4: Novelty=0.760, P@10=0.833, nDCG@10=0.632</title>
+        <circle cx="460" cy="124.60000000000002" r="9" fill="#7c3aed" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A4: Novelty=0.760, P@10=0.830, nDCG@10=0.630</title>
         </circle>
-        <text x="460" y="110.64999999999998" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A4</text>
+        <text x="460" y="111.60000000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A4</text>
       </g>
     
       <g>
@@ -102,17 +102,17 @@
       </g>
     
       <g>
-        <circle cx="205.0000000000001" cy="173.05" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>R1: Novelty=0.590, P@10=0.703, nDCG@10=0.523</title>
+        <circle cx="205.0000000000001" cy="172.10000000000002" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>R1: Novelty=0.590, P@10=0.705, nDCG@10=0.521</title>
         </circle>
-        <text x="205.0000000000001" y="160.05" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R1</text>
+        <text x="205.0000000000001" y="159.10000000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R1</text>
       </g>
     
       <g>
-        <circle cx="261.2499999999999" cy="107.5" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-          <title>R2: Novelty=0.627, P@10=0.875, nDCG@10=0.631</title>
+        <circle cx="265" cy="106.55000000000001" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>R2: Novelty=0.630, P@10=0.877, nDCG@10=0.631</title>
         </circle>
-        <text x="261.2499999999999" y="94.5" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R2</text>
+        <text x="265" y="93.55000000000001" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R2</text>
       </g>
     
 </svg>

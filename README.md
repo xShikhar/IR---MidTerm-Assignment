@@ -77,20 +77,26 @@ npm run build:index
 ```bash
 npm test
 ```
-*(Executes 77 tests across server and eval workspaces; all 77 pass).*
+*(Executes 78 tests across server and eval workspaces; all 78 pass).*
 
 4. Run evaluation benchmark:
 ```bash
 npm run eval
 ```
 
-5. Launch local application:
+5. Compile publication-grade 8-page PDF report:
+```bash
+npm run build:report
+```
+*(Generates `TurnTrace_Report.pdf` at root and in `docs/report/`, formatted strictly within the 8-page assignment limit).*
+
+6. Launch local application:
 ```bash
 npm run dev
 ```
 *(Spawns both backend server on `http://localhost:3001` and Vite frontend on `http://localhost:3000`).*
 
-6. Execute a test query:
+7. Execute a test query:
 - Browser UI: open `http://localhost:3000`
 - Terminal CLI:
 ```bash
@@ -205,14 +211,14 @@ flowchart TD
 | Tokenization & Positions | `server/src/index/tokenizer.js` (`tokenizeWithPositions`) | Preserves word positions for exact phrase verification |
 | Text Normalization | `server/src/index/normalizer.js` (`normalize`, `analyze`) | Strips diacritics and case variations deterministically |
 | Stop Word Removal | `server/src/index/normalizer.js` (`isStopWord`) | Eliminates SMART 174 frequent terms to reduce postings noise |
-| Porter Stemmer | `server/src/index/porterStemmer.js` (`stemWord`) | Reduces morphological variants via standard Porter (1980) 5-step rules |
+| Porter Stemmer | `server/src/index/porterStemmer.js` (`stem`) | Reduces morphological variants via standard Porter (1980) 5-step rules |
 | Inverted Index Postings | `server/src/index/postings.js` (`PostingsList`) | Memory-efficient dictionary mapping terms to document postings |
-| Multi-Zone Indexing | `server/src/index/builder.js` (`InvertedIndexBuilder`) | Separates title ($0.35$) and body ($0.65$) term frequencies |
+| Multi-Zone Indexing | `server/src/index/builder.js` (`buildIndex`) | Separates title ($0.35$) and body ($0.65$) term frequencies |
 | Positional Phrase Search | `server/src/retrieval/phrase.js` (`evaluatePhraseQuery`) | Two-pointer positional intersection for adjacent quoted bigrams |
 | SMART lnc.ltc Vector Space | `server/src/retrieval/cosine.js` (`scoreCosineLncLtc`) | Logarithmic TF with document Euclidean length normalization |
 | Okapi BM25 Probabilistic | `server/src/retrieval/bm25.js` (`scoreBM25`) | Non-linear TF saturation ($k_1=1.2$) and document length penalty ($b=0.75$) |
 | Top-K Min-Heap Selection | `server/src/retrieval/heap.js` (`TopKHeap`) | Maintains top-$K$ candidates in $O(N \log K)$ without sorting the corpus |
-| Boolean DF Intersection | `server/src/retrieval/boolean.js` (`evaluateBooleanQuery`) | Intersects postings in increasing document frequency order to minimize comparisons |
+| Boolean DF Intersection | `server/src/retrieval/boolean.js` (`evaluateBooleanAnd`, `evaluateBooleanOr`) | Intersects postings in increasing document frequency order to minimize comparisons |
 | Champion Lists Pruning | `server/src/index/championLists.js` (`buildChampionLists`) | Caches top $r=50$ documents per term for fast candidate generation |
 | Index Elimination Pruning | `server/src/retrieval/indexElimination.js` (`eliminateLowIdfTerms`) | Skips low-IDF terms ($\text{IDF} < 2.50$) to reduce accumulator overhead |
 | Reciprocal Rank Fusion | `server/src/retrieval/fusion.js` (`reciprocalRankFusion`) | Merges sub-query rankings with smoothing parameter $k=60$ |
@@ -384,11 +390,11 @@ All tunable parameters reside in `server/src/config/index.js` (frozen following 
 ## 9. Testing & Code Quality
 
 ```bash
-# Execute full unit and integration test suite (77 tests, all pass)
+# Execute full unit and integration test suite (78 tests, all pass)
 npm test
 
 # Run individual workspaces
-npm run test --workspace=server   # 57 server tests
+npm run test --workspace=server   # 58 server tests
 npm run test --workspace=eval     # 20 evaluation tests
 ```
 
@@ -414,6 +420,8 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── qrels.json              # Relevance judgments storage (2,297 judged pairs)
 │   └── splits.json             # Stratified train/dev/test split definition (FROZEN)
 ├── docs/                       # Project documentation and submission materials
+│   ├── report/                 # Chapters 01-07 and compiled TurnTrace_Report.pdf
+│   ├── video-script.md         # 6-minute presentation script matching hackathon specs
 │   ├── RESULTS_FOR_REPORT.md   # Comprehensive empirical results and statistics compilation
 │   ├── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
 │   └── notes/                  # Tuning plans, detector design, and audit notes
@@ -423,7 +431,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── src/significance.js     # Paired bootstrap & Wilcoxon signed-rank tests
 │   ├── src/systemsRunner.js    # S0-S5, A0-A6, R1-R2 benchmark execution
 │   └── output/test_final/      # Final TEST evaluation artifacts (11 CSV and SVG files)
-├── scripts/                    # Development runner scripts (dev.js, verifyFrozenData.js)
+├── scripts/                    # Development runner scripts (dev.js, buildReportPdf.js, verifyFrozenData.js)
 ├── server/                     # Core IR engine and API workspace
 │   ├── scripts/                # Data preparation, index building, and sweeps
 │   └── src/
@@ -432,6 +440,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 │       ├── conversation/       # Decision detector, entity lock, aspect context, clarifier
 │       ├── index/              # Tokenizer, Porter stemmer, postings, serializer
 │       └── retrieval/          # Cosine, BM25, Boolean, title filter, seen penalty
+├── TurnTrace_Report.pdf        # Compiled 8-page assignment report (PDF deliverable)
 └── package.json                # Root npm workspace configuration
 ```
 

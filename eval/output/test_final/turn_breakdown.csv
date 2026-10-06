@@ -147,8 +147,8 @@ S3,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 S3,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,1,0.7272727272727273,1,1,1,CARRY,true
 S3,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,0.9,0.56,1,0.6013225370609506,0.8,CARRY,true
 S3,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,0.9,0.5384615384615384,1,0.7402428506449171,1,CARRY,true
-S3,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",1,1,0.625,1,0.782212690416171,1,CARRY,true
-S3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",1,1,0.6666666666666666,1,0.7437924315970611,1,CARRY,true
+S3,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,true
+S3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",1,0.9,0.625,1,0.6683831782990184,1,CARRY,true
 S3,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 S3,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 S3,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.6,0.4,0.17857142857142858,1,0.4641815239468848,1,CARRY,true
@@ -267,8 +267,8 @@ A1,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 A1,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,1,0.7272727272727273,1,1,1,CARRY,false
 A1,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,1,0.64,1,0.7907659062841775,0.4,CARRY,false
 A1,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,1,0.5384615384615384,1,0.6321797415786456,0.8,CARRY,false
-A1,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",1,0.9,0.625,1,0.7130239035240444,0.9,CARRY,false
-A1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",1,0.9,0.5416666666666666,1,0.6675121616066446,0.9,CARRY,false
+A1,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,false
+A1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",1,0.8,0.5833333333333334,1,0.6047623901000666,0.9,CARRY,false
 A1,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.8888888888888888,1,0.955830517697074,1,CARRY,false
 A1,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,false
 A1,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,false
@@ -307,8 +307,8 @@ A2,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 A2,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,1,0.7272727272727273,1,1,1,CARRY,true
 A2,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur self",1,1,0.64,1,0.7833567008107489,0.5,CARRY,true
 A2,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent self multi head",1,1,0.6538461538461539,1,0.6829002150280794,0.5,CARRY,true
-A2,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent self multi head posit encod",0.2,0.1,0.25,0.2,0.08891431692491045,0.2,CARRY,true
-A2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent self multi head posit encod electr power step voltag",0.4,0.5,0.3333333333333333,0.25,0.22011724676134356,0.4,CARRY,true
+A2,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,true
+A2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform step voltag",1,0.7,0.4166666666666667,1,0.3855413434232142,0.7,CARRY,true
 A2,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A2,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
@@ -347,8 +347,8 @@ A3,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 A3,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,1,0.7272727272727273,1,1,1,CARRY,true
 A3,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,1,0.64,1,0.7907659062841775,0.4,CARRY,true
 A3,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,1,0.5384615384615384,1,0.6321797415786456,0.8,CARRY,true
-A3,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",1,0.9,0.625,1,0.7130239035240444,0.9,CARRY,true
-A3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",1,0.9,0.5416666666666666,1,0.6675121616066446,0.9,CARRY,true
+A3,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,true
+A3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",1,0.8,0.5833333333333334,1,0.6047623901000666,0.9,CARRY,true
 A3,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A3,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A3,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
@@ -387,8 +387,8 @@ A4,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 A4,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,1,0.7272727272727273,1,1,1,CARRY,true
 A4,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,0.9,0.56,1,0.6013225370609506,0.8,CARRY,true
 A4,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,0.9,0.5384615384615384,1,0.7402428506449171,1,CARRY,true
-A4,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",1,1,0.625,1,0.782212690416171,1,CARRY,true
-A4,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",1,1,0.6666666666666666,1,0.7437924315970611,1,CARRY,true
+A4,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,true
+A4,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",1,0.9,0.625,1,0.6683831782990184,1,CARRY,true
 A4,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A4,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A4,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.6,0.4,0.17857142857142858,1,0.4641815239468848,1,CARRY,true
@@ -507,8 +507,8 @@ R1,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 R1,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0.8,0.7,0.3181818181818182,1,0.7001400282874835,1,CARRY,true
 R1,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,0.8,0.36,1,0.786872436013331,0.5,CARRY,true
 R1,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,0.9,0.5,1,0.7547650192560332,0.8,CARRY,true
-R1,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",0.6,0.4,0.375,1,0.42038817161636294,1,CARRY,true
-R1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",1,0.5,0.2916666666666667,1,0.5022037311331264,0.5,CARRY,true
+R1,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",0.6,0.4,0.5,1,0.42038817161636294,1,reset,true
+R1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",0.6,0.6,0.4166666666666667,1,0.4319523811723904,0.5,CARRY,true
 R1,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 R1,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.2,0.1,0.07407407407407407,1,0.0766133916760433,1,reset,true
 R1,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.4,0.6,0.2857142857142857,1,0.5727340496350966,0.1,CARRY,true
@@ -547,8 +547,8 @@ R2,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from i
 R2,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",1,0.9,0.6818181818181818,1,0.9363792118010483,1,CARRY,true
 R2,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",1,1,0.64,1,0.7907659062841775,0.5,CARRY,true
 R2,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",1,1,0.5384615384615384,1,0.6810927062148605,0.8,CARRY,true
-R2,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",1,0.9,0.625,1,0.7130239035240444,0.9,CARRY,true
-R2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",0.8,0.9,0.5416666666666666,1,0.660767312943699,0.9,CARRY,true
+R2,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage?",1,1,0.625,1,0.782212690416171,1,reset,true
+R2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? electr power transform",1,0.9,0.5833333333333334,1,0.6175400535618375,0.9,CARRY,true
 R2,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 R2,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 R2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
