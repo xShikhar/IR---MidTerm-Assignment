@@ -88,3 +88,11 @@
 - Visualizations exported: `metrics_chart.svg`, `retrieval_tradeoffs.svg`, `novelty_tradeoff.svg`.
 - Frozen hashes verified unchanged. Tests: 77/77 pass. Zero further code or config changes.
 
+## Phase 7: README and Results
+- **Date:** 2026-10-06T21:11Z
+- **Status:** PASS
+- README.md: updated with honest Status Table, final TEST results table, DEV tuning diagnostics, rigorous A3-vs-A0 comparison, decision metrics table, clarifier evaluation findings, judging methodology and self-consistency statistics, comprehensive empirical limitations, and verified reproducibility commands.
+- docs/RESULTS_FOR_REPORT.md: created comprehensive single source of truth containing every empirical table, number, plot path, failure analysis case, best demo case, and exact command.
+- Zero changes to docs/report/* or docs/video-script.md. Tests: 77/77 pass.
+
+
