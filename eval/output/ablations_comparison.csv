@@ -1,6 +1,0 @@
-Ablation_ID,Configuration,P@5,P@10,Recall@20,MRR,nDCG@10
-S2,"S2 Baseline (lnc.ltc Cosine, Decay on, Shift on)",0,0,1,0,0
-A1,"Ablation A1: Okapi BM25 Scoring Model",0,0,1,0,0
-A2,"Ablation A2: Topic-Shift Detector OFF",0,0,1,0,0
-A3,"Ablation A3: Exponential Context Decay OFF (lambda=1.0)",0,0,1,0,0
-A4,"Ablation A4: Decomposer Rank Fusion OFF",0,0,1,0,0

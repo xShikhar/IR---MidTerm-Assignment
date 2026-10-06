@@ -4,5 +4,5 @@ data/index.json
 .env
 .DS_Store
 dist/
+client/dist/
 *.log
-.planning/temp/
