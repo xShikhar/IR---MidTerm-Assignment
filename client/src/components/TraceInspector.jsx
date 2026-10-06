@@ -35,8 +35,17 @@ export default function TraceInspector({ trace }) {
     seenPassagePenalty,
     decomposition,
     clarification,
-    phraseMatches = []
+    phraseMatches = [],
+    retrievalExecution = {}
   } = trace;
+
+  const {
+    model = 'cosine',
+    championLists = false,
+    indexElimination = false,
+    minIdf = 2.50,
+    eliminatedTerms = []
+  } = retrievalExecution;
 
   const decisionLabel = entityLock?.decision || shiftDecision?.decision || 'CARRY';
   const decisionReason = entityLock?.decisionReason || shiftDecision?.reason || '';
@@ -85,6 +94,22 @@ export default function TraceInspector({ trace }) {
         >
           4. Novelty & Profiler
         </button>
+      </div>
+
+      {/* Active Pipeline Status Strip */}
+      <div className="trace-pipeline-strip">
+        <div className="pipeline-pill">
+          <span className="pipe-label">Model:</span>
+          <span className="pipe-val">{model === 'bm25' ? 'Okapi BM25' : 'SMART lnc.ltc'}</span>
+        </div>
+        <div className={`pipeline-pill ${championLists ? 'pill-active-green' : ''}`}>
+          <span className="pipe-label">Champion Lists:</span>
+          <span className="pipe-val">{championLists ? 'Active (r=50)' : 'Disabled'}</span>
+        </div>
+        <div className={`pipeline-pill ${indexElimination ? 'pill-active-blue' : ''}`}>
+          <span className="pipe-label">Index Elimination:</span>
+          <span className="pipe-val">{indexElimination ? `Active (IDF ≥ ${minIdf})` : 'Disabled'}</span>
+        </div>
       </div>
 
       <div className="trace-tab-content">
@@ -324,6 +349,74 @@ export default function TraceInspector({ trace }) {
         {/* =================================================================== */}
         {activeTab === 'postings' && (
           <div className="tab-pane">
+            {/* Efficiency & Index Elimination Card */}
+            <div className="trace-card">
+              <div className="trace-card-header">
+                <span className="card-step-num">Pruning</span>
+                <span className="card-step-title">Inverted Index Pruning & Candidate Reduction</span>
+              </div>
+
+              <div className="pruning-status-grid">
+                <div className="pruning-stat-box">
+                  <div className="stat-box-title">Index Elimination (IDF ≥ {minIdf})</div>
+                  <div className="stat-box-desc">
+                    {indexElimination ? (
+                      eliminatedTerms && eliminatedTerms.length > 0 ? (
+                        <div className="eliminated-terms-alert">
+                          <span className="elim-badge">Pruned {eliminatedTerms.length} Low-IDF Term(s):</span>
+                          <div className="elim-chips">
+                            {eliminatedTerms.map((t, idx) => (
+                              <span key={idx} className="chip-eliminated">
+                                ✂️ {typeof t === 'string' ? t : t.term} (IDF &lt; {minIdf})
+                              </span>
+                            ))}
+                          </div>
+                          <span className="elim-note">
+                            Pruned non-discriminative query terms with collection IDF &lt; {minIdf} to avoid traversing massive postings lists (Manning §7.1.2).
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="elim-none">
+                          <span className="badge-pass">✓ Active: All Stems Retained</span>
+                          <span className="elim-note">
+                            All query terms in this turn possess high discriminative power (collection IDF ≥ {minIdf}). Zero terms pruned.
+                          </span>
+                        </div>
+                      )
+                    ) : (
+                      <div className="elim-disabled">
+                        <span className="badge-off">Disabled (Offline Ablation)</span>
+                        <span className="elim-note">
+                          Full query term evaluation active. Toggle "Index Elimination" in the Controls Ribbon to prune low-IDF terms.
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="pruning-stat-box">
+                  <div className="stat-box-title">Champion Lists (r=50)</div>
+                  <div className="stat-box-desc">
+                    {championLists ? (
+                      <div className="elim-none">
+                        <span className="badge-pass">✓ Precomputed Lists Active</span>
+                        <span className="elim-note">
+                          Candidate gathering restricted to top 50 documents per term sorted by local weight w_(t,d) = 1 + ln(tf) (Manning §7.1.3).
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="elim-disabled">
+                        <span className="badge-off">Standard Posting Scan</span>
+                        <span className="elim-note">
+                          Traversing standard complete postings lists across all matching documents.
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="trace-card">
               <div className="trace-card-header">
                 <span className="card-step-num">Dictionary</span>

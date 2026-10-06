@@ -51,7 +51,7 @@ npm install
 
 2. Obtain dataset:
 - **Path A (Recommended - Frozen Corpus & Index):** Download the evaluated corpus and prebuilt index to match exact evaluated docIds:
-  - Download `corpus.json` and `index.json` into `data/` from: `[TEAM_MUST_FILL: Release or Drive URL]`
+  - Download `corpus.json` and `index.json` into `data/` from: `https://drive.google.com/drive/folders/1v6gZbclgtuP-jE0E5L60N5V7Aucx-5RY?usp=sharing`
   - Verify SHA-256 checksums:
     - Windows PowerShell: `Get-FileHash data/corpus.json, data/index.json -Algorithm SHA256`
     - Linux / macOS: `sha256sum data/corpus.json data/index.json`

@@ -135,6 +135,63 @@ export default function App() {
     }
   };
 
+  const [isRescoring, setIsRescoring] = useState(false);
+
+  const handleRescoreLastTurn = async () => {
+    const lastUserMsg = [...messages].reverse().find(m => m.role === 'user');
+    if (!lastUserMsg || isLoading || isRescoring) return;
+
+    setIsRescoring(true);
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: lastUserMsg.content,
+          sessionId,
+          model,
+          lockMode,
+          applySeenPenalty,
+          useChampionLists,
+          applyIndexElimination
+        })
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      setMessages(prev => {
+        const next = [...prev];
+        let lastEngineIdx = -1;
+        for (let i = next.length - 1; i >= 0; i--) {
+          if (next[i].role === 'engine') {
+            lastEngineIdx = i;
+            break;
+          }
+        }
+        const engineMessage = {
+          role: 'engine',
+          results: data.results || [],
+          trace: data.trace || null
+        };
+        if (lastEngineIdx !== -1) {
+          next[lastEngineIdx] = engineMessage;
+        } else {
+          next.push(engineMessage);
+        }
+        return next;
+      });
+
+      if (data.trace) {
+        setActiveTrace(data.trace);
+      }
+    } catch (err) {
+      console.warn('Re-score failed:', err);
+    } finally {
+      setIsRescoring(false);
+    }
+  };
+
   const handleReset = async () => {
     try {
       await fetch('/api/reset', {
@@ -179,6 +236,9 @@ export default function App() {
         setUseChampionLists={setUseChampionLists}
         applyIndexElimination={applyIndexElimination}
         setApplyIndexElimination={setApplyIndexElimination}
+        onRescoreLastTurn={handleRescoreLastTurn}
+        hasActiveResults={messages.length > 0}
+        isRescoring={isRescoring}
       />
 
       {/* Main Split Layout */}

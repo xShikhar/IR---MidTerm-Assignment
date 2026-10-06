@@ -10,7 +10,10 @@ export default function ControlsRibbon({
   useChampionLists,
   setUseChampionLists,
   applyIndexElimination,
-  setApplyIndexElimination
+  setApplyIndexElimination,
+  onRescoreLastTurn,
+  hasActiveResults = false,
+  isRescoring = false
 }) {
   return (
     <div className="controls-ribbon">
@@ -80,7 +83,7 @@ export default function ControlsRibbon({
             onClick={() => setUseChampionLists(!useChampionLists)}
             title="Ablation R1: Restricts candidate evaluation to top r=50 postings per query term"
           >
-            Champion Lists (r=50)
+            {useChampionLists ? '✓ ' : ''}Champion Lists (r=50)
           </button>
           <button
             type="button"
@@ -88,10 +91,24 @@ export default function ControlsRibbon({
             onClick={() => setApplyIndexElimination(!applyIndexElimination)}
             title="Ablation R2: Eliminates query terms with collection IDF < 2.50"
           >
-            Index Elimination (IDF ≥ 2.50)
+            {applyIndexElimination ? '✓ ' : ''}Index Elimination (IDF ≥ 2.50)
           </button>
         </div>
       </div>
+
+      {hasActiveResults && onRescoreLastTurn && (
+        <div className="controls-rescore-group">
+          <button
+            type="button"
+            className="btn-rescore"
+            onClick={onRescoreLastTurn}
+            disabled={isRescoring}
+            title="Re-executes the current query with updated ribbon parameters and inspects new scores"
+          >
+            {isRescoring ? 'Re-scoring...' : '⚡ Re-score Active Turn'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

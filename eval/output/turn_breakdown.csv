@@ -216,39 +216,39 @@ S3,conv_01,4,turn_04,"Why is document length normalization needed?","Why is docu
 S3,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.7,CARRY,true
 S3,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
 S3,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
-S3,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.9,CARRY,false
-S3,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.6,CARRY,false
-S3,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.7,CARRY,false
+S3,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.7,CARRY,false
+S3,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.7,CARRY,false
+S3,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.6,CARRY,false
 S3,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-S3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.9,CARRY,false
-S3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.8,CARRY,false
+S3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.8,CARRY,false
+S3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
 S3,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.8,CARRY,false
-S3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,1,CARRY,false
+S3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.9,CARRY,false
 S3,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 S3,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-S3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,1,CARRY,false
-S3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,1,CARRY,false
-S3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.9,CARRY,false
+S3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.9,CARRY,false
+S3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.4,CARRY,false
+S3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 S3,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 S3,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
-S3,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,1,CARRY,false
+S3,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.2,CARRY,false
 S3,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,1,reset,true
 S3,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.9,CARRY,true
 S3,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 S3,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
-S3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.7,CARRY,false
-S3,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
-S3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
+S3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+S3,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+S3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 S3,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-S3,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.9,CARRY,false
-S3,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.7,CARRY,false
-S3,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0.9,CARRY,false
-S3,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.6,CARRY,false
+S3,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.6,CARRY,false
+S3,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.4,CARRY,false
+S3,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0.1,CARRY,false
+S3,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 S3,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
-S3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.9,CARRY,false
-S3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.7,CARRY,false
-S3,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",0,0,1,0,0,0.7,CARRY,false
-S3,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",0,0,1,0,0,0.9,CARRY,false
+S3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
+S3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.5,CARRY,false
+S3,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",0,0,1,0,0,0.6,CARRY,false
+S3,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",0,0,1,0,0,0.8,CARRY,false
 S3,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",0,0,1,0,0,1,CARRY,false
 S3,conv_09,2,turn_02,"What paper did he introduce it in?","What paper did he introduce it in? ture",0,0,1,0,0,1,CARRY,false
 S3,conv_09,3,turn_03,"What are the common criticisms of the imitation game?","What are the common criticisms of the imitation game? ture",0,0,1,0,0,0.6,CARRY,false
@@ -256,14 +256,14 @@ S3,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?"
 S3,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole",0,0,1,0,0,0.9,CARRY,true
 S3,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 S3,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-S3,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,1,CARRY,false
-S3,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,1,CARRY,false
-S3,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,1,CARRY,false
+S3,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.9,CARRY,false
+S3,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.8,CARRY,false
+S3,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.5,CARRY,false
 S3,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 S3,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,1,CARRY,false
-S3,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,1,CARRY,false
+S3,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.9,CARRY,false
 S3,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,1,CARRY,false
-S3,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.7,CARRY,false
+S3,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,1,CARRY,false
 S3,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 S3,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.8,CARRY,true
 S3,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,1,CARRY,true
@@ -276,9 +276,9 @@ S3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compar
 S3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 S3,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
 S3,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.9,CARRY,false
-S3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,1,CARRY,false
-S3,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,1,CARRY,false
-S3,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,1,CARRY,false
+S3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.6,CARRY,false
+S3,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.3,CARRY,false
+S3,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0,CARRY,false
 S5,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,false
 S5,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it?",0,0,1,0,0,0.5,CARRY,false
 S5,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization?",0,0,1,0,0,0.5,CARRY,false
@@ -495,35 +495,35 @@ A2,conv_01,3,turn_03,"What about cosine normalization?","What about cosine norma
 A2,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed? vector space model inform retriev term frequenc weight work cosin",0,0,1,0,0,0.2,CARRY,true
 A2,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev term frequenc weight work cosin normal document length need",0,0,1,0,0,0.5,CARRY,true
 A2,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
-A2,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,0.9,entity_switch,false
-A2,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.7,CARRY,false
-A2,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.6,CARRY,false
-A2,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.5,CARRY,false
+A2,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
+A2,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.4,CARRY,false
+A2,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.2,CARRY,false
+A2,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.2,CARRY,false
 A2,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-A2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.4,CARRY,false
-A2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop orbit locat",0,0,1,0,0,0.4,CARRY,false
+A2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.2,CARRY,false
+A2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop orbit locat",0,0,1,0,0,0.5,CARRY,false
 A2,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop orbit locat tell primari mirror size",0,0,1,0,0,0.5,CARRY,false
-A2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop orbit locat tell primari mirror size carri infrar astronomi",0,0,1,0,0,0.5,CARRY,false
+A2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop orbit locat tell primari mirror size carri infrar astronomi",0,0,1,0,0,0.6,CARRY,false
 A2,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 A2,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-A2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut board",0,0,1,0,0,0.9,CARRY,false
-A2,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut board rocket launch space",0,0,1,0,0,0.6,CARRY,false
-A2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut board rocket launch space long spend lunar surfac",0,0,1,0,0,0.5,CARRY,false
+A2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut board",0,0,1,0,0,0.6,CARRY,false
+A2,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut board rocket launch space",0,0,1,0,0,0.1,CARRY,false
+A2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut board rocket launch space long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 A2,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 A2,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
-A2,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna locat target dna sequenc",0,0,1,0,0,0.1,CARRY,false
+A2,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna locat target dna sequenc",0,0,1,0,0,0,CARRY,false
 A2,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,0.9,reset,true
 A2,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.6,CARRY,true
 A2,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 A2,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
 A2,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl role plai deliveri",0,0,1,0,0,0.1,CARRY,false
-A2,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl role plai deliveri cell produc spike protein",0,0,1,0,0,0.1,CARRY,false
+A2,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl role plai deliveri cell produc spike protein",0,0,1,0,0,0,CARRY,false
 A2,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl role plai deliveri cell produc spike protein immun respons trigger",0,0,1,0,0,0,CARRY,false
 A2,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-A2,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type invent press europ",0,0,1,0,0,0.2,CARRY,false
-A2,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type invent press europ shop establish",0,0,1,0,0,0,CARRY,false
+A2,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type invent press europ",0,0,1,0,0,0,CARRY,false
+A2,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type invent press europ shop establish",0,0,1,0,0,0.1,CARRY,false
 A2,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type invent print press europ first shop establish major book",0,0,1,0,0,0,CARRY,false
-A2,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type invent print press europ first shop establish major book influenc protest reform",0,0,1,0,0,0,CARRY,false
+A2,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type invent print press europ first shop establish major book influenc protest reform",0,0,1,0,0,0.1,CARRY,false
 A2,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
 A2,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
 A2,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria ancient locat found",0,0,1,0,0,0.3,CARRY,false
@@ -536,13 +536,13 @@ A2,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?"
 A2,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole astrophys",0,0,1,0,0,0.4,CARRY,true
 A2,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 A2,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-A2,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot mould produc substanc",0,0,1,0,0,0.5,CARRY,false
+A2,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot mould produc substanc",0,0,1,0,0,0.2,CARRY,false
 A2,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot mould produc substanc purifi mass product oxford",0,0,1,0,0,0,CARRY,false
-A2,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot mould produc substanc purifi mass product oxford paint mona lisa florenc",0,0,1,0,0,0.4,CARRY,false
+A2,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot mould produc substanc purifi mass product oxford paint mona lisa florenc",0,0,1,0,0,0.1,CARRY,false
 A2,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 A2,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri solar system",0,0,1,0,0,0.5,CARRY,false
-A2,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri solar system close sun",0,0,1,0,0,0.4,CARRY,false
-A2,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. solar system close sun extrem temperatur variat surfac",0,0,1,0,0,0.5,CARRY,false
+A2,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri solar system close sun",0,0,1,0,0,0.1,CARRY,false
+A2,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. solar system close sun extrem temperatur variat surfac",0,0,1,0,0,0.6,CARRY,false
 A2,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri solar system close sun extrem temperatur variat surfac tell environment exposur",0,0,1,0,0,0.2,CARRY,false
 A2,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 A2,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur self",0,0,1,0,0,0.5,CARRY,true
@@ -555,45 +555,45 @@ A2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is bi
 A2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",0,0,1,0,0,0.8,CARRY,true
 A2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 A2,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
-A2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi claud shannon formula",0,0,1,0,0,0.5,CARRY,false
+A2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi claud shannon formula",0,0,1,0,0,0.4,CARRY,false
 A2,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform claud shannon formula base logarithm bit unit",0,0,1,0,0,0.2,CARRY,false
-A2,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform claud shannon formula base logarithm bit unit relat thermodynam",0,0,1,0,0,0.3,CARRY,false
-A2,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi claud shannon formula base logarithm bit unit relat physic alwai conserv process",0,0,1,0,0,0.3,CARRY,false
+A2,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform claud shannon formula base logarithm bit unit relat thermodynam",0,0,1,0,0,0,CARRY,false
+A2,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi claud shannon formula base logarithm bit unit relat physic alwai conserv process",0,0,1,0,0,0.1,CARRY,false
 A3,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,true
 A3,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it? vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 A3,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A3,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A3,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A3,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
-A3,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,0.9,entity_switch,false
-A3,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.7,CARRY,false
-A3,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.6,CARRY,false
-A3,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.5,CARRY,false
+A3,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
+A3,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.4,CARRY,false
+A3,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.2,CARRY,false
+A3,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.2,CARRY,false
 A3,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-A3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.4,CARRY,false
-A3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
-A3,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.7,CARRY,false
-A3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.5,CARRY,false
+A3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.2,CARRY,false
+A3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.4,CARRY,false
+A3,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.6,CARRY,false
+A3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.7,CARRY,false
 A3,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 A3,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-A3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.9,CARRY,false
-A3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.7,CARRY,false
-A3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.6,CARRY,false
+A3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.7,CARRY,false
+A3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.2,CARRY,false
+A3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 A3,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 A3,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
-A3,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.9,CARRY,false
+A3,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.2,CARRY,false
 A3,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,0.9,reset,true
 A3,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.6,CARRY,true
 A3,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 A3,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
-A3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.3,CARRY,false
+A3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 A3,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
-A3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
+A3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 A3,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-A3,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.6,CARRY,false
-A3,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.2,CARRY,false
+A3,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.4,CARRY,false
+A3,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.3,CARRY,false
 A3,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0,CARRY,false
-A3,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.3,CARRY,false
+A3,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 A3,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
 A3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
 A3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.3,CARRY,false
@@ -606,14 +606,14 @@ A3,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?"
 A3,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole",0,0,1,0,0,0.4,CARRY,true
 A3,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 A3,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-A3,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.8,CARRY,false
-A3,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.5,CARRY,false
-A3,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.9,CARRY,false
+A3,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.6,CARRY,false
+A3,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.3,CARRY,false
+A3,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.1,CARRY,false
 A3,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 A3,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,0.9,CARRY,false
-A3,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,1,CARRY,false
-A3,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.7,CARRY,false
-A3,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.6,CARRY,false
+A3,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.8,CARRY,false
+A3,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.8,CARRY,false
+A3,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.8,CARRY,false
 A3,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 A3,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.4,CARRY,true
 A3,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,0.8,CARRY,true
@@ -625,10 +625,10 @@ A3,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is bi
 A3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",0,0,1,0,0,0.8,CARRY,true
 A3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 A3,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
-A3,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.9,CARRY,false
-A3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.8,CARRY,false
-A3,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.5,CARRY,false
-A3,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.5,CARRY,false
+A3,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.8,CARRY,false
+A3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.4,CARRY,false
+A3,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.2,CARRY,false
+A3,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.1,CARRY,false
 A4,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,true
 A4,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it? vector space model inform retriev",0,0,1,0,0,0.8,CARRY,true
 A4,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization? vector space model inform retriev",0,0,1,0,0,0.8,CARRY,true
@@ -636,39 +636,39 @@ A4,conv_01,4,turn_04,"Why is document length normalization needed?","Why is docu
 A4,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.7,CARRY,true
 A4,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
 A4,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
-A4,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.9,CARRY,false
-A4,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.6,CARRY,false
-A4,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.7,CARRY,false
+A4,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.7,CARRY,false
+A4,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.7,CARRY,false
+A4,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.6,CARRY,false
 A4,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-A4,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.9,CARRY,false
-A4,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.8,CARRY,false
+A4,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.8,CARRY,false
+A4,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
 A4,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.8,CARRY,false
-A4,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,1,CARRY,false
+A4,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.9,CARRY,false
 A4,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 A4,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-A4,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,1,CARRY,false
-A4,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,1,CARRY,false
-A4,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.9,CARRY,false
+A4,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.9,CARRY,false
+A4,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.4,CARRY,false
+A4,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 A4,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 A4,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
-A4,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,1,CARRY,false
+A4,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.2,CARRY,false
 A4,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,1,reset,true
 A4,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.9,CARRY,true
 A4,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 A4,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
-A4,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.7,CARRY,false
-A4,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
-A4,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
+A4,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+A4,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+A4,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 A4,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-A4,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.9,CARRY,false
-A4,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.7,CARRY,false
-A4,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0.9,CARRY,false
-A4,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.6,CARRY,false
+A4,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.6,CARRY,false
+A4,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.4,CARRY,false
+A4,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0.1,CARRY,false
+A4,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 A4,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
-A4,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.9,CARRY,false
-A4,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.7,CARRY,false
-A4,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",0,0,1,0,0,0.7,CARRY,false
-A4,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",0,0,1,0,0,0.9,CARRY,false
+A4,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
+A4,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.5,CARRY,false
+A4,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",0,0,1,0,0,0.6,CARRY,false
+A4,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",0,0,1,0,0,0.8,CARRY,false
 A4,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",0,0,1,0,0,1,CARRY,false
 A4,conv_09,2,turn_02,"What paper did he introduce it in?","What paper did he introduce it in? ture",0,0,1,0,0,1,CARRY,false
 A4,conv_09,3,turn_03,"What are the common criticisms of the imitation game?","What are the common criticisms of the imitation game? ture",0,0,1,0,0,0.6,CARRY,false
@@ -676,14 +676,14 @@ A4,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?"
 A4,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole",0,0,1,0,0,0.9,CARRY,true
 A4,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 A4,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-A4,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,1,CARRY,false
-A4,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,1,CARRY,false
-A4,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,1,CARRY,false
+A4,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.9,CARRY,false
+A4,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.8,CARRY,false
+A4,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.5,CARRY,false
 A4,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 A4,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,1,CARRY,false
-A4,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,1,CARRY,false
+A4,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.9,CARRY,false
 A4,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,1,CARRY,false
-A4,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.7,CARRY,false
+A4,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,1,CARRY,false
 A4,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 A4,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.8,CARRY,true
 A4,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,1,CARRY,true
@@ -696,28 +696,28 @@ A4,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compar
 A4,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 A4,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
 A4,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.9,CARRY,false
-A4,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,1,CARRY,false
-A4,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,1,CARRY,false
-A4,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,1,CARRY,false
+A4,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.6,CARRY,false
+A4,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.3,CARRY,false
+A4,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0,CARRY,false
 A5,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,true
 A5,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it? vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 A5,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A5,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A5,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 A5,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
-A5,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford? pagerank",0,0,1,0,0,0.6,CARRY,false
-A5,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? pagerank invent stanford",0,0,1,0,0,0.7,CARRY,false
-A5,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? pagerank invent stanford random surfer model",0,0,1,0,0,0.2,CARRY,false
-A5,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? pagerank invent stanford random surfer model handl dead end trap",0,0,1,0,0,0.4,CARRY,false
+A5,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford? pagerank",0,0,1,0,0,0.5,CARRY,false
+A5,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? pagerank invent stanford",0,0,1,0,0,0.5,CARRY,false
+A5,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? pagerank invent stanford random surfer model",0,0,1,0,0,0.3,CARRY,false
+A5,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? pagerank invent stanford random surfer model handl dead end trap",0,0,1,0,0,0.2,CARRY,false
 A5,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-A5,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.4,CARRY,false
-A5,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
-A5,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.7,CARRY,false
-A5,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.5,CARRY,false
+A5,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.2,CARRY,false
+A5,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.4,CARRY,false
+A5,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.6,CARRY,false
+A5,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.7,CARRY,false
 A5,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
-A5,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board? apollo 11",0,0,1,0,0,1,CARRY,false
-A5,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? apollo 11",0,0,1,0,0,1,CARRY,false
-A5,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? apollo 11",0,0,1,0,0,0.6,CARRY,false
+A5,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board? apollo 11",0,0,1,0,0,0.8,CARRY,false
+A5,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? apollo 11",0,0,1,0,0,0.5,CARRY,false
+A5,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? apollo 11",0,0,1,0,0,0.7,CARRY,false
 A5,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? apollo 11 long spend surfac",0,0,1,0,0,0.6,CARRY,false
 A5,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 A5,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences? crispr cas9 edit",0,0,1,0,0,0.9,CARRY,true
@@ -725,15 +725,15 @@ A5,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who re
 A5,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing? crispr cas9",0,0,1,0,0,0.5,CARRY,true
 A5,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. crispr cas9 edit concern surround human",0,0,1,0,0,0.4,CARRY,true
 A5,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
-A5,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery? mrna vaccin",0,0,1,0,0,0.9,CARRY,false
-A5,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? mrna vaccin",0,0,1,0,0,0.2,CARRY,false
-A5,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? mrna vaccin",0,0,1,0,0,0.4,CARRY,false
+A5,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery? mrna vaccin",0,0,1,0,0,0.7,CARRY,false
+A5,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? mrna vaccin",0,0,1,0,0,0.1,CARRY,false
+A5,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? mrna vaccin",0,0,1,0,0,0.2,CARRY,false
 A5,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? mrna vaccin",0,0,1,0,0,0.3,CARRY,false
 A5,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-A5,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.6,CARRY,false
-A5,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.2,CARRY,false
+A5,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.4,CARRY,false
+A5,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.3,CARRY,false
 A5,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0,CARRY,false
-A5,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.3,CARRY,false
+A5,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 A5,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
 A5,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
 A5,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.3,CARRY,false
@@ -743,7 +743,7 @@ A5,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","
 A5,conv_09,2,turn_02,"What paper did he introduce it in?","What paper did he introduce it in? ture",0,0,1,0,0,0.9,CARRY,false
 A5,conv_09,3,turn_03,"What are the common criticisms of the imitation game?","What are the common criticisms of the imitation game? ture",0,0,1,0,0,0.3,CARRY,false
 A5,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?","What is the event horizon of an astrophysical black hole? ture",0,0,1,0,0,1,CARRY,false
-A5,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? ture",0,0,1,0,0,0.9,CARRY,false
+A5,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? ture",0,0,1,0,0,0.3,CARRY,false
 A5,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 A5,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance? alexand fleme penicillin",0,0,1,0,0,0.4,CARRY,true
 A5,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? alexand fleme penicillin",0,0,1,0,0,0.7,CARRY,true
@@ -751,43 +751,43 @@ A5,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the M
 A5,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? alexand fleme penicillin",0,0,1,0,0,0.4,CARRY,true
 A5,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 A5,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,0.9,CARRY,false
-A5,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,1,CARRY,false
-A5,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.7,CARRY,false
-A5,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.6,CARRY,false
+A5,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.8,CARRY,false
+A5,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.8,CARRY,false
+A5,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.8,CARRY,false
 A5,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 A5,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.4,CARRY,true
 A5,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,0.8,CARRY,true
 A5,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",0,0,1,0,0,0.9,CARRY,true
 A5,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",0,0,1,0,0,0.9,CARRY,true
 A5,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",0,0,1,0,0,1,CARRY,false
-A5,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm? neural network biolog artifici differ brain",0,0,1,0,0,0.3,CARRY,false
+A5,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm? neural network biolog artifici differ brain",0,0,1,0,0,0,CARRY,false
 A5,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? neural network",0,0,1,0,0,0.2,CARRY,false
-A5,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. neural network biolog plausibl debat",0,0,1,0,0,0.9,CARRY,false
-A5,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work? neural network biolog",0,0,1,0,0,0.7,CARRY,false
+A5,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. neural network biolog plausibl debat",0,0,1,0,0,0.6,CARRY,false
+A5,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work? neural network biolog",0,0,1,0,0,0,CARRY,false
 A5,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
-A5,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.9,CARRY,false
-A5,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.8,CARRY,false
-A5,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.5,CARRY,false
-A5,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.5,CARRY,false
+A5,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.8,CARRY,false
+A5,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.4,CARRY,false
+A5,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.2,CARRY,false
+A5,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.1,CARRY,false
 A6,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,reset,true
 A6,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it?",0,0,1,0,0,1,reset,false
 A6,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization?",0,0,1,0,0,1,reset,false
 A6,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed?",0,0,1,0,0,1,reset,false
-A6,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring.",0,0,1,0,0,0.9,reset,false
+A6,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring.",0,0,1,0,0,0.8,reset,false
 A6,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,reset,false
-A6,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,0.9,reset,false
-A6,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model?",0,0,1,0,0,1,reset,false
+A6,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,reset,false
+A6,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model?",0,0,1,0,0,0.9,reset,false
 A6,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps?",0,0,1,0,0,1,reset,false
 A6,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value?",0,0,1,0,0,1,reset,false
 A6,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,reset,false
-A6,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space?",0,0,1,0,0,0.9,reset,true
-A6,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size.",0,0,1,0,0,0.9,reset,false
+A6,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space?",0,0,1,0,0,1,reset,true
+A6,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size.",0,0,1,0,0,0.8,reset,false
 A6,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy?",0,0,1,0,0,0.8,reset,false
-A6,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0,0,1,0,0,0.9,reset,false
+A6,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0,0,1,0,0,1,reset,false
 A6,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,reset,false
 A6,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
 A6,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space?",0,0,1,0,0,1,reset,false
-A6,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface?",0,0,1,0,0,0.9,reset,false
+A6,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface?",0,0,1,0,0,1,reset,false
 A6,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down?",0,0,1,0,0,0.9,reset,false
 A6,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,reset,true
 A6,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
@@ -800,8 +800,8 @@ A6,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How
 A6,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger?",0,0,1,0,0,0.9,reset,false
 A6,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability?",0,0,1,0,0,1,reset,false
 A6,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,reset,false
-A6,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established?",0,0,1,0,0,0.9,reset,false
-A6,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed?",0,0,1,0,0,0.6,reset,false
+A6,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established?",0,0,1,0,0,1,reset,false
+A6,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed?",0,0,1,0,0,0.8,reset,false
 A6,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation?",0,0,1,0,0,1,reset,false
 A6,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates?",0,0,1,0,0,1,reset,false
 A6,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,reset,false
@@ -823,7 +823,7 @@ A6,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in 
 A6,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun?",0,0,1,0,0,1,reset,false
 A6,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface?",0,0,1,0,0,1,reset,false
 A6,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure.",0,0,1,0,0,0.9,reset,false
-A6,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage?",0,0,1,0,0,0.8,reset,false
+A6,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage?",0,0,1,0,0,1,reset,false
 A6,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,reset,true
 A6,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention?",0,0,1,0,0,0.8,reset,false
 A6,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it?",0,0,1,0,0,1,reset,false
@@ -831,69 +831,69 @@ A6,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","
 A6,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use?",0,0,1,0,0,1,reset,false
 A6,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",0,0,1,0,0,1,reset,false
 A6,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0,0,1,0,0,1,reset,true
-A6,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it?",0,0,1,0,0,0.7,reset,false
+A6,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it?",0,0,1,0,0,0.2,reset,false
 A6,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",0,0,1,0,0,1,reset,false
 A6,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,reset,false
 A6,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,reset,false
 A6,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units?",0,0,1,0,0,0.9,reset,false
 A6,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics?",0,0,1,0,0,0.9,reset,false
 A6,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes?",0,0,1,0,0,0.7,reset,false
-A6,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it?",0,0,1,0,0,0.8,reset,false
+A6,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it?",0,0,1,0,0,1,reset,false
 R1,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,true
 R1,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it? vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 R1,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization? vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 R1,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed? vector space model inform retriev",0,0,1,0,0,0,CARRY,true
 R1,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 R1,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
-R1,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,0.9,entity_switch,false
-R1,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.4,CARRY,false
-R1,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.7,CARRY,false
-R1,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.3,CARRY,false
+R1,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
+R1,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.2,CARRY,false
+R1,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.3,CARRY,false
+R1,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.1,CARRY,false
 R1,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-R1,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0,CARRY,false
-R1,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
-R1,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.4,CARRY,false
-R1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.4,CARRY,false
+R1,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.1,CARRY,false
+R1,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.4,CARRY,false
+R1,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.3,CARRY,false
+R1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.7,CARRY,false
 R1,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 R1,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-R1,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.6,CARRY,false
-R1,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.5,CARRY,false
-R1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.8,CARRY,false
+R1,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.7,CARRY,false
+R1,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.2,CARRY,false
+R1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 R1,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
-R1,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,0.9,reset,false
-R1,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.8,CARRY,false
+R1,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
+R1,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.2,CARRY,false
 R1,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,1,reset,true
 R1,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.7,CARRY,true
 R1,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 R1,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
-R1,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.4,CARRY,false
-R1,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
-R1,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
+R1,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+R1,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
+R1,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 R1,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-R1,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.2,CARRY,false
-R1,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0,CARRY,false
-R1,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0.6,CARRY,false
+R1,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.4,CARRY,false
+R1,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.3,CARRY,false
+R1,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0,CARRY,false
 R1,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 R1,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
-R1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
+R1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.8,CARRY,false
 R1,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.3,CARRY,false
 R1,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",0,0,1,0,0,0.1,CARRY,false
 R1,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",0,0,1,0,0,0.2,CARRY,false
 R1,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",0,0,1,0,0,1,CARRY,false
 R1,conv_09,2,turn_02,"What paper did he introduce it in?","What paper did he introduce it in? ture",0,0,1,0,0,0.8,CARRY,false
-R1,conv_09,3,turn_03,"What are the common criticisms of the imitation game?","What are the common criticisms of the imitation game? ture",0,0,1,0,0,0.4,CARRY,false
+R1,conv_09,3,turn_03,"What are the common criticisms of the imitation game?","What are the common criticisms of the imitation game? ture",0,0,1,0,0,0.3,CARRY,false
 R1,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?","What is the event horizon of an astrophysical black hole?",0,0,1,0,0,1,reset,true
 R1,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole",0,0,1,0,0,0.3,CARRY,true
 R1,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 R1,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-R1,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.4,CARRY,false
-R1,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.5,CARRY,false
-R1,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.8,CARRY,false
+R1,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.1,CARRY,false
+R1,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0,CARRY,false
+R1,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0,CARRY,false
 R1,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
-R1,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,0.4,CARRY,false
-R1,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.5,CARRY,false
-R1,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.5,CARRY,false
-R1,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.4,CARRY,false
+R1,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,0.2,CARRY,false
+R1,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.1,CARRY,false
+R1,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.6,CARRY,false
+R1,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.5,CARRY,false
 R1,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
 R1,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.5,CARRY,true
 R1,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,0.8,CARRY,true
@@ -905,45 +905,45 @@ R1,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is bi
 R1,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",0,0,1,0,0,0.9,CARRY,true
 R1,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 R1,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
-R1,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.8,CARRY,false
-R1,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.6,CARRY,false
-R1,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.6,CARRY,false
-R1,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.4,CARRY,false
+R1,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.6,CARRY,false
+R1,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.4,CARRY,false
+R1,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.1,CARRY,false
+R1,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.1,CARRY,false
 R2,conv_01,1,turn_01,"What is the vector space model in information retrieval?","What is the vector space model in information retrieval?",0,0,1,0,0,1,CARRY,true
 R2,conv_01,2,turn_02,"How does term frequency weighting work in it?","How does term frequency weighting work in it? vector space model inform retriev",0,0,1,0,0,0.5,CARRY,true
 R2,conv_01,3,turn_03,"What about cosine normalization?","What about cosine normalization? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 R2,conv_01,4,turn_04,"Why is document length normalization needed?","Why is document length normalization needed? vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 R2,conv_01,5,turn_05,"Compare it with Okapi BM25 scoring.","Compare it with Okapi BM25 scoring. vector space model inform retriev",0,0,1,0,0,0.4,CARRY,true
 R2,conv_02,1,turn_01,"How does the PageRank algorithm rank web pages?","How does the PageRank algorithm rank web pages?",0,0,1,0,0,1,CARRY,false
-R2,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,0.9,entity_switch,false
-R2,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.7,CARRY,false
-R2,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.6,CARRY,false
-R2,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.5,CARRY,false
+R2,conv_02,2,turn_02,"Who invented the algorithm at Stanford?","Who invented the algorithm at Stanford?",0,0,1,0,0,1,entity_switch,false
+R2,conv_02,3,turn_03,"What is the random surfer model?","What is the random surfer model? algorithm invent stanford",0,0,1,0,0,0.4,CARRY,false
+R2,conv_02,4,turn_04,"How does it handle dead ends and spider traps?","How does it handle dead ends and spider traps? algorithm invent stanford random surfer model",0,0,1,0,0,0.2,CARRY,false
+R2,conv_02,5,turn_05,"What is the standard damping factor value?","What is the standard damping factor value? algorithm invent stanford random surfer model handl dead end spider trap",0,0,1,0,0,0.2,CARRY,false
 R2,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the James Webb Space Telescope?",0,0,1,0,0,1,CARRY,false
-R2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.4,CARRY,false
-R2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.5,CARRY,false
-R2,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.7,CARRY,false
-R2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.5,CARRY,false
+R2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",0,0,1,0,0,0.2,CARRY,false
+R2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",0,0,1,0,0,0.4,CARRY,false
+R2,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",0,0,1,0,0,0.6,CARRY,false
+R2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0,0,1,0,0,0.7,CARRY,false
 R2,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0,0,1,0,0,1,CARRY,false
 R2,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0,0,1,0,0,1,reset,false
-R2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.9,CARRY,false
-R2,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.7,CARRY,false
-R2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.6,CARRY,false
+R2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,1,0,0,0.7,CARRY,false
+R2,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0,0,1,0,0,0.2,CARRY,false
+R2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0,0,1,0,0,0.1,CARRY,false
 R2,conv_05,1,turn_01,"What is CRISPR Cas9 genome editing?","What is CRISPR Cas9 genome editing?",0,0,1,0,0,1,CARRY,true
 R2,conv_05,2,turn_02,"How does the guide RNA locate target DNA sequences?","How does the guide RNA locate target DNA sequences?",0,0,1,0,0,1,reset,false
-R2,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.9,CARRY,false
+R2,conv_05,3,turn_03,"Who received the Nobel Prize for its development?","Who received the Nobel Prize for its development? guid rna",0,0,1,0,0,0.2,CARRY,false
 R2,conv_05,4,turn_04,"What ethical concerns surround human germline editing?","What ethical concerns surround human germline editing?",0,0,1,0,0,0.9,reset,true
 R2,conv_05,5,turn_05,"Compare somatic and germline gene therapies.","Compare somatic and germline gene therapies. ethic edit concern surround human",0,0,1,0,0,0.6,CARRY,true
 R2,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",0,0,1,0,0,1,CARRY,false
 R2,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",0,0,1,0,0,1,reset,false
-R2,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.3,CARRY,false
+R2,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 R2,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
-R2,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.2,CARRY,false
+R2,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",0,0,1,0,0,0.1,CARRY,false
 R2,conv_07,1,turn_01,"Who invented the movable type printing press in Europe?","Who invented the movable type printing press in Europe?",0,0,1,0,0,1,CARRY,false
-R2,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.6,CARRY,false
+R2,conv_07,2,turn_02,"Where was his first print shop established?","Where was his first print shop established? movabl type",0,0,1,0,0,0.4,CARRY,false
 R2,conv_07,3,turn_03,"What was the first major book printed?","What was the first major book printed? movabl type",0,0,1,0,0,0.2,CARRY,false
 R2,conv_07,4,turn_04,"How did it influence the Protestant Reformation?","How did it influence the Protestant Reformation? movabl type",0,0,1,0,0,0,CARRY,false
-R2,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.3,CARRY,false
+R2,conv_07,5,turn_05,"What were the broader impacts on European literacy rates?","What were the broader impacts on European literacy rates? movabl type",0,0,1,0,0,0.1,CARRY,false
 R2,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",0,0,1,0,0,1,CARRY,false
 R2,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0,0,1,0,0,0.7,CARRY,false
 R2,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",0,0,1,0,0,0.3,CARRY,false
@@ -956,16 +956,16 @@ R2,conv_09,4,turn_04,"What is the event horizon of an astrophysical black hole?"
 R2,conv_09,5,turn_05,"Can light escape from inside it?","Can light escape from inside it? event horizon black hole",0,0,1,0,0,0.4,CARRY,true
 R2,conv_10,1,turn_01,"How did Alexander Fleming discover penicillin?","How did Alexander Fleming discover penicillin?",0,0,1,0,0,1,CARRY,true
 R2,conv_10,2,turn_02,"What mould produced the antibiotic substance?","What mould produced the antibiotic substance?",0,0,1,0,0,1,reset,false
-R2,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.8,CARRY,false
-R2,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.5,CARRY,false
-R2,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.9,CARRY,false
+R2,conv_10,3,turn_03,"Who purified it for mass production in Oxford?","Who purified it for mass production in Oxford? antibiot",0,0,1,0,0,0.6,CARRY,false
+R2,conv_10,4,turn_04,"Who painted the Mona Lisa in Florence?","Who painted the Mona Lisa in Florence? antibiot",0,0,1,0,0,0.3,CARRY,false
+R2,conv_10,5,turn_05,"What museum is it exhibited in today?","What museum is it exhibited in today? antibiot",0,0,1,0,0,0.1,CARRY,false
 R2,conv_11,1,turn_01,"What is Mercury in our Solar System?","What is Mercury in our Solar System?",0,0,1,0,0,1,CARRY,false
 R2,conv_11,2,turn_02,"How close is it to the Sun?","How close is it to the Sun? mercuri",0,0,1,0,0,0.9,CARRY,false
-R2,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,1,CARRY,false
-R2,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.7,CARRY,false
-R2,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.6,CARRY,false
+R2,conv_11,3,turn_03,"What are the extreme temperature variations on the surface?","What are the extreme temperature variations on the surface? mercuri",0,0,1,0,0,0.8,CARRY,false
+R2,conv_11,4,turn_04,"Tell me about mercury toxicity and environmental exposure.","Tell me about mercury toxicity and environmental exposure. extrem temperatur variat surfac",0,0,1,0,0,0.8,CARRY,false
+R2,conv_11,5,turn_05,"What organs does the toxic metal damage?","What organs does the toxic metal damage? mercuri",0,0,1,0,0,0.8,CARRY,false
 R2,conv_12,1,turn_01,"How does the Transformer architecture use self-attention?","How does the Transformer architecture use self-attention?",0,0,1,0,0,1,CARRY,true
-R2,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.4,CARRY,true
+R2,conv_12,2,turn_02,"What is multi-head attention?","What is multi-head attention? transform architectur",0,0,1,0,0,0.5,CARRY,true
 R2,conv_12,3,turn_03,"What are positional encodings used for in it?","What are positional encodings used for in it? transform architectur attent",0,0,1,0,0,0.8,CARRY,true
 R2,conv_12,4,turn_04,"How do electrical power transformers step down voltage?","How do electrical power transformers step down voltage? architectur attent",0,0,1,0,0,0.9,CARRY,true
 R2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic core materials do they use? transform architectur attent",0,0,1,0,0,0.9,CARRY,true
@@ -975,7 +975,7 @@ R2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is bi
 R2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",0,0,1,0,0,0.8,CARRY,true
 R2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",0,0,1,0,0,1,entity_switch,false
 R2,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0,0,1,0,0,1,CARRY,false
-R2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.9,CARRY,false
-R2,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.8,CARRY,false
-R2,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.5,CARRY,false
-R2,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.5,CARRY,false
+R2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",0,0,1,0,0,0.8,CARRY,false
+R2,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",0,0,1,0,0,0.4,CARRY,false
+R2,conv_14,4,turn_04,"Is entropy always conserved in physical processes?","Is entropy always conserved in physical processes? inform",0,0,1,0,0,0.2,CARRY,false
+R2,conv_14,5,turn_05,"What does the second law of thermodynamics state about it?","What does the second law of thermodynamics state about it? inform entropi",0,0,1,0,0,0.1,CARRY,false

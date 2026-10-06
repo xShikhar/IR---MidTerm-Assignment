@@ -2,14 +2,14 @@ System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10,Novelty@10
 S0,"S0: Raw Query Only (lnc.ltc Cosine)",0,0,1,0,0,0.9371
 S1,"S1: Naive Concatenation of Dialogue History",0,0,1,0,0,0.4271
 S2,"S2: TurnTrace Legacy Baseline (Decayed Bag, Cosine)",0,0,1,0,0,0.8471
-S3,"S3: TurnTrace Full Headline (Lock + Aspect + Penalty)",0,0,1,0,0,0.8943
+S3,"S3: TurnTrace Full Headline (Lock + Aspect + Penalty)",0,0,1,0,0,0.7657
 S5,"S5: Oracle Gold Rewrite (Upper Bound)",0,0,1,0,0,0.7343
 A0,"A0: Legacy Decayed Context Bag (S2 Equivalent)",0,0,1,0,0,0.8471
 A1,"A1: Entity Soft Boost + Aspect Replacement",0,0,1,0,0,0.7029
-A2,"A2: Hard Lock + Aspect Accumulation",0,0,1,0,0,0.5614
-A3,"A3: Hard Lock + Aspect Replacement (Headline Core)",0,0,1,0,0,0.7029
-A4,"A4: A3 + Seen-Passage Penalty (beta=0.30)",0,0,1,0,0,0.8943
-A5,"A5: A3 with Forced CARRY (Decision Isolation)",0,0,1,0,0,0.6514
-A6,"A6: A3 with Forced RESET (Decision Isolation)",0,0,1,0,0,0.9371
-R1,"R1: Retrieval Efficiency - Champion Lists ON (r=50)",0,0,1,0,0,0.6371
-R2,"R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)",0,0,1,0,0,0.7029
+A2,"A2: Hard Lock + Aspect Accumulation",0,0,1,0,0,0.5086
+A3,"A3: Hard Lock + Aspect Replacement (Headline Core)",0,0,1,0,0,0.6186
+A4,"A4: A3 + Seen-Passage Penalty (beta=0.30)",0,0,1,0,0,0.7657
+A5,"A5: A3 with Forced CARRY (Decision Isolation)",0,0,1,0,0,0.5800
+A6,"A6: A3 with Forced RESET (Decision Isolation)",0,0,1,0,0,0.9414
+R1,"R1: Retrieval Efficiency - Champion Lists ON (r=50)",0,0,1,0,0,0.5557
+R2,"R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)",0,0,1,0,0,0.6186

@@ -73,7 +73,9 @@ export function decomposeAndRetrieve(query, index, options = {}) {
       topK,
       model: options.model || 'cosine',
       useChampionLists: options.useChampionLists,
-      applyIndexElimination: options.applyIndexElimination
+      applyIndexElimination: options.applyIndexElimination,
+      minIdf: options.minIdf,
+      allowedDocIds: options.allowedDocIds
     });
     return {
       isDecomposed: false,
@@ -95,7 +97,9 @@ export function decomposeAndRetrieve(query, index, options = {}) {
       topK: topK * 2,
       model: options.model || 'cosine',
       useChampionLists: options.useChampionLists,
-      applyIndexElimination: options.applyIndexElimination
+      applyIndexElimination: options.applyIndexElimination,
+      minIdf: options.minIdf,
+      allowedDocIds: options.allowedDocIds
     });
     candidateLists.push(partRes.results);
     subQueriesTrace.push({

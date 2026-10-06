@@ -238,6 +238,7 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
     topK: topK * 2,
     useChampionLists: options.useChampionLists,
     applyIndexElimination: options.applyIndexElimination,
+    minIdf: options.minIdf ?? CONFIG.retrieval.indexElimination.minIdf,
     model: options.model,
     allowedDocIds: titleFilterResult.filteredDocIds
   });
@@ -296,7 +297,9 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
       retrievalExecution: {
         model: options.model || 'cosine',
         championLists: Boolean(options.useChampionLists),
-        indexElimination: Boolean(options.applyIndexElimination)
+        indexElimination: Boolean(options.applyIndexElimination),
+        minIdf: options.minIdf ?? CONFIG.retrieval.indexElimination.minIdf,
+        eliminatedTerms: decomposerResult.eliminatedTerms || []
       },
       entityLock: {
         decision: decisionResult.decision,

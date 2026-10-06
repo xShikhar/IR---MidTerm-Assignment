@@ -38,7 +38,7 @@ export const CONFIG = Object.freeze({
     }),
     // Index elimination: threshold for skipping low-idf query terms
     indexElimination: Object.freeze({
-      minIdf: 0.20
+      minIdf: 2.50
     }),
     // Champion lists: number of top-scoring documents cached per posting
     championLists: Object.freeze({
