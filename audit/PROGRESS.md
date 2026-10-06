@@ -8,3 +8,12 @@
 - npm test: 74/74 pass (54 server + 20 eval)
 - Index verified: 35,000 docs, 80,684 vocab terms
 - Frozen hashes recorded (9 files)
+
+## Phase 1: Pending Code Fixes
+- **Date:** 2026-10-06T20:31Z
+- **Status:** PASS
+- Decomposer regex: added 'differ from' / 'differs from' / 'contrast with' detection and splitting; 3 tests added.
+- Favicon: client/public/favicon.svg created; linked in client/index.html; verified 200 OK via HTTP.
+- README wording cleanup: confirmed zero 'rescued' / 'wrongly reset' in README.md; recorded legacy report lines in docs/RESULTS_FOR_REPORT.md.
+- Frozen corpus availability: gzipped data/corpus.json (6.50 MB) and data/index.json (18.67 MB) into data/frozen/; created SHA-256 files and scripts/verifyFrozenData.js; added verify:data / unpack:data npm scripts.
+- Tests: 77/77 pass (57 server + 20 eval); 56 JS files syntax-clean; Vite client build passes.

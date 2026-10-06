@@ -140,6 +140,31 @@ describe('Conversation Layer: Multi-Part Query Decomposer', () => {
     assert.equal(parts[0], 'vector space model');
     assert.equal(parts[1], 'Okapi BM25');
   });
+
+  it('detects and splits "differ from" comparative pattern', () => {
+    const q = 'How does transformer self-attention differ from RNNs?';
+    assert.equal(isMultiPartQuery(q), true);
+    const parts = extractSubQueries(q);
+    assert.equal(parts.length, 2);
+    assert.ok(parts[0].toLowerCase().includes('self-attention'));
+    assert.ok(parts[1].toLowerCase().includes('rnn'));
+  });
+
+  it('detects and splits "differs from" comparative pattern', () => {
+    const q = 'How gradient descent differs from Newton method';
+    assert.equal(isMultiPartQuery(q), true);
+    const parts = extractSubQueries(q);
+    assert.equal(parts.length, 2);
+  });
+
+  it('detects and splits "contrast with" comparative pattern', () => {
+    const q = 'Supervised learning in contrast with unsupervised learning';
+    assert.equal(isMultiPartQuery(q), true);
+    const parts = extractSubQueries(q);
+    assert.equal(parts.length, 2);
+    assert.ok(parts[0].toLowerCase().includes('supervised'));
+    assert.ok(parts[1].toLowerCase().includes('unsupervised'));
+  });
 });
 
 describe('Conversation Layer: Cluster Clarifier', () => {

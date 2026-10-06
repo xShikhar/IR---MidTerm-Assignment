@@ -50,26 +50,34 @@ npm install
 ```
 
 2. Obtain dataset:
-- **Path A (Recommended - Frozen Corpus & Index):** Download the evaluated corpus and prebuilt index to match exact evaluated docIds:
-  - Download `corpus.json` and `index.json` into `data/` from: `https://drive.google.com/drive/folders/1v6gZbclgtuP-jE0E5L60N5V7Aucx-5RY?usp=sharing`
-  - Verify SHA-256 checksums:
+- **Path A (Committed Frozen Data & Verification — Recommended):**
+  The evaluated frozen corpus and prebuilt inverted index are archived and committed directly in `data/frozen/`:
+  - Verify archive integrity:
+    ```bash
+    npm run verify:data
+    ```
+  - Unpack archives (if `data/corpus.json` or `data/index.json` need restoration):
+    ```bash
+    npm run unpack:data
+    ```
+  - Manual SHA-256 checksum verification:
     - Windows PowerShell: `Get-FileHash data/corpus.json, data/index.json -Algorithm SHA256`
     - Linux / macOS: `sha256sum data/corpus.json data/index.json`
     - Expected SHA-256 hashes:
-      - `corpus.json`: `2394B2A11A46ED8AB7BCC0194BA78C0C3DA38C792F6B76A0D7CA9AB5FBD01282`
-      - `index.json`: `68965158B354389457C261C7A180073ED66A871B489FB6A4E3B4013D01DB415D`
+      - `corpus.json`: `2394b2a11a46ed8ab7bcc0194ba78c0c3da38c792f6b76a0d7ca9ab5fbd01282`
+      - `index.json`: `68965158b354389457c261c7a180073ed66a871b489fb6a4e3b4013d01db415d`
 - **Path B (Optional Rebuild):** Re-harvest from Wikipedia Action API and re-index:
 ```bash
 npm run prepare:data
 npm run build:index
 ```
-*(Note: Wikipedia revisions change over time; live re-harvesting may produce minor text or docId variations relative to frozen judging sheets).*
+*(Note: Wikipedia revisions change over time; live re-harvesting may produce minor text or docId variations relative to frozen judging sheets. Path A is strictly recommended for benchmark reproduction).*
 
 3. Run verification test suite:
 ```bash
 npm test
 ```
-*(Executes 72 tests across server and eval workspaces; all 72 pass).*
+*(Executes 77 tests across server and eval workspaces; all 77 pass).*
 
 4. Run evaluation benchmark:
 ```bash
@@ -308,11 +316,11 @@ All tunable parameters reside in `server/src/config/index.js`:
 ## 9. Testing & Code Quality
 
 ```bash
-# Execute unit and integration tests (72 passing)
+# Execute unit and integration tests (77 passing)
 npm test
 
 # Run individual workspaces
-npm run test --workspace=server   # 52 server tests
+npm run test --workspace=server   # 57 server tests
 npm run test --workspace=eval     # 20 evaluation tests
 ```
 

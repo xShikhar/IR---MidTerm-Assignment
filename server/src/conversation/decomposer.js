@@ -28,6 +28,9 @@ export function isMultiPartQuery(query) {
     q.includes('versus') ||
     q.includes(' vs ') ||
     q.includes('difference between') ||
+    q.includes('differ from') ||
+    q.includes('differs from') ||
+    q.includes('contrast') ||
     q.includes(' as well as ') ||
     (q.includes(' and ') && q.length > 30)
   );
@@ -42,7 +45,11 @@ export function isMultiPartQuery(query) {
 export function extractSubQueries(query) {
   let clean = query.replace(/^(compare|what is the difference between|difference between)\s+/i, '');
 
-  const separators = [/\s+with\s+/i, /\s+and\s+/i, /\s+versus\s+/i, /\s+vs\.?\s+/i];
+  const separators = [
+    /\s+differs?\s+from\s+/i,
+    /\s+(?:in\s+)?contrast\s+(?:with|to)\s+/i,
+    /\s+with\s+/i, /\s+and\s+/i, /\s+versus\s+/i, /\s+vs\.?\s+/i
+  ];
   for (const sep of separators) {
     if (sep.test(clean)) {
       const parts = clean.split(sep).map(p => p.trim()).filter(Boolean);
