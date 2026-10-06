@@ -11,13 +11,13 @@ export default function ResultCard({
 
   // Domain aesthetic tags
   const domainColors = {
-    cs_ai: { name: 'CS & AI', color: '#6366f1', bg: 'rgba(99, 102, 241, 0.12)' },
-    space_physics: { name: 'Space & Physics', color: '#38bdf8', bg: 'rgba(56, 189, 248, 0.12)' },
-    history_civilization: { name: 'History', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.12)' },
-    biology_medicine: { name: 'Bio & Medicine', color: '#10b981', bg: 'rgba(16, 185, 129, 0.12)' }
+    cs_ai: { name: 'CS & AI', color: '#4338ca', bg: '#eef2ff', border: '#c7d2fe' },
+    space_physics: { name: 'Space & Physics', color: '#0369a1', bg: '#f0f9ff', border: '#bae6fd' },
+    history_civilization: { name: 'History', color: '#b45309', bg: '#fffbeb', border: '#fde68a' },
+    biology_medicine: { name: 'Bio & Medicine', color: '#047857', bg: '#ecfdf5', border: '#a7f3d0' }
   };
 
-  const dom = domainColors[doc.domain] || { name: doc.domain, color: '#94a3b8', bg: 'rgba(148, 163, 184, 0.1)' };
+  const dom = domainColors[doc.domain] || { name: doc.domain, color: '#475569', bg: '#f1f5f9', border: '#e2e8f0' };
 
   // Match confidence tier
   let confidenceLabel = 'Relevant';
@@ -46,7 +46,7 @@ export default function ResultCard({
         <div className="card-header-actions">
           <span
             className="domain-badge"
-            style={{ color: dom.color, backgroundColor: dom.bg, borderColor: dom.color }}
+            style={{ color: dom.color, backgroundColor: dom.bg, borderColor: dom.border }}
           >
             {dom.name}
           </span>
