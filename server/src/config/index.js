@@ -80,8 +80,9 @@ export const CONFIG = Object.freeze({
       topMExpansionTerms: 3,
       minTermWeight: 0.05
     }),
-    // Clarifier leader/follower cluster pruning
+    // Clarifier leader/follower cluster pruning (Phase 5 DEV tuning evaluated)
     clarifier: Object.freeze({
+      enabled: false,              // [Tuned on DEV] Disabled by default; failed to beat trivial baseline on DEV
       scoreMarginThreshold: 0.065, // Trigger clarifying question if top margin is below this
       minClusterSize: 2,
       discriminatingTermsCount: 2
@@ -89,27 +90,27 @@ export const CONFIG = Object.freeze({
   }),
 
   // Headline Novelty: Entity-Lock & Aspect-Aware Context Tracking
-  // NOTE: All thresholds below are initial untuned baselines awaiting human qrels
+  // Values finalized via Phase 5 DEV coordinate tuning
   novelty: Object.freeze({
     entity: Object.freeze({
-      minIdf: 2.50,        // [Untuned Initial] Minimum collection IDF for an entity candidate
-      minTitleHits: 1,     // [Untuned Initial] Minimum title hits in top-3 candidates
-      topN: 3              // [Untuned Initial] Depth of top results inspected for title-zone entity hits
+      minIdf: 2.50,        // [Tuned on DEV] Minimum collection IDF for an entity candidate
+      minTitleHits: 1,     // [Tuned on DEV] Minimum title hits in top-3 candidates
+      topN: 3              // Depth of top results inspected for title-zone entity hits
     }),
     aspect: Object.freeze({
-      minIdf: 1.80,        // [Untuned Initial] Minimum collection IDF for an aspect term
-      decayLambda: 0.75,   // [Untuned Initial] Exponential decay multiplier for accumulated aspects
+      minIdf: 1.80,        // [Tuned on DEV] Minimum collection IDF for an aspect term
+      decayLambda: 0.75,   // [Tuned on DEV] Exponential decay multiplier for accumulated aspects
       additiveCues: Object.freeze([
         'also', 'and', 'as well', 'too', 'additionally', 'plus', 'furthermore'
       ])
     }),
     lock: Object.freeze({
-      mode: 'hard',        // [Untuned Initial] 'hard' (Boolean title filter) | 'soft' (score boost)
-      entityBoost: 2.0,    // [Untuned Initial] Multiplier for locked entity terms in soft mode
-      minCandidates: 10    // [Untuned Initial] Fallback to soft if fewer than 10 candidates survive
+      mode: 'hard',        // 'hard' (Boolean title filter) | 'soft' (score boost)
+      entityBoost: 2.0,    // Multiplier for locked entity terms in soft mode
+      minCandidates: 10    // Fallback to soft if fewer than 10 candidates survive
     }),
     seen: Object.freeze({
-      penalty: 0.30        // [Untuned Initial] Score penalty: (1 - 0.30) for previously shown docs
+      penalty: 0.30        // [Tuned on DEV] Score penalty: (1 - 0.30) for previously shown docs
     })
   }),
 

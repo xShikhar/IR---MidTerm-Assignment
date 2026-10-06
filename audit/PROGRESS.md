@@ -47,3 +47,15 @@
 - Multi-turn transitions (excluding Turn 1, n=56): DEV (n=24): carry=22, reset=1, entity_switch=1; TEST (n=32): carry=30, reset=1, entity_switch=1.
 - DEV decision metrics: Legacy Cosine accuracy=0.5000, macroF1=0.2698 (11 false resets); New Decision Detector accuracy=0.7500, macroF1=0.2857 (false resets reduced to 4).
 - Tests: 77/77 pass; frozen files unchanged.
+
+## Phase 5: DEV Tuning
+- **Date:** 2026-10-06T20:51Z
+- **Status:** PASS
+- Specification: created `docs/notes/tuning_plan.md` before sweep.
+- Grid sweep on DEV (n=30 turns): 35 evaluations exported to `eval/output/tuning_dev.csv`.
+- Results on DEV:
+  - DEV A0: P@5=0.5600, MRR=0.6289, nDCG@10=0.4727
+  - DEV A3: P@5=0.5600, MRR=0.6033, nDCG@10=0.4061 (Bootstrap p=0.235, Wilcoxon p=0.3869)
+  - DEV A4: P@5=0.5467, MRR=0.6114, nDCG@10=0.4127 (Bootstrap p=0.280, Wilcoxon p=0.5373)
+- Clarifier evaluation on DEV: Cluster clarifier fired on 23/30 turns (76.7% FP rate) vs trivial baseline 7/30 (23.3%); failed to beat trivial baseline. Clarifier disabled by default (`CONFIG.conversation.clarifier.enabled = false`) and kept reachable via options flag.
+- Final parameters committed; zero further parameter changes permitted. Tests: 77/77 pass.

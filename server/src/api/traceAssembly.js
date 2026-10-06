@@ -262,9 +262,19 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
     contextState.seenTracker.recordShown(activeResults.slice(0, topK));
   }
 
-  // 9. Cluster-Pruned Clarification
+  // 9. Cluster-Pruned Clarification (Phase 5 DEV Tuning: disabled by default)
   const tClarifyStart = performance.now();
-  const clarificationResult = evaluateClarification(activeResults, index);
+  const clarifierEnabled = options.enableClarifier ?? CONFIG.conversation.clarifier.enabled;
+  const clarificationResult = clarifierEnabled
+    ? evaluateClarification(activeResults, index, options)
+    : {
+        fired: false,
+        margin: activeResults.length >= 2 ? Number((activeResults[0].score - activeResults[1].score).toFixed(4)) : 1.0,
+        clustersCount: 0,
+        clarifyingQuestion: null,
+        distinguishingTerms: [],
+        reason: 'Cluster clarifier disabled by default (failed to outperform trivial baseline on DEV).'
+      };
   const clarifyMs = performance.now() - tClarifyStart;
 
   // 10. Postings Statistics Used
