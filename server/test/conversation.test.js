@@ -198,7 +198,7 @@ describe('End-to-End Trace Assembly', () => {
     assert.ok(Array.isArray(response.trace.positionalTokens));
     assert.ok(Array.isArray(response.trace.phraseMatches));
     assert.equal(response.trace.retrievalExecution.championLists, false);
-    assert.equal(response.trace.retrievalExecution.indexElimination, true);
+    assert.equal(response.trace.retrievalExecution.indexElimination, false);
   });
 
   it('detects exact quoted phrase matches using positional index', async () => {

@@ -129,7 +129,7 @@ export async function executeConversationalTurn(rawQuery, contextState, index, o
       retrievalExecution: {
         model: options.model || 'cosine',
         championLists: Boolean(options.useChampionLists),
-        indexElimination: options.applyIndexElimination !== false
+        indexElimination: Boolean(options.applyIndexElimination)
       },
       shiftDecision: {
         decision: shiftDecision.decision,

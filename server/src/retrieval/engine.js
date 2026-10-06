@@ -18,16 +18,16 @@ import { CONFIG } from '../config/index.js';
  * @param {Object} index - Inverted index
  * @param {Object} [options]
  * @param {'cosine' | 'bm25'} [options.model='cosine'] - Ranking model
- * @param {boolean} [options.applyIndexElimination=true] - Whether to prune low-idf terms
+ * @param {boolean} [options.applyIndexElimination=false] - Whether to prune low-idf terms
  * @param {boolean} [options.useChampionLists=false] - Whether to use champion lists
  * @param {number} [options.topK=CONFIG.retrieval.topK] - Ranking depth
  * @returns {{ results: Array<Object>, trace: Object }}
  */
 export function executeRetrieval(rawQuery, index, options = {}) {
   const model = options.model || 'cosine';
-  const applyElimination = options.applyIndexElimination ?? true;
+  const applyElimination = options.applyIndexElimination ?? false;
   const topK = options.topK || CONFIG.retrieval.topK;
-  const useChampionLists = options.useChampionLists || false;
+  const useChampionLists = options.useChampionLists ?? false;
 
   // 1. Analyze query terms
   const rawTerms = analyze(rawQuery, true);

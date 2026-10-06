@@ -123,6 +123,22 @@ export async function runEvaluation() {
       'Recall@20': benchmarkResults.A4.overall.recall20,
       MRR: benchmarkResults.A4.overall.mrr,
       'nDCG@10': benchmarkResults.A4.overall.ndcg10
+    },
+    {
+      Configuration: 'A5: Champion Lists ON (Candidate Pruning)',
+      'P@5': benchmarkResults.A5.overall.p5,
+      'P@10': benchmarkResults.A5.overall.p10,
+      'Recall@20': benchmarkResults.A5.overall.recall20,
+      MRR: benchmarkResults.A5.overall.mrr,
+      'nDCG@10': benchmarkResults.A5.overall.ndcg10
+    },
+    {
+      Configuration: 'A6: Index Elimination ON (Low-IDF Pruning)',
+      'P@5': benchmarkResults.A6.overall.p5,
+      'P@10': benchmarkResults.A6.overall.p10,
+      'Recall@20': benchmarkResults.A6.overall.recall20,
+      MRR: benchmarkResults.A6.overall.mrr,
+      'nDCG@10': benchmarkResults.A6.overall.ndcg10
     }
   ]);
 
