@@ -1,0 +1,101 @@
+conversationId,turnIndex,queryId,docId,docTitle,referenceGrade,rationale
+conv_10,5,conv_10_turn_05,doc_34842,Antibiotic - Section 6,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_14,2,conv_14_turn_02,doc_01384,Entropy (information theory) - Section 73,1,Discusses logarithmic measures in communication channels without specifying bit units.
+conv_10,5,conv_10_turn_05,doc_13919,Museum of Work - Section 7,1,Discusses modern art curation without naming the Louvre Museum exhibition.
+conv_11,5,conv_11_turn_05,doc_02375,Mercury (planet) - Section 48,0,Passage describes astronomical planet Mercury rather than the toxic chemical element mercury.
+conv_05,4,conv_05_turn_04,doc_03531,Guide RNA - Section 18,1,Discusses clinical gene therapy without focusing on germline ethics.
+conv_01,5,conv_01_turn_05,doc_00012,Vector space model - Section 12,0,Passage lacks quantum computing concepts and is off-topic.
+conv_03,2,conv_03_turn_02,doc_22599,Atomic orbital - Section 1,0,Passage is unrelated to the James Webb Space Telescope.
+conv_09,2,conv_09_turn_02,doc_00619,Turing test - Section 15,2,"Directly identifies the 1950 philosophical paper ""Computing Machinery and Intelligence"" in Mind."
+conv_01,5,conv_01_turn_05,doc_00089,Cosine similarity - Section 9,0,Passage lacks quantum computing concepts and is off-topic.
+conv_12,3,conv_12_turn_03,doc_01014,Transformer (deep learning architecture) - Section 93,1,Mentions token embedding tables without positional encoding mechanics.
+conv_07,2,conv_07_turn_02,doc_04526,Movable type - Section 27,1,Discusses Gutenberg early life without naming the Mainz workshop.
+conv_14,5,conv_14_turn_05,doc_02589,Entropy - Section 60,1,Mentions laws of thermodynamics without explicitly formulating the second law.
+conv_07,2,conv_07_turn_02,doc_04430,Printing press - Section 6,1,Discusses Gutenberg early life without naming the Mainz workshop.
+conv_01,5,conv_01_turn_05,doc_00018,Vector space model - Section 18,0,Passage lacks quantum computing concepts and is off-topic.
+conv_07,3,conv_07_turn_03,doc_06172,Animalia (book) - Section 12,0,Passage is unrelated to Johannes Gutenberg and the European printing press.
+conv_02,3,conv_02_turn_03,doc_00196,PageRank - Section 1,0,Passage is unrelated to relational databases and database management.
+conv_07,1,conv_07_turn_01,doc_04530,Movable type - Section 31,2,Directly identifies Johannes Gutenberg as the inventor of movable type printing in Europe.
+conv_07,4,conv_07_turn_04,doc_04696,Protestant Reformation - Section 150,0,Passage is unrelated to Johannes Gutenberg and the European printing press.
+conv_10,5,conv_10_turn_05,doc_34908,Antibiotic - Section 72,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_08,2,conv_08_turn_02,doc_09874,Asia - Section 62,0,Passage is unrelated to the ancient Library of Alexandria.
+conv_02,5,conv_02_turn_05,doc_00221,PageRank - Section 26,0,Passage is unrelated to relational databases and database management.
+conv_09,3,conv_09_turn_03,doc_22779,Alan Turing - Section 1,1,Discusses artificial intelligence philosophy without detailing imitation game objections.
+conv_03,5,conv_03_turn_05,doc_01716,James Webb Space Telescope - Section 3,1,Mentions space telescope imaging without comparative infrared wavelength analysis.
+conv_01,1,conv_01_turn_01,doc_00183,Information retrieval - Section 34,0,Passage lacks quantum computing concepts and is off-topic.
+conv_04,5,conv_04_turn_05,doc_02071,Neil Armstrong - Section 50,1,Mentions mission reentry without documenting the Pacific splashdown coordinates.
+conv_11,5,conv_11_turn_05,doc_04095,Mercury (element) - Section 67,2,"Directly identifies human organs damaged by mercury including the central nervous system, brain, and kidneys."
+conv_03,3,conv_03_turn_03,doc_01793,James Webb Space Telescope - Section 80,2,Directly describes the 6.5-meter beryllium primary mirror and segment architecture.
+conv_10,4,conv_10_turn_04,doc_34878,Antibiotic - Section 42,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_10,5,conv_10_turn_05,doc_34863,Antibiotic - Section 27,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_03,4,conv_03_turn_04,doc_01719,James Webb Space Telescope - Section 6,1,Discusses telescope thermal control without sunshield specifics.
+conv_04,5,conv_04_turn_05,doc_20576,Amplitude modulation - Section 30,0,Passage is unrelated to the Apollo 11 lunar landing mission.
+conv_14,1,conv_14_turn_01,doc_02645,Entropy - Section 116,2,Directly provides Claude Shannon mathematical formula for average information entropy in bits.
+conv_03,1,conv_03_turn_01,doc_01892,Space telescope - Section 6,1,Provides related space observatory context.
+conv_14,3,conv_14_turn_03,doc_02530,Entropy - Section 1,2,Directly explains the formal mathematical equivalence between Shannon informational entropy and Boltzmann thermodynamic entropy.
+conv_12,5,conv_12_turn_05,doc_00967,Transformer (deep learning architecture) - Section 46,0,Passage describes deep learning Transformer models rather than electromagnetic electrical transformers.
+conv_14,5,conv_14_turn_05,doc_01444,Entropy (information theory) - Section 133,1,Mentions laws of thermodynamics without explicitly formulating the second law.
+conv_04,5,conv_04_turn_05,doc_09111,Astronaut - Section 16,0,Passage is unrelated to the Apollo 11 lunar landing mission.
+conv_14,5,conv_14_turn_05,doc_02765,Second law of thermodynamics - Section 108,2,Directly states the second law of thermodynamics regarding non-decreasing entropy in isolated physical systems.
+conv_02,1,conv_02_turn_01,doc_00264,PageRank - Section 69,0,Passage is unrelated to relational databases and database management.
+conv_14,5,conv_14_turn_05,doc_02800,Second law of thermodynamics - Section 143,2,Directly states the second law of thermodynamics regarding non-decreasing entropy in isolated physical systems.
+conv_07,5,conv_07_turn_05,doc_04472,Printing press - Section 48,1,Discusses early modern European culture without addressing literacy metrics.
+conv_04,5,conv_04_turn_05,doc_09100,Astronaut - Section 5,1,Mentions mission reentry without documenting the Pacific splashdown coordinates.
+conv_02,5,conv_02_turn_05,doc_12269,Algorithm - Section 160,0,Passage is unrelated to relational databases and database management.
+conv_01,3,conv_01_turn_03,doc_00082,Cosine similarity - Section 2,0,Passage lacks quantum computing concepts and is off-topic.
+conv_14,2,conv_14_turn_02,doc_01522,Claude Shannon - Section 53,1,Discusses logarithmic measures in communication channels without specifying bit units.
+conv_10,3,conv_10_turn_03,doc_34837,Antibiotic - Section 1,1,Discusses mass antibiotic clinical deployment without detailing the Oxford purification team.
+conv_06,5,conv_06_turn_05,doc_03652,Lipid nanoparticle - Section 9,1,Discusses vaccine distribution logistics without cold temperature degradation physics.
+conv_04,4,conv_04_turn_04,doc_08947,Apollo 11 - Section 64,1,Describes surface activities without documenting stay duration.
+conv_04,1,conv_04_turn_01,doc_28133,Apollo program - Section 52,1,Provides Apollo 11 crew background without explicitly identifying the mission commander.
+conv_04,1,conv_04_turn_01,doc_09001,Apollo 11 - Section 118,1,Provides Apollo 11 crew background without explicitly identifying the mission commander.
+conv_02,5,conv_02_turn_05,doc_06350,Alain Connes - Section 16,0,Passage is unrelated to relational databases and database management.
+conv_10,5,conv_10_turn_05,doc_03778,Penicillin - Section 53,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_05,3,conv_05_turn_03,doc_09880,Asia - Section 68,0,Passage is unrelated to CRISPR-Cas9 genome editing.
+conv_05,3,conv_05_turn_03,doc_04384,RNA - Section 32,0,Passage is unrelated to CRISPR-Cas9 genome editing.
+conv_05,3,conv_05_turn_03,doc_03461,Cas9 - Section 6,2,Directly names Jennifer Doudna and Emmanuelle Charpentier as recipients of the 2020 Nobel Prize.
+conv_12,3,conv_12_turn_03,doc_00933,Transformer (deep learning architecture) - Section 12,1,Mentions token embedding tables without positional encoding mechanics.
+conv_07,1,conv_07_turn_01,doc_04428,Printing press - Section 4,2,Directly identifies Johannes Gutenberg as the inventor of movable type printing in Europe.
+conv_10,1,conv_10_turn_01,doc_03733,Penicillin - Section 8,1,Discusses early antibiotics without recounting Fleming specific laboratory discovery.
+conv_08,4,conv_08_turn_04,doc_04765,Library of Alexandria - Section 14,1,Discusses decline of Hellenistic learning without documenting destruction events.
+conv_14,4,conv_14_turn_04,doc_02547,Entropy - Section 18,2,"Directly answers that entropy is not conserved in physical processes, but strictly increases in irreversible real systems."
+conv_09,3,conv_09_turn_03,doc_00615,Turing test - Section 11,1,Discusses artificial intelligence philosophy without detailing imitation game objections.
+conv_13,3,conv_13_turn_03,doc_01249,Backpropagation - Section 46,1,Mentions cortical plasticity without addressing backpropagation plausibility debates.
+conv_06,3,conv_06_turn_03,doc_03642,MRNA vaccine - Section 39,2,Directly answers how cellular ribosomes translate the mRNA transcript into viral spike proteins.
+conv_03,5,conv_03_turn_05,doc_01876,NIRCam - Section 4,0,Passage is unrelated to the James Webb Space Telescope.
+conv_08,3,conv_08_turn_03,doc_04765,Library of Alexandria - Section 14,2,"Directly answers historical estimates of papyrus scroll collections (40,000 to 700,000 scrolls)."
+conv_05,4,conv_05_turn_04,doc_03447,CRISPR gene editing - Section 92,1,Discusses clinical gene therapy without focusing on germline ethics.
+conv_11,3,conv_11_turn_03,doc_03040,Black hole - Section 21,1,Describes surface geology without documenting diurnal thermal swings.
+conv_11,5,conv_11_turn_05,doc_02384,Mercury (planet) - Section 57,0,Passage describes astronomical planet Mercury rather than the toxic chemical element mercury.
+conv_06,3,conv_06_turn_03,doc_03650,Lipid nanoparticle - Section 7,1,Discusses viral structures without detailing ribosome translation.
+conv_10,5,conv_10_turn_05,doc_03709,Alexander Fleming - Section 25,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.
+conv_05,3,conv_05_turn_03,doc_14132,Alfred Nobel - Section 4,0,Passage is unrelated to CRISPR-Cas9 genome editing.
+conv_12,3,conv_12_turn_03,doc_00962,Transformer (deep learning architecture) - Section 41,2,Directly explains that positional encodings inject token sequence order into non-recurrent models.
+conv_07,4,conv_07_turn_04,doc_04405,Johannes Gutenberg - Section 14,1,Discusses Renaissance religious history without detailing print press influence.
+conv_13,4,conv_13_turn_04,doc_04182,Synaptic plasticity - Section 2,2,Directly compares biological local synaptic plasticity (Hebbian learning) with global artificial gradient descent.
+conv_11,4,conv_11_turn_04,doc_02375,Mercury (planet) - Section 48,0,Passage describes astronomical planet Mercury rather than the toxic chemical element mercury.
+conv_11,3,conv_11_turn_03,doc_02367,Mercury (planet) - Section 40,2,Directly details Mercury surface temperature extremes ranging from 427 °C by day to -173 °C at night.
+conv_08,2,conv_08_turn_02,doc_32259,Almoravid dynasty - Section 55,0,Passage is unrelated to the ancient Library of Alexandria.
+conv_14,4,conv_14_turn_04,doc_01384,Entropy (information theory) - Section 73,1,Mentions energy conservation laws without answering entropy non-conservation.
+conv_08,5,conv_08_turn_05,doc_04753,Library of Alexandria - Section 2,1,Discusses Alexandria intellectual climate without naming specific chief librarians.
+conv_03,5,conv_03_turn_05,doc_01742,James Webb Space Telescope - Section 29,2,Directly contrasts JWST infrared instruments with Hubble visible-spectrum imaging.
+conv_09,3,conv_09_turn_03,doc_07179,Apollo - Section 220,1,Discusses artificial intelligence philosophy without detailing imitation game objections.
+conv_04,1,conv_04_turn_01,doc_02000,Apollo 11 - Section 107,1,Provides Apollo 11 crew background without explicitly identifying the mission commander.
+conv_08,3,conv_08_turn_03,doc_04752,Library of Alexandria - Section 1,2,"Directly answers historical estimates of papyrus scroll collections (40,000 to 700,000 scrolls)."
+conv_03,3,conv_03_turn_03,doc_05470,A - Section 20,0,Passage is unrelated to the James Webb Space Telescope.
+conv_04,4,conv_04_turn_04,doc_08978,Apollo 11 - Section 95,1,Describes surface activities without documenting stay duration.
+conv_13,5,conv_13_turn_05,doc_04173,Biological neural network - Section 14,1,Mentions spiking neurons without explaining temporal STDP potentiation/depression rules.
+conv_11,5,conv_11_turn_05,doc_34886,Antibiotic - Section 50,2,"Directly identifies human organs damaged by mercury including the central nervous system, brain, and kidneys."
+conv_04,3,conv_04_turn_03,doc_01907,Apollo 11 - Section 14,1,Describes the lunar surface touchdown without the specific geographic site name.
+conv_13,2,conv_13_turn_02,doc_12134,Algorithm - Section 25,1,Discusses supervised machine learning training without detailing backpropagation math.
+conv_07,1,conv_07_turn_01,doc_04515,Movable type - Section 16,1,Provides general printing history without explicitly attributing European invention to Gutenberg.
+conv_08,5,conv_08_turn_05,doc_19216,Anatole France - Section 3,0,Passage is unrelated to the ancient Library of Alexandria.
+conv_01,2,conv_01_turn_02,doc_00020,Vector space model - Section 20,0,Passage lacks quantum computing concepts and is off-topic.
+conv_07,1,conv_07_turn_01,doc_04393,Johannes Gutenberg - Section 2,2,Directly identifies Johannes Gutenberg as the inventor of movable type printing in Europe.
+conv_04,4,conv_04_turn_04,doc_02320,Apollo Lunar Module - Section 36,1,Describes surface activities without documenting stay duration.
+conv_08,1,conv_08_turn_01,doc_04782,Library of Alexandria - Section 31,2,"Directly identifies the Royal Library location in Alexandria, Egypt."
+conv_09,4,conv_09_turn_04,doc_00745,Turing machine - Section 50,0,Passage discusses Alan Turing instead of black holes and the Schwarzschild event horizon.
+conv_12,1,conv_12_turn_01,doc_00992,Transformer (deep learning architecture) - Section 71,2,Directly explains how self-attention mechanisms compute token dependencies in Transformer models.
+conv_13,3,conv_13_turn_03,doc_04161,Biological neural network - Section 2,1,Mentions cortical plasticity without addressing backpropagation plausibility debates.
+conv_03,5,conv_03_turn_05,doc_01720,James Webb Space Telescope - Section 7,2,Directly contrasts JWST infrared instruments with Hubble visible-spectrum imaging.
+conv_10,4,conv_10_turn_04,doc_03709,Alexander Fleming - Section 25,0,Passage discusses penicillin discovery instead of the Mona Lisa painting.

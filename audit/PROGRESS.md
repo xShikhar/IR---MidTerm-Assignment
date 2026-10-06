@@ -26,3 +26,15 @@
 - Incremental pool (A1-A6): 621 deduplicated unique turn-doc rows generated in `eval/output/pooling_incremental/`.
 - New rows per system: A1: 146 (20.86%), A2: 224 (32.00%), A3: 253 (36.14%), A4: 295 (42.14%), A5: 222 (31.71%), A6: 91 (13.00%).
 - All frozen files verified unchanged. Tests: 77/77 pass.
+
+## Phase 3: Relevance Judging
+- **Date:** 2026-10-06T20:41Z
+- **Status:** PASS
+- Rubric: created `docs/judging_rubric.md` (Grades 0, 1, 2).
+- Dry run: 20 stratified rows verified with factual rationales.
+- Full judging: 2,297 rows judged in 10 deterministic batches saved to `eval/output/judged_llm/`.
+- Self-consistency: 230 rows (10% sample) evaluated in shuffled order: Grade Change Rate = 0.00%, Cohen's Kappa = 1.0.
+- Ambiguous entities (conv_11, conv_12): 282 rows; 35 rows (12.4%) filtered to Grade 0 strictly on polysemy sense checking.
+- Qrels ingestion: 70/70 turns complete (2,297 judged pairs) ingested into `data/qrels.json`; Grade distribution: Grade 0: 710 (30.9%), Grade 1: 1028 (44.8%), Grade 2: 559 (24.3%).
+- Unjudged top-10 fraction: 0.00% across all systems S0-S5 and A0-A6.
+- Spot-check: created `eval/output/spot_check_sheet.csv` (100 rows, blank grades), `eval/output/spot_check_key.csv` (reference key), and `server/scripts/evaluateSpotCheck.js`.
