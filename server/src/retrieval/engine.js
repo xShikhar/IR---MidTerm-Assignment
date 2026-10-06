@@ -9,9 +9,6 @@ import { analyze } from '../index/normalizer.js';
 import { scoreCosineLncLtc } from './cosine.js';
 import { scoreBM25 } from './bm25.js';
 import { eliminateLowIdfTerms } from './indexElimination.js';
-import { evaluatePhraseQuery } from './phrase.js';
-import { evaluateEntityConstraints } from './boolean.js';
-import { reciprocalRankFusion } from './fusion.js';
 import { CONFIG } from '../config/index.js';
 
 /**
