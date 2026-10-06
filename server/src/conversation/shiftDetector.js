@@ -70,7 +70,7 @@ export function detectTopicShift(rawQuery, contextVector, index, options = {}) {
   }
 
   // 1. Build sparse query vector
-  const queryWords = rawQuery.toLowerCase().split(/\s+/);
+  const queryWords = rawQuery.toLowerCase().match(/[a-z0-9]+/g) || [];
   const queryStems = analyze(rawQuery, true);
   const queryVector = new Map();
 
