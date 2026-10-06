@@ -1,0 +1,30 @@
+{
+  "name": "turntrace",
+  "version": "1.0.0",
+  "description": "TurnTrace: Inspectable Conversational Search Engine built on core IR principles",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client",
+    "eval"
+  ],
+  "scripts": {
+    "prepare:data": "node server/scripts/prepareCorpus.js",
+    "build:index": "node server/scripts/buildIndex.js",
+    "test": "npm run test --workspace=server && npm run test --workspace=eval",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "dev": "npm run dev:server",
+    "eval": "npm run run --workspace=eval"
+  },
+  "keywords": [
+    "information-retrieval",
+    "conversational-search",
+    "vector-space-model",
+    "bm25",
+    "inverted-index"
+  ],
+  "author": "TurnTrace Team",
+  "license": "MIT"
+}

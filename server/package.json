@@ -1,0 +1,17 @@
+{
+  "name": "turntrace-server",
+  "version": "1.0.0",
+  "description": "TurnTrace IR Core Backend and Trace API",
+  "private": true,
+  "type": "module",
+  "main": "src/api/server.js",
+  "scripts": {
+    "dev": "node src/api/server.js",
+    "start": "node src/api/server.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
