@@ -19,8 +19,8 @@ import { buildChampionLists } from './championLists.js';
  */
 export function buildIndex(passages) {
   const totalDocs = passages.length;
-  const docs = {};
-  const dictionary = {}; // term -> { df, idf, bm25Idf, postings }
+  const docs = Object.create(null);
+  const dictionary = Object.create(null); // term -> { df, idf, bm25Idf, postings }
   const docTermWeights = {}; // docId -> Map<term, logTf> for computing Euclidean length
   const allDocIds = [];
   let totalTokensAcrossCollection = 0;

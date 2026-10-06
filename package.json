@@ -12,6 +12,7 @@
   "scripts": {
     "prepare:data": "node server/scripts/prepareCorpus.js",
     "build:index": "node server/scripts/buildIndex.js",
+    "pool:data": "node server/scripts/generatePoolingSheet.js",
     "test": "npm run test --workspace=server && npm run test --workspace=eval",
     "dev:server": "npm run dev --workspace=server",
     "dev:client": "npm run dev --workspace=client",
