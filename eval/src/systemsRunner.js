@@ -148,11 +148,21 @@ function executeConversationalTurnSync(query, contextState, index, options = {})
   let clarifRes = { fired: false };
 
   if (disableDecomp) {
-    const ret = executeRetrieval(rewriteRes.rewrittenQuery, index, { topK, model: options.model || 'cosine' });
+    const ret = executeRetrieval(rewriteRes.rewrittenQuery, index, {
+      topK,
+      model: options.model || 'cosine',
+      useChampionLists: options.useChampionLists,
+      applyIndexElimination: options.applyIndexElimination
+    });
     results = ret.results;
   } else {
     const { decomposeAndRetrieve } = requireDecompModule();
-    const decompRes = decomposeAndRetrieve(rewriteRes.rewrittenQuery, index, { topK });
+    const decompRes = decomposeAndRetrieve(rewriteRes.rewrittenQuery, index, {
+      topK,
+      model: options.model || 'cosine',
+      useChampionLists: options.useChampionLists,
+      applyIndexElimination: options.applyIndexElimination
+    });
     results = disableFusion ? decompRes.fusedResultsScoreSum : decompRes.fusedResultsRrf;
   }
 
