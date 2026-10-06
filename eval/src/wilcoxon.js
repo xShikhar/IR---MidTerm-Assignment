@@ -145,6 +145,7 @@ export function wilcoxonSignedRankTest(scoresA, scoresB, options = {}) {
     pValue: Number(Math.min(1.0, Math.max(0.0, pValue)).toFixed(4)),
     isSignificant: pValue < alpha,
     nPairs: n,
-    nonZeroPairs: Nr
+    nonZeroPairs: Nr,
+    formattedPValue: `${Number(Math.min(1.0, Math.max(0.0, pValue)).toFixed(4))} (n=${Nr})`
   };
 }

@@ -212,17 +212,19 @@ export async function runEvaluation() {
         {
           Comparison: 'S2 vs S0 (nDCG@10)',
           Delta: sigS2vsS0.bootstrap.delta,
-          'Bootstrap p-value': sigS2vsS0.bootstrap.pValue,
+          'Bootstrap p-value': `${sigS2vsS0.bootstrap.pValue} (n=${sigS2vsS0.bootstrap.sampleCount})`,
           '95% CI': `[${sigS2vsS0.bootstrap.ciLower}, ${sigS2vsS0.bootstrap.ciUpper}]`,
-          'Wilcoxon p-value': sigS2vsS0.wilcoxon.pValue,
+          'Wilcoxon p-value': `${sigS2vsS0.wilcoxon.pValue} (n=${sigS2vsS0.wilcoxon.nonZeroPairs})`,
+          'Wilcoxon n (non-zero / total)': `${sigS2vsS0.wilcoxon.nonZeroPairs} / ${sigS2vsS0.wilcoxon.nPairs}`,
           'Significant (alpha=0.05)': sigS2vsS0.bootstrap.isSignificant
         },
         {
           Comparison: 'S2 vs S1 (nDCG@10)',
           Delta: sigS2vsS1.bootstrap.delta,
-          'Bootstrap p-value': sigS2vsS1.bootstrap.pValue,
+          'Bootstrap p-value': `${sigS2vsS1.bootstrap.pValue} (n=${sigS2vsS1.bootstrap.sampleCount})`,
           '95% CI': `[${sigS2vsS1.bootstrap.ciLower}, ${sigS2vsS1.bootstrap.ciUpper}]`,
-          'Wilcoxon p-value': sigS2vsS1.wilcoxon.pValue,
+          'Wilcoxon p-value': `${sigS2vsS1.wilcoxon.pValue} (n=${sigS2vsS1.wilcoxon.nonZeroPairs})`,
+          'Wilcoxon n (non-zero / total)': `${sigS2vsS1.wilcoxon.nonZeroPairs} / ${sigS2vsS1.wilcoxon.nPairs}`,
           'Significant (alpha=0.05)': sigS2vsS1.bootstrap.isSignificant
         }
       ]);

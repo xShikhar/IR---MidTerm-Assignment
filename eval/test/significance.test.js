@@ -78,6 +78,7 @@ describe('Statistical Significance: Wilcoxon Signed-Rank Test', () => {
     assert.ok(result.wMinus === 0);
     assert.ok(result.pValue < 0.01);
     assert.equal(result.isSignificant, true);
+    assert.ok(result.formattedPValue.includes('(n=12)'));
   });
 
   it('handles tied differences correctly without divergence', () => {

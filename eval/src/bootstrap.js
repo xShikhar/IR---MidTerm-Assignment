@@ -147,6 +147,7 @@ export function pairedBootstrapTest(scoresA, scoresB, options = {}) {
     ciLower: Number(ciLower.toFixed(4)),
     ciUpper: Number(ciUpper.toFixed(4)),
     sampleCount: n,
-    replications: B
+    replications: B,
+    formattedPValue: `${Number(pValue.toFixed(4))} (n=${n})`
   };
 }
