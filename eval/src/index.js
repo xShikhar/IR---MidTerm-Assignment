@@ -5,11 +5,14 @@
  * Outputs formatted console tables and generates export artifacts in eval/output/.
  */
 
+import fs from 'node:fs';
+import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { loadIndex } from '../../server/src/index/serializer.js';
 import { loadEvaluationData } from './qrelsLoader.js';
 import { runEvaluationBenchmark } from './systemsRunner.js';
 import { exportEvaluationArtifacts } from './export.js';
+import { compareSystems } from './significance.js';
 import { CONFIG } from '../../server/src/config/index.js';
 
 export async function runEvaluation() {
@@ -181,7 +184,63 @@ export async function runEvaluation() {
   console.log('Analysis: Query rewriter carried "bits" and "information" from Shannon entropy');
   console.log('into a thermodynamic physics law query, demonstrating term-overlap limitation.');
 
-  // 6. Export artifacts to disk
+  // 6. Benchmark Splits & Significance Analysis (F-06)
+  const splitsPath = path.resolve('data/splits.json');
+  if (fs.existsSync(splitsPath)) {
+    const splits = JSON.parse(fs.readFileSync(splitsPath, 'utf8'));
+    console.log('\n------------------------------------------------------------------------');
+    console.log(' Table 5: Benchmark Splits & Statistical Significance Setup (F-06)');
+    console.log('------------------------------------------------------------------------');
+    console.table([
+      {
+        Split: 'Dev (Tuning / Diagnostic)',
+        Conversations: splits.dev.conversationCount,
+        Turns: splits.dev.turnCount,
+        Focus: 'Topic-shifts (conv_09,10,11,12) & Ambiguity (conv_11,12)'
+      },
+      {
+        Split: 'Test (Unseen Headline Evaluation)',
+        Conversations: splits.test.conversationCount,
+        Turns: splits.test.turnCount,
+        Focus: 'Multi-part decomposition, standard carries & entropy drift'
+      }
+    ]);
+
+    if (totalTurns > 0) {
+      const testConvSet = new Set(splits.test.conversationIds);
+      const testRecordsS2 = benchmarkResults.S2.rawRecords.filter(r => testConvSet.has(r.convId));
+      const testRecordsS0 = benchmarkResults.S0.rawRecords.filter(r => testConvSet.has(r.convId));
+      const testRecordsS1 = benchmarkResults.S1.rawRecords.filter(r => testConvSet.has(r.convId));
+
+      const sigS2vsS0 = compareSystems(testRecordsS2, testRecordsS0, 'ndcg10');
+      const sigS2vsS1 = compareSystems(testRecordsS2, testRecordsS1, 'ndcg10');
+
+      console.log('\n Statistical Significance on Test Set (40 Turns, Seed 42, 2000 Bootstrap Replicates):');
+      console.table([
+        {
+          Comparison: 'S2 vs S0 (nDCG@10)',
+          Delta: sigS2vsS0.bootstrap.delta,
+          'Bootstrap p-value': sigS2vsS0.bootstrap.pValue,
+          '95% CI': `[${sigS2vsS0.bootstrap.ciLower}, ${sigS2vsS0.bootstrap.ciUpper}]`,
+          'Wilcoxon p-value': sigS2vsS0.wilcoxon.pValue,
+          'Significant (alpha=0.05)': sigS2vsS0.bootstrap.isSignificant
+        },
+        {
+          Comparison: 'S2 vs S1 (nDCG@10)',
+          Delta: sigS2vsS1.bootstrap.delta,
+          'Bootstrap p-value': sigS2vsS1.bootstrap.pValue,
+          '95% CI': `[${sigS2vsS1.bootstrap.ciLower}, ${sigS2vsS1.bootstrap.ciUpper}]`,
+          'Wilcoxon p-value': sigS2vsS1.wilcoxon.pValue,
+          'Significant (alpha=0.05)': sigS2vsS1.bootstrap.isSignificant
+        }
+      ]);
+    } else {
+      console.log(' [Notice] Relevance labels pending human judging via pooling sheets.');
+      console.log(' Paired Bootstrap and Wilcoxon tests will execute automatically once qrels are populated.');
+    }
+  }
+
+  // 7. Export artifacts to disk
   exportEvaluationArtifacts(benchmarkResults);
 
   const totalElapsed = (performance.now() - startTime).toFixed(1);

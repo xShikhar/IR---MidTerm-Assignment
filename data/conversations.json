@@ -1,0 +1,660 @@
+[
+  {
+    "id": "conv_01",
+    "domain": "cs_ai",
+    "topic": "Vector Space Model and Weighting Schemes",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What is the vector space model in information retrieval?",
+        "goldRewrite": "What is the vector space model in information retrieval?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "How does term frequency weighting work in it?",
+        "goldRewrite": "How does term frequency weighting work in the vector space model?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What about cosine normalization?",
+        "goldRewrite": "What is cosine normalization in the vector space model?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "Why is document length normalization needed?",
+        "goldRewrite": "Why is document length normalization needed in the vector space model?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Compare it with Okapi BM25 scoring.",
+        "goldRewrite": "Compare vector space model with Okapi BM25 scoring.",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": true
+      }
+    ]
+  },
+  {
+    "id": "conv_02",
+    "domain": "cs_ai",
+    "topic": "PageRank and Link Analysis",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "How does the PageRank algorithm rank web pages?",
+        "goldRewrite": "How does the PageRank algorithm rank web pages?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "Who invented the algorithm at Stanford?",
+        "goldRewrite": "Who invented the PageRank algorithm at Stanford?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What is the random surfer model?",
+        "goldRewrite": "What is the random surfer model in PageRank?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "How does it handle dead ends and spider traps?",
+        "goldRewrite": "How does PageRank handle dead ends and spider traps?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What is the standard damping factor value?",
+        "goldRewrite": "What is the standard damping factor value used in PageRank?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_03",
+    "domain": "space_physics",
+    "topic": "James Webb Space Telescope Mission",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What is the James Webb Space Telescope?",
+        "goldRewrite": "What is the James Webb Space Telescope?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "Where is its orbit located in space?",
+        "goldRewrite": "Where is the James Webb Space Telescope orbit located in space?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "Tell me about its primary mirror size.",
+        "goldRewrite": "What is the primary mirror size and material of the James Webb Space Telescope?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "What instruments does it carry for infrared astronomy?",
+        "goldRewrite": "What instruments does James Webb Space Telescope carry for infrared astronomy?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Compare NIRCam and MIRI instruments.",
+        "goldRewrite": "Compare NIRCam and MIRI instruments on the James Webb Space Telescope.",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": true
+      }
+    ]
+  },
+  {
+    "id": "conv_04",
+    "domain": "space_physics",
+    "topic": "Apollo 11 Lunar Landing",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "When did the Apollo 11 mission land on the Moon?",
+        "goldRewrite": "When did the Apollo 11 mission land on the Moon?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "Who were the astronauts on board?",
+        "goldRewrite": "Who were the astronauts on board the Apollo 11 mission?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What rocket launched them into space?",
+        "goldRewrite": "What rocket launched the Apollo 11 astronauts into space?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "How long did they spend on the lunar surface?",
+        "goldRewrite": "How long did Apollo 11 astronauts spend on the lunar surface?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Where did the command module splash down?",
+        "goldRewrite": "Where did the Apollo 11 command module Columbia splash down on Earth?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_05",
+    "domain": "biology_medicine",
+    "topic": "CRISPR-Cas9 Gene Editing",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What is CRISPR Cas9 genome editing?",
+        "goldRewrite": "What is CRISPR Cas9 genome editing technology in molecular biology?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "How does the guide RNA locate target DNA sequences?",
+        "goldRewrite": "How does guide RNA locate target DNA sequences in CRISPR Cas9?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "Who received the Nobel Prize for its development?",
+        "goldRewrite": "Who received the Nobel Prize in Chemistry for CRISPR Cas9 development?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "What ethical concerns surround human germline editing?",
+        "goldRewrite": "What ethical concerns surround human germline gene editing using CRISPR?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Compare somatic and germline gene therapies.",
+        "goldRewrite": "Compare somatic gene therapies and germline gene therapies in medicine.",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": true
+      }
+    ]
+  },
+  {
+    "id": "conv_06",
+    "domain": "biology_medicine",
+    "topic": "mRNA Vaccines and Lipid Nanoparticles",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "How do mRNA vaccines work against viruses?",
+        "goldRewrite": "How do mRNA vaccines work against viruses in the human immune system?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What role do lipid nanoparticles play in delivery?",
+        "goldRewrite": "What role do lipid nanoparticles play in delivering mRNA vaccines into cells?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "How does the cell produce the spike protein from it?",
+        "goldRewrite": "How does the human cell ribosome produce viral spike protein from mRNA?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "What immune response do they trigger?",
+        "goldRewrite": "What immune response do mRNA vaccines trigger in the human body?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "How does storage temperature affect stability?",
+        "goldRewrite": "How does ultra-cold storage temperature affect mRNA vaccine stability?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_07",
+    "domain": "history_civilization",
+    "topic": "Johannes Gutenberg and the Printing Press",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "Who invented the movable type printing press in Europe?",
+        "goldRewrite": "Who invented the movable type printing press in Europe?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "Where was his first print shop established?",
+        "goldRewrite": "Where was Johannes Gutenberg first print shop established in Mainz?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What was the first major book printed?",
+        "goldRewrite": "What was the first major book printed by Gutenberg?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "How did it influence the Protestant Reformation?",
+        "goldRewrite": "How did the Gutenberg printing press influence the Protestant Reformation?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What were the broader impacts on European literacy rates?",
+        "goldRewrite": "What were the impacts of the printing press on European literacy rates?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_08",
+    "domain": "history_civilization",
+    "topic": "Ancient Library of Alexandria",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "Where was the ancient Library of Alexandria located?",
+        "goldRewrite": "Where was the ancient Royal Library of Alexandria located in Egypt?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "Who founded it and when?",
+        "goldRewrite": "Who founded the Library of Alexandria and during which century?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "How many scrolls was it estimated to hold?",
+        "goldRewrite": "How many papyrus scrolls was the Library of Alexandria estimated to hold?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "How was the library destroyed according to historians?",
+        "goldRewrite": "How was the ancient Library of Alexandria destroyed according to historical evidence?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Which scholars worked there as chief librarians?",
+        "goldRewrite": "Which famous Hellenistic scholars worked as chief librarians at Alexandria?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_09",
+    "domain": "cs_ai",
+    "topic": "Alan Turing and the Imitation Game to Black Holes (Cross-Domain Topic Shift)",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What was Alan Turing formulation of the imitation game?",
+        "goldRewrite": "What was Alan Turing formulation of the imitation game in his 1950 paper?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What paper did he introduce it in?",
+        "goldRewrite": "What landmark philosophical paper introduced the Turing test imitation game?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What are the common criticisms of the imitation game?",
+        "goldRewrite": "What are the common philosophical objections to Alan Turing imitation game?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "What is the event horizon of an astrophysical black hole?",
+        "goldRewrite": "What is the Schwarzschild event horizon of an astrophysical black hole in general relativity?",
+        "isShift": true,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "Can light escape from inside it?",
+        "goldRewrite": "Can light escape from within the Schwarzschild radius of an astrophysical black hole?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_10",
+    "domain": "biology_medicine",
+    "topic": "Penicillin Discovery to Renaissance Art (Cross-Domain Topic Shift)",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "How did Alexander Fleming discover penicillin?",
+        "goldRewrite": "How did Alexander Fleming accidentally discover penicillin at St Mary Hospital in 1928?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What mould produced the antibiotic substance?",
+        "goldRewrite": "What fungus or mould species produced the antibacterial substance penicillin?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "Who purified it for mass production in Oxford?",
+        "goldRewrite": "Who purified penicillin for mass pharmaceutical production in Oxford during World War II?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "Who painted the Mona Lisa in Florence?",
+        "goldRewrite": "Who painted the Mona Lisa Renaissance oil portrait in Florence?",
+        "isShift": true,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What museum is it exhibited in today?",
+        "goldRewrite": "What art museum displays the original Leonardo da Vinci Mona Lisa in Paris today?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_11",
+    "domain": "space_physics",
+    "topic": "Mercury Planet vs Mercury Chemical Element (Lexical Ambiguity)",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What is Mercury in our Solar System?",
+        "goldRewrite": "What is the planet Mercury in our Solar System and its orbital characteristics?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "How close is it to the Sun?",
+        "goldRewrite": "How close is the planet Mercury to the Sun at perihelion?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What are the extreme temperature variations on the surface?",
+        "goldRewrite": "What are the extreme surface temperatures on planet Mercury between day and night?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "Tell me about mercury toxicity and environmental exposure.",
+        "goldRewrite": "What are the health risks and environmental toxicity of the heavy metal chemical element mercury?",
+        "isShift": true,
+        "isAmbiguous": true,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What organs does the toxic metal damage?",
+        "goldRewrite": "What human organs and neurological systems does toxic methylmercury exposure damage?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_12",
+    "domain": "cs_ai",
+    "topic": "Neural Transformers vs Electrical Transformers (Lexical Ambiguity)",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "How does the Transformer architecture use self-attention?",
+        "goldRewrite": "How does the Transformer deep learning architecture use multi-head self-attention mechanisms?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What is multi-head attention?",
+        "goldRewrite": "What is multi-head attention in transformer neural network models?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "What are positional encodings used for in it?",
+        "goldRewrite": "What are positional encodings used for in transformer sequence models?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "How do electrical power transformers step down voltage?",
+        "goldRewrite": "How do electrical electromagnetic power transformers step down AC voltage using induction coils?",
+        "isShift": true,
+        "isAmbiguous": true,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What magnetic core materials do they use?",
+        "goldRewrite": "What laminated magnetic core materials do electrical power transformers use?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_13",
+    "domain": "cs_ai",
+    "topic": "Artificial vs Biological Neural Networks Decomposer",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "How do artificial neural networks differ from biological brains?",
+        "goldRewrite": "How do artificial neural networks differ from biological neural architectures in the brain?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What is the backpropagation algorithm?",
+        "goldRewrite": "What is the backpropagation algorithm for training artificial neural networks?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "Why is biological plausibility debated for it?",
+        "goldRewrite": "Why is the biological plausibility of backpropagation debated in neuroscience?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "Compare synaptic plasticity and gradient descent.",
+        "goldRewrite": "Compare biological synaptic plasticity with artificial neural gradient descent optimization.",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": true
+      },
+      {
+        "turnId": "turn_05",
+        "query": "How does spike-timing-dependent plasticity work?",
+        "goldRewrite": "How does spike-timing-dependent plasticity work in biological synapses?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  },
+  {
+    "id": "conv_14",
+    "domain": "cs_ai",
+    "topic": "Shannon Entropy to Physics Thermodynamic Law (Documented Limitation Case)",
+    "turns": [
+      {
+        "turnId": "turn_01",
+        "query": "What is Claude Shannon information entropy formula?",
+        "goldRewrite": "What is Claude Shannon mathematical formula for information entropy in bits?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_02",
+        "query": "What base logarithm did he use for bit units?",
+        "goldRewrite": "What base logarithm did Claude Shannon use to define bit units of entropy?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_03",
+        "query": "How does it relate to thermodynamic entropy in physics?",
+        "goldRewrite": "How does Claude Shannon information entropy relate to thermodynamic entropy in statistical physics?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_04",
+        "query": "Is entropy always conserved in physical processes?",
+        "goldRewrite": "Is thermodynamic entropy conserved or increasing according to physical laws?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      },
+      {
+        "turnId": "turn_05",
+        "query": "What does the second law of thermodynamics state about it?",
+        "goldRewrite": "What does the second law of thermodynamics state about isolated systems and entropy increase?",
+        "isShift": false,
+        "isAmbiguous": false,
+        "isDecomposable": false
+      }
+    ]
+  }
+]
