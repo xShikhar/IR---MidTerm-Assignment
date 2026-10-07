@@ -94,19 +94,13 @@ npm test
 npm run eval
 ```
 
-5. Compile PDF deliverable:
-```bash
-npm run build:report
-```
-*(Generates `TurnTrace_Report.pdf` at project root).*
-
-6. Launch local application:
+5. Launch local application:
 ```bash
 npm run dev
 ```
 *(Spawns both backend server on `http://localhost:3001` and Vite frontend on `http://localhost:3000`).*
 
-7. Execute a test query:
+6. Execute a test query:
 - Browser UI: open `http://localhost:3000`
 - Terminal CLI:
 ```bash
@@ -438,7 +432,6 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── qrels.json              # Relevance judgments storage (2,297 LLM-judged pairs; no human validation)
 │   └── splits.json             # Stratified train/dev/test split definition (FROZEN)
 ├── docs/                       # Project documentation and submission materials
-│   ├── report/                 # System documentation chapters
 │   └── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
 ├── eval/                       # Independent evaluation workspace
 │   ├── src/metrics.js          # P@K, Recall, MRR, nDCG calculation
@@ -446,7 +439,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── src/significance.js     # Paired bootstrap & Wilcoxon signed-rank tests
 │   ├── src/systemsRunner.js    # S0-S5, A0-A6, R1-R2 benchmark execution
 │   └── output/test_final/      # Final TEST evaluation artifacts (11 CSV and SVG files)
-├── scripts/                    # Development runner scripts (dev.js, buildReportPdf.js, verifyFrozenData.js)
+├── scripts/                    # Development runner scripts (dev.js, verifyFrozenData.js)
 ├── server/                     # Core IR engine and API workspace
 │   ├── scripts/                # Data preparation, index building, and sweeps
 │   └── src/

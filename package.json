@@ -19,8 +19,7 @@
     "dev": "node scripts/dev.js",
     "verify:data": "node scripts/verifyFrozenData.js",
     "unpack:data": "node scripts/verifyFrozenData.js --unpack",
-    "eval": "node eval/src/index.js",
-    "build:report": "node scripts/buildReportPdf.js"
+    "eval": "node eval/src/index.js"
   },
   "keywords": [
     "information-retrieval",
