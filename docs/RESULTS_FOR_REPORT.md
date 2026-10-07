@@ -343,3 +343,29 @@ The following lines in pre-drafted report chapters and video scripts contain leg
 2. `docs/report/05_evaluation.md:86`: Replace column header *"Follow-Ups Rescued from Reset"* with *"Follow-Ups Changed from Reset to Carry"*.
 3. `docs/report/05_evaluation.md:89`: Replace cell value *"5 turns rescued"* with *"5 follow-ups changed"*.
 4. `docs/report/05_evaluation.md`: Replace placeholders with the actual TEST numbers: S0 (P@5: 0.8350, nDCG@10: 0.6732), S2/A0 (P@5: 0.8900, nDCG@10: 0.6875), A3 (P@5: 0.9150, nDCG@10: 0.6317), A4 (P@5: 0.9050, Novelty@10: 0.7600), S5 (P@5: 0.9950, nDCG@10: 0.7723).
+
+---
+
+## 16. Report Fixes Needed (docs/report/*.md Stale & Inaccurate Statements Audit)
+
+Per Phase 2 and Rule 4 guidelines, the markdown report files (`docs/report/*.md`) are preserved without text rewriting until final paper drafting. The following stale, placeholder, or inaccurate statements have been audited and must be updated during final report compilation:
+
+1. **Untuned Parameter Disclosures (`docs/report/04_novelty.md:118-130`):**
+   - *Current Text:* Lists novelty parameters as `[Untuned Initial]` and states parameters are untuned pending completion of judging.
+   - *Required Fix:* Update to state that hyperparameter tuning has been systematically completed on the DEV split (35 grid configurations evaluated in `eval/output/tuning_dev.csv`; entity threshold $\text{IDF} \ge 2.50$, aspect decay $\lambda = 0.75$, title filter threshold $N \ge 10$, seen penalty $\beta = 0.30$).
+2. **AI-Generated Labeling Terminology (`docs/report/04_novelty.md:118`, `docs/report/05_evaluation.md:3`):**
+   - *Current Text:* Uses terms like "human relevance judging" or "human gold judgments".
+   - *Required Fix:* State transparently that all 2,297 relevance judgments in `data/qrels.json` were evaluated by an LLM following the strict rubric in `docs/judging_rubric.md`, conversation transitions were AI-labeled, and human validation is pending (blind spot check prepared in `eval/output/spot_check_sheet.csv`). Never write "human judged" or "ground truth".
+3. **Audit Paths Update (`docs/report/` references):**
+   - *Current Text:* References `audit/CORE_VERIFICATION.md` and `audit/FINAL_ACCEPTANCE.md`.
+   - *Required Fix:* Update paths to `docs/audit/CORE_VERIFICATION.md` and `docs/audit/FINAL_ACCEPTANCE.md`.
+4. **Test Suite Counts (`docs/report/07_work_division_and_ai_declaration.md`):**
+   - *Current Text:* References earlier 77 or 78 test counts.
+   - *Required Fix:* Update to 83 verified unit/integration tests (63 server + 20 eval, all pass).
+5. **Final Test Metrics Population (`docs/report/05_evaluation.md` Table):**
+   - *Current Text:* Contains preliminary or placeholder figures.
+   - *Required Fix:* Populate with official test benchmark outputs from `eval/output/test_final/systems_comparison.csv` and `significance_tests.csv`.
+6. **Mercury Turn 4 Limitation Case (`docs/report/06_limitations_and_roadmap.md`):**
+   - *Current Text:* Features `conv_14` (entropy) failure case.
+   - *Required Fix:* Add `conv_11` Turn 4 (Mercury planet to toxic element) as a primary polysemy failure case illustrating classical IR title-zone ambiguity without semantic ontologies.
+
