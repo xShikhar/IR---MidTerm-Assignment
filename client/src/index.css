@@ -2168,6 +2168,9 @@ input, textarea {
   .controls-ribbon {
     gap: 10px;
     padding: 8px 12px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .controls-group {
     flex-wrap: wrap;
