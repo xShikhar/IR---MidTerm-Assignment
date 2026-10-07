@@ -15,7 +15,7 @@
 | **2** | 0:50 – 1:50 | 60s | **Member 1** [Member Name] | Offline Inverted Index, Morphological Pipeline & **Collection Stats Modal** |
 | **3** | 1:50 – 3:00 | 70s | **Member 2** [Member Name] | SMART `lnc.ltc` vs BM25, **Controls Ribbon**, **Live Rescore** & **Mathematical Score Modal** |
 | **4** | 3:00 – 4:25 | 85s | **Member 3** [Member Name] | Live Dialogue: **Benchmark Modal**, Entity Lock, **4-Tab Trace Inspector**, Aspect Eviction, RRF, Phrases & **Topic Shift** |
-| **5** | 4:25 – 5:10 | 45s | **Member 3** [Member Name] | Live Architectural Limitation & Polysemy Boundary (`conv_11` Mercury / `conv_14` Entropy) |
+| **5** | 4:25 – 5:10 | 45s | **Member 3** [Member Name] | Live Limitation: Cross-Domain Vocabulary Lock-in (`conv_14` Entropy) & **Soft Boost Recovery** |
 | **6** | 5:10 – 6:20 | 70s | **Member 4** [Member Name] | Benchmark Evaluation, Significance Tests, Novelty Trade-Offs & AI-Label Declaration |
 | **7** | 6:20 – 6:45 | 25s | **All Members** | Rehearsed Summary, Open-Source GitHub Repository & 1-Command Reproduction |
 | **Total** | **0:00 – 6:45** | **405s** | **4 Members** | **Full Compliance with 5–8 Minute Constraint** |
@@ -187,17 +187,39 @@ Execute these exact steps before recording the video:
 
 ---
 
-### Segment 5: Live Architectural Limitation & Lexical Polysemy Boundary (4:25 – 5:10 | 45s)
+### Segment 5: Live Architectural Limitation & Soft Boost Recovery (4:25 – 5:10 | 45s)
 - **Speaker:** **Member 3** `[Member name placeholder]`
-- **Screen:** Browser UI on `http://localhost:3000` executing the failure turn, then opening Trace Tab 1 and Tab 3.
-- **Turn Action:**
-  - Type / click: `"Tell me about mercury toxicity and environmental exposure."` (Conversation `conv_11`, Turn 4, after 3 turns discussing Mercury the planet).
-  - Trace Display: Show `shiftDecision`: `CARRY`, `lockedEntity`: `mercuri`, `titleFilter`: Matches both astronomical and chemical passages.
+- **Screen:** Fullscreen browser UI on `http://localhost:3000` showing live query execution, result cards, trace drawer, and Controls Ribbon.
+- **Turn Actions & Visual Observations on Screen:**
+  1. **Load Documented Boundary Case:**
+     - Click **"Benchmark Scenarios"** in Navbar $\to$ select **`conv_14` ("Entropy: Shannon Information vs Thermodynamics", tagged `Documented Boundary Case`)**.
+  2. **Execute Turn 1:**
+     - Click / send Turn 1: `"What is Claude Shannon information entropy formula?"`
+     - Point out: Locks entity terms `inform` (IDF: 3.25) and `entropi` in Computer Science.
+  3. **Execute Turn 5 (The Cross-Domain Failure Turn):**
+     - Click / send Turn 5: `"What does the second law of thermodynamics state about it?"`
+     - **Visibly point to the Result Cards on screen:**
+       - Although the user asked about a fundamental law of physics (*Second Law of Thermodynamics*), **all top result cards have purple `[CS & AI]` badges with titles `Entropy (information theory)`**!
+       - The actual physics articles on thermodynamics in `[Space & Physics]` are completely absent!
+     - **Inspect the Trace Drawer:**
+       - Open **Tab 1 & Tab 2**: The trace reveals why—because the stem `entropy` matched, the entity guard issued a `CARRY` decision, keeping `inform` locked from Turn 1!
+       - The rewritten query forcibly appended `inform`: `"What does the second law of thermodynamics state about it? inform entropi"`.
+       - **Tab 3**: The Hard Title Filter restricted candidates strictly to titles matching `inform` $\cap$ `entropi`, completely filtering out the physical thermodynamics documents. In our offline audit (`worst_turns_a3_vs_a0.csv`), this exact turn suffered a $-0.5531$ nDCG drop.
+  4. **Live Recovery via Soft Boost:**
+     - In the top **Controls Ribbon**, switch **Entity Lock Mode** from **"Hard Lock (Title Zone)"** to **"Soft Boost (2.0×)"**.
+     - Click the **"Rescore Last Turn"** button!
+     - **Visibly point to the Result Cards flip on screen:**
+       - Instantly, the rigid title filter is removed:
+       - Result `#1` immediately becomes **blue `[Space & Physics] Entropy - Section 1`** (Score: 0.4976)!
+       - Result `#2` becomes **blue `[Space & Physics] Second law of thermodynamics - Section 41`** (Score: 0.4659)!
+       - Proving how our dual locking architecture directly remedies vocabulary lock-in!
 - **Spoken Script:**
-  > *"In accordance with the hackathon rubric, we believe in rigorous academic transparency and now demonstrate an authentic limitation of classical lexical IR.*  
-  > *In Conversation 11, after three turns exploring Mercury the planet's solar orbit and surface craters, Turn 4 asks: 'Tell me about mercury toxicity and environmental exposure.'*  
-  > *Look at Tab 1 of the trace: because the query contains the stem 'mercuri', our locked entity guard classifies this as a CARRY continuation. While aspect replacement successfully replaces 'orbit' with 'toxic' and 'environment', both 'Mercury (planet)' and 'Mercury (element)' share the exact same title stem 'mercuri'.*  
-  > *Without an external semantic ontology or runtime LLM, a pure inverted index cannot distinguish lexical polysemy when the surface stem is identical. We document this failure boundary openly in our evaluation and report."*
+  > *"In accordance with the hackathon rubric, we believe in rigorous academic transparency and now demonstrate an authentic, visually striking limitation of classical lexical IR.*  
+  > *In Conversation 14, labeled in our benchmark modal as our 'Documented Boundary Case', Turn 1 explores Claude Shannon's information entropy in computer science, locking 'inform' and 'entropy'.*  
+  > *By Turn 5, the dialogue pivots into physical thermodynamics: 'What does the second law of thermodynamics state about it?'*  
+  > *Look at the result cards on screen: even though we asked about physics, every single card is purple, showing 'Entropy (information theory)'! The actual physics article is nowhere to be found.*  
+  > *Tab 2 of our trace exposes the exact root cause: because 'entropy' matched, our Hard Title Filter kept 'information' locked, restricting the search space to computer science titles. Without an external semantic ontology, classical IR cannot detect that this ambiguous concept crossed scientific disciplines.*  
+  > *Watch the recovery: in our Controls Ribbon, we switch from Hard Lock to 'Soft Boost (2.0x)' and click 'Rescore Last Turn'. Instantly, the strict title barrier drops, and 'Second law of thermodynamics' from physics surges straight into the top ranks!"*
 
 ---
 
