@@ -238,7 +238,7 @@ export async function runDevTuning() {
   // -------------------------------------------------------------
   console.log('\n--- 5.3 CLARIFIER EVALUATION ON DEV SPLIT ---');
 
-  // Establish expectedClarification ground truth on DEV turns:
+  // Establish expectedClarification reference labels on DEV turns:
   // An ambiguous query requires clarification when the user query is underspecified
   // and admits two disjoint entity senses in the collection.
   // In our DEV benchmark conversations (conv_01, conv_02, conv_05, conv_07, conv_10, conv_11):

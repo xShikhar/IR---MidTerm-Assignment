@@ -1,6 +1,6 @@
 /**
  * @file server/scripts/labelExpectedActions.js
- * @description Generates and imports ground truth expectedAction labels for all 70 benchmark turns.
+ * @description Generates and imports AI-labeled expectedAction labels for all 70 benchmark turns.
  *
  * Requirements:
  * 1. Labels strictly based on dialogue context: previous turns + current query.
@@ -39,7 +39,7 @@ export function runExpectedActionLabeling() {
   const devConvIds = new Set(splits.dev.conversationIds);
   const testConvIds = new Set(splits.test.conversationIds);
 
-  // Ground truth expected actions based strictly on conversation structure:
+  // AI-labeled expected actions based strictly on conversation structure:
   // - carry: Standard continuity, aspectual follow-up, or pronoun anaphora.
   // - reset: Disjoint entity topic transition with zero lexical context overlap (conv_09_T4 black hole, conv_10_T4 Mona Lisa).
   // - entity_switch: Disjoint entity domain pivot that retains surface lexical overlap (conv_11_T4 mercury element, conv_12_T4 electrical transformer).
