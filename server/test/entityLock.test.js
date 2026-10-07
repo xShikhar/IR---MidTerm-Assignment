@@ -19,7 +19,7 @@ import assert from 'node:assert/strict';
 import { buildIndex } from '../src/index/builder.js';
 import { extractEntityCandidates, extractAspectTerms } from '../src/conversation/entityExtractor.js';
 import { detectConversationalDecision } from '../src/conversation/decisionDetector.js';
-import { ContextState } from '../src/conversation/contextState.js';
+import { ContextState, hasLeadingAdditiveCue } from '../src/conversation/contextState.js';
 import { rewriteQuery } from '../src/conversation/rewriter.js';
 import { computeTitleFilteredCandidates } from '../src/retrieval/titleFilter.js';
 import { SeenPassageTracker } from '../src/retrieval/seenPenalty.js';
@@ -104,10 +104,10 @@ describe('Headline Novelty: Entity-Lock & Aspect-Aware Context', () => {
       aspectCandidates: [{ term: 'orbit', idf: 2.0, weight: 1.0, sourceTurn: 1 }]
     });
 
-    // Turn 2: Additive cue "also" -> ADD aspect and decay old aspect
+    // Turn 2: Additive cue "also" at start -> ADD aspect and decay old aspect
     ctx.updateV2({
       decision: 'CARRY',
-      rawQuery: 'What was also the landing speed?',
+      rawQuery: 'Also, what was the landing speed?',
       aspectCandidates: [{ term: 'speed', idf: 2.1, weight: 1.0, sourceTurn: 2 }]
     });
 
@@ -302,5 +302,142 @@ describe('Headline Novelty: Entity-Lock & Aspect-Aware Context', () => {
     assert.ok(apolloMeta);
     assert.equal(apolloMeta.role, 'entity');
     assert.equal(apolloMeta.sourceTurn, 1);
+  });
+
+  describe('Additive and Ellipsis Cues with Word-Boundary Matching', () => {
+    const miniPassages = [
+      { docId: 'doc_merc_planet', title: 'Mercury Planet Exploration', body: 'Mercury is the smallest planet in the solar system with an extreme orbit.' },
+      { docId: 'doc_merc_chem', title: 'Mercury Element Toxicity', body: 'Mercury is a heavy metal causing neurotoxicity and health hazards.' },
+      { docId: 'doc_ml', title: 'Machine Learning Concepts', body: 'Supervised and unsupervised learning are core paradigms.' },
+      { docId: 'doc_arch', title: 'Computer Architecture', body: 'Hardware and software interact through system instructions.' }
+    ];
+    const miniIndex = buildIndex(miniPassages);
+
+    it('ensures mid-sentence "and" in Mercury Turn 4 does NOT trigger ellipsis guard or additive aspect carry', () => {
+      const qMercuryTurn4 = 'Tell me about mercury toxicity and environmental exposure.';
+
+      // 1. Check leading additive cue
+      assert.equal(hasLeadingAdditiveCue(qMercuryTurn4), false, 'Mid-sentence "and" must not be treated as leading additive cue');
+
+      // 2. Check conversational decision guards
+      const locked = [{ term: 'mercuri', idf: 2.5, titleHitCount: 2, sourceTurn: 1 }];
+      const contextTerms = [
+        { term: 'mercuri', role: 'entity' },
+        { term: 'orbit', role: 'aspect' },
+        { term: 'crater', role: 'aspect' }
+      ];
+      const decisionResult = detectConversationalDecision(qMercuryTurn4, locked, contextTerms, miniIndex);
+      assert.ok(!decisionResult.guardsTriggered.includes('ellipsis'), 'Ellipsis guard must NOT trigger on mid-sentence "and"');
+
+      // 3. Check aspect replacement in ContextState (old planet aspects must be replaced, not accumulated)
+      const ctx = new ContextState({ mode: 'v2' });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: 'Mercury planet orbit and craters',
+        entityCandidates: locked,
+        aspectCandidates: [
+          { term: 'orbit', idf: 2.2, weight: 1.0, sourceTurn: 1 },
+          { term: 'crater', idf: 2.1, weight: 1.0, sourceTurn: 1 }
+        ]
+      });
+      assert.equal(ctx.getAspectTerms().length, 2);
+
+      // Now apply Turn 4 query (no leading additive cue) -> REPLACE old aspects
+      ctx.updateV2({
+        decision: decisionResult.decision,
+        rawQuery: qMercuryTurn4,
+        aspectCandidates: [
+          { term: 'toxic', idf: 2.3, weight: 1.0, sourceTurn: 4 },
+          { term: 'exposur', idf: 2.0, weight: 1.0, sourceTurn: 4 }
+        ]
+      });
+
+      const updatedAspects = ctx.getAspectTerms().map(a => a.term);
+      assert.ok(!updatedAspects.includes('orbit'), 'Old planet aspect "orbit" must be replaced');
+      assert.ok(!updatedAspects.includes('crater'), 'Old planet aspect "crater" must be replaced');
+      assert.ok(updatedAspects.includes('toxic'), 'New aspect "toxic" must be present');
+      assert.ok(updatedAspects.includes('exposur'), 'New aspect "exposur" must be present');
+    });
+
+    it('ensures mid-sentence "and" in ML query does NOT trigger ellipsis guard or additive aspect carry', () => {
+      const qML = 'What is the difference between supervised and unsupervised learning?';
+      assert.equal(hasLeadingAdditiveCue(qML), false);
+
+      const locked = [{ term: 'learn', idf: 2.5, titleHitCount: 1, sourceTurn: 1 }];
+      const decision = detectConversationalDecision(qML, locked, [], miniIndex);
+      assert.ok(!decision.guardsTriggered.includes('ellipsis'), 'Ellipsis guard must NOT trigger on mid-sentence "and" in ML query');
+
+      const ctx = new ContextState({ mode: 'v2' });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: 'Initial machine learning paradigms',
+        aspectCandidates: [{ term: 'paradigm', idf: 2.0, weight: 1.0, sourceTurn: 1 }]
+      });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: qML,
+        aspectCandidates: [{ term: 'supervis', idf: 2.2, weight: 1.0, sourceTurn: 2 }]
+      });
+      const aspectTerms = ctx.getAspectTerms().map(a => a.term);
+      assert.ok(!aspectTerms.includes('paradigm'), 'Initial aspect should be replaced without additive cue');
+      assert.ok(aspectTerms.includes('supervis'), 'New aspect should be active');
+    });
+
+    it('ensures mid-sentence "and" in hardware/software query does NOT trigger ellipsis guard or additive aspect carry', () => {
+      const qArch = 'Explain how hardware and software interact in modern computers.';
+      assert.equal(hasLeadingAdditiveCue(qArch), false);
+
+      const locked = [{ term: 'comput', idf: 2.5, titleHitCount: 1, sourceTurn: 1 }];
+      const decision = detectConversationalDecision(qArch, locked, [], miniIndex);
+      assert.ok(!decision.guardsTriggered.includes('ellipsis'), 'Ellipsis guard must NOT trigger on mid-sentence "and" in hardware query');
+
+      const ctx = new ContextState({ mode: 'v2' });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: 'Computer CPU design',
+        aspectCandidates: [{ term: 'design', idf: 2.0, weight: 1.0, sourceTurn: 1 }]
+      });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: qArch,
+        aspectCandidates: [{ term: 'interact', idf: 2.1, weight: 1.0, sourceTurn: 2 }]
+      });
+      const aspectTerms = ctx.getAspectTerms().map(a => a.term);
+      assert.ok(!aspectTerms.includes('design'), 'Initial aspect should be replaced without additive cue');
+      assert.ok(aspectTerms.includes('interact'), 'New aspect should be active');
+    });
+
+    it('positively triggers ellipsis and additive accumulation ONLY on true leading cues', () => {
+      // Leading "and what about" (without pronoun)
+      assert.equal(hasLeadingAdditiveCue('And what about the toxicity?'), true);
+      const dec1 = detectConversationalDecision('And what about the toxicity?', [{ term: 'mercuri' }], [], miniIndex);
+      assert.ok(dec1.guardsTriggered.includes('ellipsis'), 'Leading "and what about" should trigger ellipsis');
+
+      // Leading "also"
+      assert.equal(hasLeadingAdditiveCue('Also tell me about environmental exposure.'), true);
+      const dec2 = detectConversationalDecision('Also tell me about environmental exposure.', [{ term: 'mercuri' }], [], miniIndex);
+      assert.ok(dec2.guardsTriggered.includes('ellipsis'), 'Leading "also" should trigger ellipsis');
+
+      // Leading "as well as"
+      assert.equal(hasLeadingAdditiveCue('As well as its orbital resonance'), true);
+
+      // Verify accumulation when leading cue is present
+      const ctx = new ContextState({ mode: 'v2' });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: 'Mercury planet',
+        entityCandidates: [{ term: 'mercuri', idf: 2.5, titleHitCount: 2, sourceTurn: 1 }],
+        aspectCandidates: [{ term: 'orbit', idf: 2.0, weight: 1.0, sourceTurn: 1 }]
+      });
+      ctx.updateV2({
+        decision: 'CARRY',
+        rawQuery: 'Also tell me about its craters',
+        aspectCandidates: [{ term: 'crater', idf: 2.1, weight: 1.0, sourceTurn: 2 }]
+      });
+      const aspects = ctx.getAspectTerms();
+      assert.equal(aspects.length, 2, 'Aspects should accumulate when leading "also" is present');
+      assert.ok(aspects.some(a => a.term === 'orbit'), 'Retains decayed previous aspect');
+      assert.ok(aspects.some(a => a.term === 'crater'), 'Adds new aspect');
+    });
   });
 });

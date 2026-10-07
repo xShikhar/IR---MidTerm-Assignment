@@ -62,10 +62,15 @@ export function detectConversationalDecision(rawQuery, lockedEntities = [], cont
     };
   }
 
-  // 2. Guard 2: Ellipsis Marker presence
-  const matchedEllipsis = CONFIG.conversation.shift.ellipsisMarkers.filter(m =>
-    queryLower.startsWith(m) || queryLower.includes(m)
-  );
+  // 2. Guard 2: Ellipsis Marker presence with word-boundary matching
+  // Mid-sentence conjunction 'and' must NOT trigger the ellipsis guard; only leading 'and' at query start
+  const matchedEllipsis = CONFIG.conversation.shift.ellipsisMarkers.filter(m => {
+    if (m === 'and') {
+      return /^\s*and\b/i.test(queryLower);
+    }
+    const regex = new RegExp(`\\b${m.replace(/\s+/g, '\\s+')}\\b`, 'i');
+    return regex.test(queryLower);
+  });
   if (matchedEllipsis.length > 0) {
     return {
       decision: 'CARRY',

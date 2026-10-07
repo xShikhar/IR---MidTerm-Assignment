@@ -89,9 +89,14 @@ export function detectTopicShift(rawQuery, contextVector, index, options = {}) {
   );
   const hasPronoun = matchedPronouns.length > 0;
   const isShortQuery = queryWords.length <= CONFIG.conversation.shift.shortQueryLength;
-  const hasEllipsis = CONFIG.conversation.shift.ellipsisMarkers.some(marker =>
-    rawQuery.toLowerCase().startsWith(marker) || rawQuery.toLowerCase().includes(marker)
-  );
+  const rawLower = rawQuery.toLowerCase();
+  const hasEllipsis = CONFIG.conversation.shift.ellipsisMarkers.some(marker => {
+    if (marker === 'and') {
+      return /^\s*and\b/i.test(rawLower);
+    }
+    const regex = new RegExp(`\\b${marker.replace(/\s+/g, '\\s+')}\\b`, 'i');
+    return regex.test(rawLower);
+  });
 
   // 4. Decision Logic:
   // Strong continuation signals: pronoun presence, short ellipsis query, or cosine >= threshold

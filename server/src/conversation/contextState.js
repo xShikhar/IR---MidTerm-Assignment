@@ -29,6 +29,21 @@ import { analyze } from '../index/normalizer.js';
  * @property {number} sourceTurn - Turn where aspect was introduced
  */
 
+/**
+ * Detects whether query begins with an additive linguistic cue.
+ * Additive cues apply ONLY as a leading cue at the start of the query
+ * ('also ...', 'and what about ...', 'as well as ...', 'and ...', 'additionally ...', 'plus ...', 'furthermore ...').
+ * Mid-sentence conjunction 'and' must NOT trigger the additive-aspect rule.
+ *
+ * @param {string} rawQuery
+ * @returns {boolean}
+ */
+export function hasLeadingAdditiveCue(rawQuery) {
+  if (!rawQuery || typeof rawQuery !== 'string') return false;
+  const trimmed = rawQuery.trim();
+  return /^\s*(also|and\s+what\s+about|and|as\s+well\s+as|as\s+well|additionally|plus|furthermore)\b/i.test(trimmed);
+}
+
 export class ContextState {
   /**
    * @param {Object} [options]
@@ -77,12 +92,9 @@ export class ContextState {
    */
   updateV2({ decision, rawQuery = '', entityCandidates = [], aspectCandidates = [] }) {
     this.turnCounter++;
-    const queryLower = (rawQuery || '').toLowerCase();
-    const queryWords = queryLower.match(/[a-z0-9]+/g) || [];
-
-    const hasAdditiveCue = CONFIG.novelty.aspect.additiveCues.some(cue =>
-      queryWords.includes(cue) || queryLower.includes(cue)
-    );
+    // Additive cues apply ONLY as a leading cue ('also ...', 'and what about ...', 'as well as ...' at start)
+    // Mid-sentence conjunction 'and' must NOT trigger the additive-aspect rule
+    const hasAdditiveCue = hasLeadingAdditiveCue(rawQuery);
 
     if (decision === 'reset' || decision === 'entity_switch' || this.entityTerms.size === 0) {
       // 1. Replace locked entity with new candidate(s)
