@@ -438,20 +438,14 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── qrels.json              # Relevance judgments storage (2,297 LLM-judged pairs; no human validation)
 │   └── splits.json             # Stratified train/dev/test split definition (FROZEN)
 ├── docs/                       # Project documentation and submission materials
-│   ├── audit/                  # Audit verification reports (CORE_VERIFICATION, FINAL_ACCEPTANCE, PROGRESS)
-│   ├── notes/                  # Tuning plans, detector design, and audit notes
 │   ├── report/                 # System documentation chapters
-│   ├── video-script.md         # Video presentation script matching hackathon specs
-│   ├── RESULTS_FOR_REPORT.md   # Comprehensive empirical results and statistics compilation
-│   ├── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
-│   └── SUBMISSION_CHECKLIST.md # Submission verification checklist
+│   └── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
 ├── eval/                       # Independent evaluation workspace
 │   ├── src/metrics.js          # P@K, Recall, MRR, nDCG calculation
 │   ├── src/metrics/            # Novelty@K, Fidelity, and Decision Classification
 │   ├── src/significance.js     # Paired bootstrap & Wilcoxon signed-rank tests
 │   ├── src/systemsRunner.js    # S0-S5, A0-A6, R1-R2 benchmark execution
 │   └── output/test_final/      # Final TEST evaluation artifacts (11 CSV and SVG files)
-├── report_latex/               # Publication-grade LaTeX source files and bibliography
 ├── scripts/                    # Development runner scripts (dev.js, buildReportPdf.js, verifyFrozenData.js)
 ├── server/                     # Core IR engine and API workspace
 │   ├── scripts/                # Data preparation, index building, and sweeps
