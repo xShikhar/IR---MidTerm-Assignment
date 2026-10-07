@@ -94,11 +94,11 @@ npm test
 npm run eval
 ```
 
-5. Compile publication-grade 8-page PDF report:
+5. Compile PDF deliverable:
 ```bash
 npm run build:report
 ```
-*(Generates `TurnTrace_Report.pdf` at root and in `docs/report/`, formatted strictly within the 8-page assignment limit).*
+*(Generates `TurnTrace_Report.pdf` at project root).*
 
 6. Launch local application:
 ```bash
@@ -440,7 +440,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 ├── docs/                       # Project documentation and submission materials
 │   ├── audit/                  # Audit verification reports (CORE_VERIFICATION, FINAL_ACCEPTANCE, PROGRESS)
 │   ├── notes/                  # Tuning plans, detector design, and audit notes
-│   ├── report/                 # Chapters 01-07 and compiled TurnTrace_Report.pdf
+│   ├── report/                 # System documentation chapters
 │   ├── video-script.md         # Video presentation script matching hackathon specs
 │   ├── RESULTS_FOR_REPORT.md   # Comprehensive empirical results and statistics compilation
 │   ├── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
@@ -461,7 +461,7 @@ npm run test --workspace=eval     # 20 evaluation tests
 │       ├── conversation/       # Decision detector, entity lock, aspect context, clarifier
 │       ├── index/              # Tokenizer, Porter stemmer, postings, serializer
 │       └── retrieval/          # Cosine, BM25, Boolean, title filter, seen penalty
-├── TurnTrace_Report.pdf        # Compiled 8-page assignment report (PDF deliverable)
+├── TurnTrace_Report.pdf        # Compiled assignment PDF deliverable
 └── package.json                # Root npm workspace configuration
 ```
 
@@ -485,15 +485,38 @@ npm run test --workspace=eval     # 20 evaluation tests
 - Expand corpus to include general Wikipedia articles beyond the four initial domains.
 
 
-## 12. Credits & Declarations
+## 12. Credits, Team Ownership & AI-Use Declaration
 
+### 12.1 Dataset & Third-Party Credits
 - **Dataset Credit:** Sourced from English Wikipedia articles via the Wikimedia Action API and Hugging Face `wikimedia/wikipedia` snapshot (`20231101.en`), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and GFDL.
 - **Third-Party Libraries:**
   - `express` (^4.21.2) & `cors` (^2.8.5): REST API server.
   - `react` (^18.3.1) & `vite` (^5.4.11): Trace inspector UI frontend.
   - Core IR algorithms (Porter stemmer, tokenizer, inverted index, cosine similarity, BM25, min-heap, Boolean intersection, RRF) are implemented entirely from first principles with zero search engine libraries.
-- **Team Ownership & AI Declaration:** Team member roles, work division, and academic AI assistance disclosures are documented in [docs/report/07_work_division_and_ai_declaration.md](file:///c:/Project/IR-Assignment/docs/report/07_work_division_and_ai_declaration.md).
-- **License:** Root `package.json` declares an MIT license (no standalone LICENSE file committed).
+- **License:** Root `package.json` declares an MIT license.
+
+### 12.2 Team Ownership Matrix
+The table below outlines the primary functional divisions of the TurnTrace architecture:
+
+| Member Role | Component Track | Key Deliverables & Modules | Video Presentation Focus |
+|---|---|---|---|
+| **Member 1** <br>*(Placeholder: Name / Roll No.)* | **Indexing, Data & Preprocessing** | • Corpus acquisition & Wikipedia structuring (`prepareCorpus.js`)<br>• Lexical tokenizer & positional tracking (`tokenizer.js`)<br>• Martin Porter (1980) 5-step stemmer (`porterStemmer.js`)<br>• Multi-zone inverted index & postings (`postings.js`, `builder.js`)<br>• Precomputed champion lists (`championLists.js`)<br>• Disk serializer & stats (`serializer.js`, `buildIndex.js`)<br>• Unit tests (`server/test/index.test.js`) | Offline indexing pipeline, multi-zone tokenization, positional postings, and champion lists. |
+| **Member 2** <br>*(Placeholder: Name / Roll No.)* | **Retrieval, Scoring & Fusion Engine** | • SMART `lnc.ltc` vector space cosine engine (`cosine.js`)<br>• Okapi BM25 scoring model (`bm25.js`)<br>• Binary min-heap top-K selector (`heap.js`)<br>• Index elimination IDF pruner (`indexElimination.js`)<br>• Boolean engine with DF-ordered intersection (`boolean.js`)<br>• Positional phrase query processor (`phrase.js`)<br>• Reciprocal Rank Fusion & Score-Sum (`fusion.js`)<br>• Unit tests (`server/test/retrieval.test.js`) | Scoring equations, Euclidean length normalization vs BM25, DF-ordered Boolean intersection, and RRF. |
+| **Member 3** <br>*(Placeholder: Name / Roll No.)* | **Conversational Layer & Tracking** | • Entity lock & title-zone filter (`entityExtractor.js`, `titleFilter.js`)<br>• Aspect-aware context state & replacement (`contextState.js`)<br>• Conversational decision detector (`decisionDetector.js`)<br>• Provenance-aware query rewriter (`rewriter.js`)<br>• Multi-part query decomposer (`decomposer.js`)<br>• Leader/follower cluster clarifier (`clarifier.js`)<br>• Unit tests (`server/test/conversation.test.js`, `server/test/entityLock.test.js`) | Entity lock vs aspect separation, title-zone hard filtering with fallback, and conversational decision logic. |
+| **Member 4** <br>*(Placeholder: Name / Roll No.)* | **Evaluation, API & Trace Inspector UI** | • Qrels loader & pooling sheet generator (`qrelsLoader.js`, `generatePoolingSheet.js`)<br>• IR metrics engine: P@k, Recall, MRR, nDCG, Novelty@k, Fidelity (`metrics.js`, `fidelity.js`, `noveltyAtK.js`)<br>• Benchmark runner across systems S0–S5, R1–R2, A0–A6 (`systemsRunner.js`)<br>• Paired bootstrap & Wilcoxon significance testing (`significance.js`)<br>• Express REST API & session manager (`server.js`, `traceAssembly.js`)<br>• React + Vite Trace Inspector interface (`client/src`)<br>• Integration tests (`server/test/api.test.js`, `eval/test/metrics.test.js`, `eval/test/noveltyMetrics.test.js`) | Evaluation benchmark results, ablation study findings, live interactive trace walkthrough, and failure case. |
+
+### 12.3 Academic AI-Use Declaration
+In strict accordance with academic integrity guidelines, the exact extent and nature of AI assistance utilized in this project is declared as follows:
+
+1. **AI Tools Utilized:**
+   - **Google Antigravity IDE (Gemini agent):** Generated implementation code, test suites, documentation drafts, the 14 multi-turn conversational benchmark scenarios, and reference gold rewrites (as recorded in the Git history).
+   - **Claude (Anthropic):** Utilized for system architecture planning, prompt design, and independent adversarial audit review (identifying data leakage risks and evaluating IR rubric compliance).
+
+2. **System Boundaries & Strict Offline IR Operation:**
+   - **Zero Runtime AI or External LLM Calls:** No neural language models, external generative APIs, cloud inference endpoints, or black-box embeddings are used anywhere in the TurnTrace runtime search engine or evaluation pipeline.
+   - **Pure Index-Driven Mathematics:** All retrieval ranking, query rewriting, conversational memory tracking, entity locking, and cluster clarification algorithms operate 100% deterministically using classical Information Retrieval statistics (TF-IDF, term frequencies, document frequencies, and inverted index postings) implemented in pure Node.js ES modules.
+   - **Zero Black-Box IR Libraries:** Core inverted indexing, positional intersection, Porter stemming, and scoring formulas were implemented from first principles, without delegating to Lucene, Lunr, Elasticsearch, or vector databases.
+   - **Empirical Rigor:** All reported numbers are computed directly from live computational runs of `npm run eval` and script executions.
 
 ## 13. Troubleshooting
 
