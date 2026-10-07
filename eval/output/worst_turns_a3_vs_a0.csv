@@ -1,6 +1,0 @@
-Rank,Turn_Key,Conversation_ID,Turn_ID,Query,A0_nDCG10,A3_nDCG10,Delta_nDCG10,Failure_Mode,Root_Cause
-1,"conv_10_turn_04","conv_10",turn_04,"Who painted the Mona Lisa in Florence?",1,0,-1,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
-2,"conv_10_turn_05","conv_10",turn_05,"What museum is it exhibited in today?",1,0,-1,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
-3,"conv_01_turn_03","conv_01",turn_03,"What about cosine normalization?",0.3869,0,-0.3869,"Hard-lock title filter fallback","Title constraint yielded < 10 candidates; soft retrieval fallback slightly demoted gold doc"
-4,"conv_10_turn_03","conv_10",turn_03,"Who purified it for mass production in Oxford?",0.5779,0.3333,-0.2445,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"
-5,"conv_07_turn_01","conv_07",turn_01,"Who invented the movable type printing press in Europe?",0.9397,0.7138,-0.226,"Context bag residual match","Legacy decayed bag serendipitously retained terms that matched body text of target passage"

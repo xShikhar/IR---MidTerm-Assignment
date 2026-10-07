@@ -1,6 +1,0 @@
-Subset_Name,Turn_Count,A0_P@10,A3_P@10,A0_nDCG@10,A3_nDCG@10,A0_Novelty@10,A3_Novelty@10
-"Turns with >=2 Aspect Changes",17,0.000,0.5176,0.000,0.3814,0.000,0.4882
-"Entity Switch Turns (disjoint entity)",2,0.000,0.5500,0.000,0.6445,0.000,0.8500
-"Ambiguous Entity Turns",1,0.9000,1.0000,0.9364,1.0000,0.9000,0.9000
-"Pronoun / Anaphora Follow-Ups",8,0.4375,0.4375,0.3196,0.2141,0.8125,0.4000
-"Hard-Lock Title Filter Fallback (<10 candidates)",8,N/A,N/A,N/A,N/A,N/A,N/A

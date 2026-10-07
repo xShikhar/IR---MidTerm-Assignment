@@ -1,7 +1,0 @@
-Comparison,Metric,Delta,Bootstrap_pValue,95_CI_Lower,95_CI_Upper,Wilcoxon_pValue,W_stat,NonZero_Pairs,Sample_Size_n,Is_Significant
-"A3 (Headline) vs A0 (Legacy Bag)","nDCG@10",-0.0673,0.227,-0.1796,0.0352,0.4093,74,19,30,false
-"A3 (Headline) vs A0 (Legacy Bag)","P@5",0,1,-0.1268,0.1267,1,17.5,8,30,false
-"A3 (Headline) vs A0 (Legacy Bag)","P@10",0.0167,0.811,-0.11,0.1501,0.9371,37.5,12,30,false
-"A3 (Headline) vs A0 (Legacy Bag)","Recall@20",-0.0237,0.691,-0.1405,0.0972,0.6008,81.5,19,30,false
-"A3 (Headline) vs A0 (Legacy Bag)","MRR",-0.026,0.643,-0.1389,0.079,0.7995,12,7,30,false
-"A3 (Headline) vs S0 (Raw Query)","nDCG@10",-0.0635,0.276,-0.1798,0.0474,0.542,71,18,30,false

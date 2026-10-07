@@ -1,3 +1,0 @@
-Configuration,Seen_Penalty_Beta,Novelty@10,P@10,TradeOff_Description
-A3_Headline_NoPenalty,0.00,0.6500,0.5467,"Preserves raw document scores; allows passage repetition across turns"
-A4_Headline_SeenPenalty,0.30,0.8033,0.49,"Demotes seen document scores by 30%; discovers fresh evidence; slight P@10 risk if doc re-needed"
