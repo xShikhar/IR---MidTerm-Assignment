@@ -19,28 +19,41 @@ console.log('=== TurnTrace Frozen Data Verification ===');
 let allPassed = true;
 
 for (const [filename, expectedSha] of Object.entries(EXPECTED_HASHES)) {
+  const directPath = path.join(rootDir, 'data', filename);
   const gzPath = path.join(rootDir, 'data', 'frozen', `${filename}.gz`);
-  if (!fs.existsSync(gzPath)) {
-    console.error(`❌ Missing frozen archive: ${gzPath}`);
-    allPassed = false;
-    continue;
-  }
 
-  const gzBuffer = fs.readFileSync(gzPath);
-  const uncompressed = zlib.gunzipSync(gzBuffer);
-  const actualSha = crypto.createHash('sha256').update(uncompressed).digest('hex');
+  if (fs.existsSync(directPath)) {
+    const fileBuffer = fs.readFileSync(directPath);
+    const actualSha = crypto.createHash('sha256').update(fileBuffer).digest('hex');
+    if (actualSha.toLowerCase() === expectedSha.toLowerCase()) {
+      console.log(`✔ data/${filename}: SHA-256 match (${actualSha})`);
+    } else {
+      console.error(`❌ data/${filename}: SHA-256 mismatch!`);
+      console.error(`   Expected: ${expectedSha}`);
+      console.error(`   Actual:   ${actualSha}`);
+      allPassed = false;
+    }
+  } else if (fs.existsSync(gzPath)) {
+    const gzBuffer = fs.readFileSync(gzPath);
+    const uncompressed = zlib.gunzipSync(gzBuffer);
+    const actualSha = crypto.createHash('sha256').update(uncompressed).digest('hex');
 
-  if (actualSha.toLowerCase() === expectedSha.toLowerCase()) {
-    console.log(`✔ ${filename}: SHA-256 match (${actualSha})`);
-    if (unpack) {
-      const targetPath = path.join(rootDir, 'data', filename);
-      fs.writeFileSync(targetPath, uncompressed);
-      console.log(`  Unpacked to: ${targetPath}`);
+    if (actualSha.toLowerCase() === expectedSha.toLowerCase()) {
+      console.log(`✔ ${filename}.gz: SHA-256 match (${actualSha})`);
+      if (unpack) {
+        fs.writeFileSync(directPath, uncompressed);
+        console.log(`  Unpacked to: ${directPath}`);
+      }
+    } else {
+      console.error(`❌ ${filename}.gz: SHA-256 mismatch!`);
+      console.error(`   Expected: ${expectedSha}`);
+      console.error(`   Actual:   ${actualSha}`);
+      allPassed = false;
     }
   } else {
-    console.error(`❌ ${filename}: SHA-256 mismatch!`);
-    console.error(`   Expected: ${expectedSha}`);
-    console.error(`   Actual:   ${actualSha}`);
+    console.error(`❌ Missing data file: data/${filename}`);
+    console.error(`   Please download ${filename} into data/ from the official Google Drive folder:`);
+    console.error(`   https://drive.google.com/drive/folders/1v6gZbclgtuP-jE0E5L60N5V7Aucx-5RY?usp=drive_link`);
     allPassed = false;
   }
 }
