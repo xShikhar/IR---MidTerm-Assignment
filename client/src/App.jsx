@@ -23,6 +23,10 @@ const DEFAULT_QUICK_PROMPTS = [
   'Compare NIRCam and MIRI instruments.'
 ];
 
+function generateSessionId() {
+  return 'session_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now();
+}
+
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
@@ -47,7 +51,7 @@ export default function App() {
   // Scenario Player State
   const [activeScenario, setActiveScenario] = useState(null);
 
-  const sessionId = 'live_demo_session';
+  const [sessionId, setSessionId] = useState(() => generateSessionId());
 
   // Load initial health, stats, and benchmark conversations
   useEffect(() => {
@@ -205,6 +209,7 @@ export default function App() {
     setMessages([]);
     setActiveTrace(null);
     setActiveScenario(null);
+    setSessionId(generateSessionId());
   };
 
   const handleSelectScenario = async (scenario) => {

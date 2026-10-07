@@ -97,4 +97,51 @@ describe('Express REST API Endpoints', () => {
     assert.equal(data.trace.retrievalExecution.model, 'bm25');
     assert.equal(data.trace.seenPassagePenalty.enabled, true);
   });
+
+  it('maintains strict isolation between concurrent distinct session IDs', async () => {
+    const s1 = 'session_iso_a_' + Date.now();
+    const s2 = 'session_iso_b_' + Date.now();
+
+    // Turn 1 on Session 1: Mercury
+    const res1 = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: 'What is Mercury in our Solar System?', sessionId: s1 })
+    });
+    const d1 = await res1.json();
+    assert.equal(d1.trace.turn, 1);
+    assert.equal(d1.trace.entityLock.lockedEntities[0].term, 'mercuri');
+
+    // Turn 1 on Session 2: PageRank
+    const res2 = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: 'How does the PageRank algorithm rank web pages?', sessionId: s2 })
+    });
+    const d2 = await res2.json();
+    assert.equal(d2.trace.turn, 1);
+    assert.notEqual(d2.trace.entityLock.lockedEntities[0].term, 'mercuri');
+
+    // Turn 2 on Session 1: Anaphoric follow-up
+    const res1t2 = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: 'How close is it to the Sun?', sessionId: s1 })
+    });
+    const d1t2 = await res1t2.json();
+    assert.equal(d1t2.trace.turn, 2);
+    assert.equal(d1t2.trace.entityLock.decision, 'CARRY');
+    assert.equal(d1t2.trace.entityLock.lockedEntities[0].term, 'mercuri');
+
+    // Turn 2 on Session 2: Follow-up on PageRank
+    const res2t2 = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: 'Who invented the algorithm at Stanford?', sessionId: s2 })
+    });
+    const d2t2 = await res2t2.json();
+    assert.equal(d2t2.trace.turn, 2);
+    assert.notEqual(d2t2.trace.entityLock.lockedEntities[0].term, 'mercuri');
+  });
 });
+
