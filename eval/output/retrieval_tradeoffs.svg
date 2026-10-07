@@ -1,0 +1,118 @@
+<svg width="880" height="500" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family: Inter, system-ui, sans-serif;">
+  <text x="440" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#111827">Retrieval Trade-Offs: Precision@10 vs. Novelty@10 Discovery</text>
+  
+  <!-- Axes and Grid -->
+  <line x1="70" y1="60" x2="70" y2="440" stroke="#9ca3af" stroke-width="1.5" />
+  <line x1="70" y1="440" x2="820" y2="440" stroke="#9ca3af" stroke-width="1.5" />
+
+  <!-- Y-Axis labels (P@10) -->
+  <text x="25" y="250" font-size="13" font-weight="600" fill="#374151" transform="rotate(-90 25 250)" text-anchor="middle">Precision@10</text>
+  <text x="60" y="65" font-size="11" text-anchor="end" fill="#6b7280">1.0</text>
+  <text x="60" y="255" font-size="11" text-anchor="end" fill="#6b7280">0.5</text>
+  <text x="60" y="445" font-size="11" text-anchor="end" fill="#6b7280">0.0</text>
+
+  <!-- X-Axis labels (Novelty@10) -->
+  <text x="445" y="485" font-size="13" font-weight="600" fill="#374151" text-anchor="middle">Novelty@10 (Fresh Passages Ratio)</text>
+  <text x="70" y="460" font-size="11" text-anchor="middle" fill="#6b7280">0.50</text>
+  <text x="445" y="460" font-size="11" text-anchor="middle" fill="#6b7280">0.75</text>
+  <text x="820" y="460" font-size="11" text-anchor="middle" fill="#6b7280">1.00</text>
+
+  <!-- Horizontal Gridlines -->
+  <line x1="70" y1="155" x2="820" y2="155" stroke="#f1f5f9" stroke-dasharray="3" />
+  <line x1="70" y1="250" x2="820" y2="250" stroke="#f1f5f9" stroke-dasharray="3" />
+  <line x1="70" y1="345" x2="820" y2="345" stroke="#f1f5f9" stroke-dasharray="3" />
+
+  <!-- Data Points -->
+  
+      <g>
+        <circle cx="750" cy="242.4" r="9" fill="#475569" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>S0: Novelty=0.953, P@10=0.520, nDCG@10=0.471</title>
+        </circle>
+        <text x="750" y="229.4" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">S0</text>
+      </g>
+    
+      <g>
+        <circle cx="70" cy="223.4" r="9" fill="#475569" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>S1: Novelty=0.397, P@10=0.570, nDCG@10=0.423</title>
+        </circle>
+        <text x="70" y="210.4" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">S1</text>
+      </g>
+    
+      <g>
+        <circle cx="649.9999999999999" cy="238.6" r="9" fill="#475569" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>S2: Novelty=0.887, P@10=0.530, nDCG@10=0.475</title>
+        </circle>
+        <text x="649.9999999999999" y="225.6" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">S2</text>
+      </g>
+    
+      <g>
+        <circle cx="465.0000000000001" cy="200.6" r="9" fill="#10b981" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>S5: Novelty=0.763, P@10=0.630, nDCG@10=0.571</title>
+        </circle>
+        <text x="465.0000000000001" y="187.6" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">S5</text>
+      </g>
+    
+      <g>
+        <circle cx="649.9999999999999" cy="238.6" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A0: Novelty=0.887, P@10=0.530, nDCG@10=0.475</title>
+        </circle>
+        <text x="649.9999999999999" y="225.6" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A0</text>
+      </g>
+    
+      <g>
+        <circle cx="454.9999999999997" cy="219.60000000000002" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A1: Novelty=0.757, P@10=0.580, nDCG@10=0.462</title>
+        </circle>
+        <text x="454.9999999999997" y="206.60000000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A1</text>
+      </g>
+    
+      <g>
+        <circle cx="94.99999999999974" cy="238.6" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A2: Novelty=0.517, P@10=0.530, nDCG@10=0.384</title>
+        </circle>
+        <text x="94.99999999999974" y="225.6" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A2</text>
+      </g>
+    
+      <g>
+        <circle cx="294.9999999999999" cy="232.25400000000002" r="9" fill="#2563eb" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A3: Novelty=0.650, P@10=0.547, nDCG@10=0.408</title>
+        </circle>
+        <text x="294.9999999999999" y="219.25400000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A3</text>
+      </g>
+    
+      <g>
+        <circle cx="524.9999999999998" cy="253.8" r="9" fill="#7c3aed" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A4: Novelty=0.803, P@10=0.490, nDCG@10=0.379</title>
+        </circle>
+        <text x="524.9999999999998" y="240.8" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A4</text>
+      </g>
+    
+      <g>
+        <circle cx="219.99999999999997" cy="218.34599999999998" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A5: Novelty=0.600, P@10=0.583, nDCG@10=0.454</title>
+        </circle>
+        <text x="219.99999999999997" y="205.34599999999998" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A5</text>
+      </g>
+    
+      <g>
+        <circle cx="764.9999999999998" cy="236.05400000000003" r="9" fill="#6366f1" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>A6: Novelty=0.963, P@10=0.537, nDCG@10=0.475</title>
+        </circle>
+        <text x="764.9999999999998" y="223.05400000000003" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">A6</text>
+      </g>
+    
+      <g>
+        <circle cx="139.99999999999994" cy="298.14599999999996" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>R1: Novelty=0.547, P@10=0.373, nDCG@10=0.301</title>
+        </circle>
+        <text x="139.99999999999994" y="285.14599999999996" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R1</text>
+      </g>
+    
+      <g>
+        <circle cx="289.9999999999998" cy="232.25400000000002" r="9" fill="#f59e0b" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
+          <title>R2: Novelty=0.647, P@10=0.547, nDCG@10=0.408</title>
+        </circle>
+        <text x="289.9999999999998" y="219.25400000000002" font-size="11" font-weight="600" text-anchor="middle" fill="#1e293b">R2</text>
+      </g>
+    
+</svg>

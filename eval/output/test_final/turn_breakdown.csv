@@ -123,20 +123,20 @@ S3,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 S3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,0.7,0.27586206896551724,1,0.7365786958274029,0.8,CARRY,false
 S3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.8421052631578947,1,0.903973569046081,0.5,CARRY,false
 S3,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,0.9,0.6,1,0.5515415664444604,0.8,CARRY,false
-S3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0.8,0.7,0.5357142857142857,1,0.3557257189753986,0.9,CARRY,false
+S3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 S3,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 S3,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 S3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,0,0,0,0.9,CARRY,false
 S3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0.4,0.2,0.041666666666666664,1,0.14623379845101242,0.4,CARRY,false
-S3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0.4,0.2,0.05714285714285714,1,0.1243491655298145,0.1,CARRY,false
+S3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",0.2,0.1,0.02857142857142857,0.25,0.038615684613617494,0.2,CARRY,false
 S3,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 S3,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.4583333333333333,1,0.9086768598011256,1,reset,false
 S3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.40540540540540543,1,0.3333333333333333,0.1,CARRY,false
 S3,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.3783783783783784,1,0.3333333333333333,0.1,CARRY,false
 S3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.4,1,0.4452483447405679,0.1,CARRY,false
 S3,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-S3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,0.7222222222222222,1,0.8312849666788911,0.7,CARRY,false
-S3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6190476190476191,1,0.9308177245318817,0.5,CARRY,false
+S3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,0.6,0.5,1,0.6415362406937476,0.8,CARRY,false
+S3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,0.9,0.6190476190476191,1,0.8569254760893347,0.5,CARRY,false
 S3,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6538461538461539,1,0.8077452990704522,0.6,CARRY,false
 S3,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,0.9,0.6296296296296297,1,0.742550897501088,0.8,CARRY,false
 S3,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",1,1,0.8461538461538461,1,0.9008240627729516,1,CARRY,false
@@ -152,8 +152,8 @@ S3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 S3,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 S3,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 S3,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.6,0.4,0.17857142857142858,1,0.4641815239468848,1,CARRY,true
-S3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.3157894736842105,1,0.3599537554429899,1,CARRY,true
-S3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+S3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+S3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 S3,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 S3,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,0.8,0.36,1,0.8084206044661075,0.9,CARRY,false
 S3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,0.8,0.2857142857142857,1,0.7277583895964397,0.6,CARRY,false
@@ -243,19 +243,19 @@ A1,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 A1,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,1,0.5517241379310345,1,0.5985118169482979,0.4,CARRY,false
 A1,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.7368421052631579,1,0.8089166488796022,0.5,CARRY,false
 A1,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,1,0.68,1,0.613816622381599,0.7,CARRY,false
-A1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",1,1,0.5,1,0.9074250374176303,0.5,CARRY,false
+A1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.8,0.7,0.39285714285714285,1,0.3950115433379226,1,entity_switch,false
 A1,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.875,1,0.9527538510341418,1,CARRY,false
 A1,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.4,0.4,0.24,1,0.34968230868246897,1,reset,false
 A1,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0.4,0.4,0.2,1,0.4351098955930419,0.9,CARRY,false
 A1,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",1,1,0.375,1,0.40738844762703974,0.7,CARRY,false
-A1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",1,1,0.4,1,0.589903003558021,0.6,CARRY,false
+A1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",1,0.8,0.34285714285714286,1,0.6557789145523051,0.6,CARRY,false
 A1,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 A1,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.5416666666666666,1,0.9510907186004267,1,reset,false
 A1,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.5135135135135135,1,0.5368232559598006,0.3,CARRY,false
 A1,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.4864864864864865,1,0.38224261473290666,0.1,CARRY,false
 A1,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.5,1,0.4452483447405679,0.2,CARRY,false
 A1,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-A1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",0.8,0.7,0.6666666666666666,1,0.569847129379916,0.7,CARRY,false
+A1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,0.7,0.6666666666666666,1,0.6663365314597631,0.7,CARRY,false
 A1,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6666666666666666,1,0.8618956368246671,0.3,CARRY,false
 A1,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6153846153846154,1,0.7490496219327154,0.2,CARRY,false
 A1,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,1,0.6296296296296297,1,0.7515427294728838,0.5,CARRY,false
@@ -272,8 +272,8 @@ A1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 A1,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.8888888888888888,1,0.955830517697074,1,CARRY,false
 A1,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,false
 A1,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,false
-A1,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.34210526315789475,1,0.3599537554429899,0.8,CARRY,false
-A1,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.5,1,1,1,entity_switch,false
+A1,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",0.8,0.8,0.39473684210526316,1,0.7738388623166169,1,reset,false
+A1,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.5,1,1,1,reset,false
 A1,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.9444444444444444,1,0.6021651957778734,1,CARRY,false
 A1,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,1,0.6,1,0.9909331158293705,0.9,CARRY,false
 A1,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,1,0.4857142857142857,1,0.7687644635358547,0.8,CARRY,false
@@ -283,7 +283,7 @@ A2,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 A2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,1,0.6206896551724138,1,0.44987000995377047,0.2,CARRY,false
 A2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop orbit locat",1,1,0.7894736842105263,1,0.7946354015191878,0.5,CARRY,false
 A2,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop orbit locat tell primari mirror size",1,1,0.56,1,0.665275985912343,0.5,CARRY,false
-A2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop orbit locat tell primari mirror size carri infrar astronomi",1,1,0.6785714285714286,1,0.6618412813250388,0.6,CARRY,false
+A2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 A2,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 A2,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 A2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut board",0,0,0,0,0,0.6,CARRY,false
@@ -312,8 +312,8 @@ A2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 A2,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A2,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
-A2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.34210526315789475,1,0.3599537554429899,0.8,CARRY,true
-A2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+A2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+A2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 A2,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 A2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi claud shannon formula",1,1,0.56,1,0.8697297164089399,0.4,CARRY,false
 A2,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform claud shannon formula base logarithm bit unit",1,1,0.45714285714285713,1,0.5733705712589113,0.2,CARRY,false
@@ -323,19 +323,19 @@ A3,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 A3,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,1,0.6206896551724138,1,0.44987000995377047,0.2,CARRY,false
 A3,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.7368421052631579,1,0.8089166488796022,0.4,CARRY,false
 A3,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,1,0.68,1,0.613816622381599,0.6,CARRY,false
-A3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",1,0.9,0.5714285714285714,1,0.6357085249988136,0.7,CARRY,false
+A3,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 A3,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 A3,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 A3,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,0,0,0,0.7,CARRY,false
 A3,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0.4,0.2,0.041666666666666664,1,0.1243491655298145,0.2,CARRY,false
-A3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0.4,0.2,0.05714285714285714,1,0.1243491655298145,0.1,CARRY,false
+A3,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",0.2,0.1,0.02857142857142857,0.25,0.038615684613617494,0.2,CARRY,false
 A3,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 A3,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.4583333333333333,1,0.9086768598011256,1,reset,false
 A3,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.40540540540540543,1,0.3333333333333333,0.1,CARRY,false
 A3,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.3783783783783784,1,0.3333333333333333,0.1,CARRY,false
 A3,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.4,1,0.4452483447405679,0.1,CARRY,false
 A3,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-A3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,1,1,0.8282984720808143,0.7,CARRY,false
+A3,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,1,0.8333333333333334,1,0.842966297909557,0.4,CARRY,false
 A3,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6666666666666666,1,0.8618956368246671,0.3,CARRY,false
 A3,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6538461538461539,1,0.7490496219327154,0.2,CARRY,false
 A3,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,1,0.6296296296296297,1,0.7515427294728838,0.5,CARRY,false
@@ -352,8 +352,8 @@ A3,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 A3,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A3,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A3,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
-A3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.34210526315789475,1,0.3599537554429899,0.8,CARRY,true
-A3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+A3,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+A3,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 A3,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 A3,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,1,0.56,1,0.896552850941831,0.8,CARRY,false
 A3,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,1,0.4,1,0.7011902929248582,0.4,CARRY,false
@@ -363,20 +363,20 @@ A4,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 A4,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,0.7,0.27586206896551724,1,0.7365786958274029,0.8,CARRY,false
 A4,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.8421052631578947,1,0.903973569046081,0.5,CARRY,false
 A4,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,0.9,0.6,1,0.5515415664444604,0.8,CARRY,false
-A4,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",0.8,0.7,0.5357142857142857,1,0.3557257189753986,0.9,CARRY,false
+A4,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 A4,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 A4,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 A4,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,0,0,0,0.9,CARRY,false
 A4,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0.4,0.2,0.041666666666666664,1,0.14623379845101242,0.4,CARRY,false
-A4,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0.4,0.2,0.05714285714285714,1,0.1243491655298145,0.1,CARRY,false
+A4,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",0.2,0.1,0.02857142857142857,0.25,0.038615684613617494,0.2,CARRY,false
 A4,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 A4,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.4583333333333333,1,0.9086768598011256,1,reset,false
 A4,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.40540540540540543,1,0.3333333333333333,0.1,CARRY,false
 A4,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.3783783783783784,1,0.3333333333333333,0.1,CARRY,false
 A4,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.4,1,0.4452483447405679,0.1,CARRY,false
 A4,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-A4,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,0.7222222222222222,1,0.8312849666788911,0.7,CARRY,false
-A4,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6190476190476191,1,0.9308177245318817,0.5,CARRY,false
+A4,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,0.6,0.5,1,0.6415362406937476,0.8,CARRY,false
+A4,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,0.9,0.6190476190476191,1,0.8569254760893347,0.5,CARRY,false
 A4,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6538461538461539,1,0.8077452990704522,0.6,CARRY,false
 A4,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,0.9,0.6296296296296297,1,0.742550897501088,0.8,CARRY,false
 A4,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",1,1,0.8461538461538461,1,0.9008240627729516,1,CARRY,false
@@ -392,8 +392,8 @@ A4,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 A4,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A4,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 A4,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.6,0.4,0.17857142857142858,1,0.4641815239468848,1,CARRY,true
-A4,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.3157894736842105,1,0.3599537554429899,1,CARRY,true
-A4,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+A4,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+A4,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 A4,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 A4,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,0.8,0.36,1,0.8084206044661075,0.9,CARRY,false
 A4,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,0.8,0.2857142857142857,1,0.7277583895964397,0.6,CARRY,false
@@ -403,19 +403,19 @@ A5,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 A5,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,1,0.6206896551724138,1,0.44987000995377047,0.2,CARRY,false
 A5,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.7368421052631579,1,0.8089166488796022,0.4,CARRY,false
 A5,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,1,0.68,1,0.613816622381599,0.6,CARRY,false
-A5,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",1,0.9,0.5714285714285714,1,0.6357085249988136,0.7,CARRY,false
+A5,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop",0.8,0.9,0.5,1,0.4485409469707844,0.7,CARRY,false
 A5,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 A5,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board? apollo 11",1,1,0.48,1,0.6943559465628251,0.8,CARRY,false
 A5,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? apollo 11",1,1,0.4,1,1,0.5,CARRY,false
 A5,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? apollo 11",1,1,0.20833333333333334,1,0.40738844762703974,0.7,CARRY,false
-A5,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? apollo 11 long spend surfac",1,1,0.4,1,0.5278365012621233,0.6,CARRY,false
+A5,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? apollo 11",1,1,0.4,1,0.40738844762703974,0.6,CARRY,false
 A5,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 A5,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery? mrna vaccin",1,1,0.5,1,0.7767952357703931,0.7,CARRY,false
 A5,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? mrna vaccin",1,1,0.32432432432432434,1,0.8824665955977138,0.1,CARRY,false
 A5,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? mrna vaccin",1,1,0.35135135135135137,1,0.8302010829452636,0.2,CARRY,false
 A5,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? mrna vaccin",1,1,0.43333333333333335,1,0.6245979154952275,0.3,CARRY,false
 A5,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-A5,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,1,1,0.8282984720808143,0.7,CARRY,false
+A5,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,1,0.8333333333333334,1,0.842966297909557,0.4,CARRY,false
 A5,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6666666666666666,1,0.8618956368246671,0.3,CARRY,false
 A5,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6538461538461539,1,0.7490496219327154,0.2,CARRY,false
 A5,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,1,0.6296296296296297,1,0.7515427294728838,0.5,CARRY,false
@@ -432,7 +432,7 @@ A5,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 A5,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 A5,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm? neural network biolog artifici differ brain",1,1,0.37037037037037035,1,0.3480974911723065,0.2,CARRY,false
 A5,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? neural network",1,1,0.42857142857142855,1,0.621404173964477,0.2,CARRY,false
-A5,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. neural network biolog plausibl debat",1,0.9,0.3157894736842105,1,0.3589414359703188,0.5,CARRY,false
+A5,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. neural network biolog",1,1,0.3157894736842105,1,0.44081392323570057,0.4,CARRY,false
 A5,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work? neural network biolog",1,1,0.38461538461538464,1,0.3333333333333333,0,CARRY,false
 A5,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 A5,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,1,0.56,1,0.896552850941831,0.8,CARRY,false
@@ -483,21 +483,21 @@ R1,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 R1,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,0.8,0.41379310344827586,1,0.3295183224910357,0.1,CARRY,false
 R1,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,0.8,0.631578947368421,1,0.6677514270816012,0.4,CARRY,false
 R1,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,1,0.64,1,0.6795737629749214,0.3,CARRY,false
-R1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",1,0.9,0.5714285714285714,1,0.6357085249988136,0.7,CARRY,false
+R1,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 R1,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",0.2,0.2,0.125,0.2,0.12972761654030307,1,CARRY,false
 R1,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 R1,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,0,0,0,0.7,CARRY,false
 R1,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0.4,0.2,0.041666666666666664,1,0.1243491655298145,0.2,CARRY,false
-R1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0.4,0.2,0.05714285714285714,1,0.1243491655298145,0.1,CARRY,false
+R1,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",0.2,0.1,0.02857142857142857,0.25,0.038615684613617494,0.2,CARRY,false
 R1,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 R1,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.4583333333333333,1,0.9086768598011256,1,reset,false
 R1,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.40540540540540543,1,0.3333333333333333,0.1,CARRY,false
 R1,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.3783783783783784,1,0.3333333333333333,0.1,CARRY,false
 R1,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.4,1,0.4452483447405679,0.1,CARRY,false
 R1,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,0.9,0.9230769230769231,1,0.764310546947432,1,CARRY,false
-R1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,1,1,0.8282984720808143,0.8,CARRY,false
+R1,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,1,0.8333333333333334,1,0.842966297909557,0.4,CARRY,false
 R1,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,0.9,0.5714285714285714,1,0.7793382928530347,0.3,CARRY,false
-R1,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.5,1,0.6590964594587342,0.1,CARRY,false
+R1,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.5,1,0.6590964594587342,0.2,CARRY,false
 R1,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,0.9,0.5185185185185185,1,0.6032124055668336,0.2,CARRY,false
 R1,conv_09,1,turn_01,"What was Alan Turing formulation of the imitation game?","What was Alan Turing formulation of the imitation game?",0.8,0.6,0.5384615384615384,1,0.5810626869272932,1,CARRY,false
 R1,conv_09,2,turn_02,"What paper did he introduce it in?","What paper did he introduce it in? ture",0.6,0.3,0.11904761904761904,1,0.2204386078501931,0.8,CARRY,false
@@ -512,8 +512,8 @@ R1,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 R1,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 R1,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.2,0.1,0.07407407407407407,1,0.0766133916760433,1,reset,true
 R1,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.4,0.6,0.2857142857142857,1,0.5727340496350966,0.1,CARRY,true
-R1,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,1,0.34210526315789475,1,0.38441023776109734,0.9,CARRY,true
-R1,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+R1,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+R1,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 R1,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",0.8,0.7,0.3888888888888889,1,0.697281023900856,1,CARRY,false
 R1,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,0.7,0.4,1,0.6948486819003711,0.6,CARRY,false
 R1,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,1,0.4,1,0.7011902929248582,0.4,CARRY,false
@@ -523,19 +523,19 @@ R2,conv_03,1,turn_01,"What is the James Webb Space Telescope?","What is the Jame
 R2,conv_03,2,turn_02,"Where is its orbit located in space?","Where is its orbit located in space? jame webb telescop",1,1,0.6206896551724138,1,0.44987000995377047,0.2,CARRY,false
 R2,conv_03,3,turn_03,"Tell me about its primary mirror size.","Tell me about its primary mirror size. jame webb space telescop",1,1,0.7368421052631579,1,0.8089166488796022,0.4,CARRY,false
 R2,conv_03,4,turn_04,"What instruments does it carry for infrared astronomy?","What instruments does it carry for infrared astronomy? jame webb space telescop",1,1,0.68,1,0.613816622381599,0.6,CARRY,false
-R2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments. jame webb space telescop carri infrar astronomi",1,0.9,0.5714285714285714,1,0.6357085249988136,0.7,CARRY,false
+R2,conv_03,5,turn_05,"Compare NIRCam and MIRI instruments.","Compare NIRCam and MIRI instruments.",0.4,0.3,0.10714285714285714,1,0.2746055618381789,1,entity_switch,false
 R2,conv_04,1,turn_01,"When did the Apollo 11 mission land on the Moon?","When did the Apollo 11 mission land on the Moon?",1,1,0.625,1,0.7660170824159508,1,CARRY,false
 R2,conv_04,2,turn_02,"Who were the astronauts on board?","Who were the astronauts on board?",0.2,0.1,0.04,0.25,0.06581686446496139,1,reset,false
 R2,conv_04,3,turn_03,"What rocket launched them into space?","What rocket launched them into space? astronaut",0,0,0,0,0,0.7,CARRY,false
 R2,conv_04,4,turn_04,"How long did they spend on the lunar surface?","How long did they spend on the lunar surface? astronaut",0.4,0.2,0.041666666666666664,1,0.1243491655298145,0.2,CARRY,false
-R2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut long spend lunar surfac",0.4,0.2,0.05714285714285714,1,0.1243491655298145,0.1,CARRY,false
+R2,conv_04,5,turn_05,"Where did the command module splash down?","Where did the command module splash down? astronaut",0.2,0.1,0.02857142857142857,0.25,0.038615684613617494,0.2,CARRY,false
 R2,conv_06,1,turn_01,"How do mRNA vaccines work against viruses?","How do mRNA vaccines work against viruses?",1,1,0.8125,1,0.7437924315970611,1,CARRY,false
 R2,conv_06,2,turn_02,"What role do lipid nanoparticles play in delivery?","What role do lipid nanoparticles play in delivery?",1,1,0.4583333333333333,1,0.9086768598011256,1,reset,false
 R2,conv_06,3,turn_03,"How does the cell produce the spike protein from it?","How does the cell produce the spike protein from it? lipid nanoparticl",1,1,0.40540540540540543,1,0.3333333333333333,0.1,CARRY,false
 R2,conv_06,4,turn_04,"What immune response do they trigger?","What immune response do they trigger? lipid nanoparticl",1,1,0.3783783783783784,1,0.3333333333333333,0.1,CARRY,false
 R2,conv_06,5,turn_05,"How does storage temperature affect stability?","How does storage temperature affect stability? lipid nanoparticl",1,1,0.4,1,0.4452483447405679,0.1,CARRY,false
 R2,conv_08,1,turn_01,"Where was the ancient Library of Alexandria located?","Where was the ancient Library of Alexandria located?",1,1,1,1,0.9042189408736063,1,CARRY,false
-R2,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria ancient locat",1,1,1,1,0.8282984720808143,0.7,CARRY,false
+R2,conv_08,2,turn_02,"Who founded it and when?","Who founded it and when? librari alexandria",1,1,0.8333333333333334,1,0.842966297909557,0.4,CARRY,false
 R2,conv_08,3,turn_03,"How many scrolls was it estimated to hold?","How many scrolls was it estimated to hold? librari alexandria",1,1,0.6666666666666666,1,0.8618956368246671,0.3,CARRY,false
 R2,conv_08,4,turn_04,"How was the library destroyed according to historians?","How was the library destroyed according to historians? alexandria",1,1,0.6538461538461539,1,0.7490496219327154,0.2,CARRY,false
 R2,conv_08,5,turn_05,"Which scholars worked there as chief librarians?","Which scholars worked there as chief librarians? librari alexandria",1,1,0.6296296296296297,1,0.7515427294728838,0.5,CARRY,false
@@ -552,8 +552,8 @@ R2,conv_12,5,turn_05,"What magnetic core materials do they use?","What magnetic 
 R2,conv_13,1,turn_01,"How do artificial neural networks differ from biological brains?","How do artificial neural networks differ from biological brains?",1,1,0.6111111111111112,1,0.8909724089198024,1,CARRY,false
 R2,conv_13,2,turn_02,"What is the backpropagation algorithm?","What is the backpropagation algorithm?",0.8,0.5,0.2962962962962963,1,0.3798820982197651,1,reset,true
 R2,conv_13,3,turn_03,"Why is biological plausibility debated for it?","Why is biological plausibility debated for it? backpropag algorithm",0.8,0.6,0.42857142857142855,1,0.5386827269798369,0.2,CARRY,true
-R2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent. backpropag algorithm biolog plausibl debat",1,0.9,0.34210526315789475,1,0.3599537554429899,0.8,CARRY,true
-R2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,entity_switch,false
+R2,conv_13,4,turn_04,"Compare synaptic plasticity and gradient descent.","Compare synaptic plasticity and gradient descent.",1,1,0.2894736842105263,1,0.9831726883068668,1,reset,false
+R2,conv_13,5,turn_05,"How does spike-timing-dependent plasticity work?","How does spike-timing-dependent plasticity work?",1,1,0.4230769230769231,1,1,1,reset,false
 R2,conv_14,1,turn_01,"What is Claude Shannon information entropy formula?","What is Claude Shannon information entropy formula?",1,1,0.5555555555555556,1,0.7598630894904709,1,CARRY,false
 R2,conv_14,2,turn_02,"What base logarithm did he use for bit units?","What base logarithm did he use for bit units? inform entropi",1,1,0.6,1,0.896552850941831,0.8,CARRY,false
 R2,conv_14,3,turn_03,"How does it relate to thermodynamic entropy in physics?","How does it relate to thermodynamic entropy in physics? inform",1,1,0.4,1,0.7011902929248582,0.4,CARRY,false

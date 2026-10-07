@@ -2,14 +2,14 @@ System_ID,System_Description,P@5,P@10,Recall@20,MRR,nDCG@10,Novelty@10,Bootstrap
 S0,"S0: Raw Query Only (lnc.ltc Cosine)",0.835,0.7975,0.4775,0.95,0.6732,0.9250,0.5170,0.9519,40
 S1,"S1: Naive Concatenation of Dialogue History",0.94,0.9425,0.6058,0.9446,0.6572,0.4500,0.4455,0.5765,40
 S2,"S2: TurnTrace Legacy Baseline (Decayed Bag, Cosine)",0.89,0.865,0.5424,0.9875,0.6875,0.8175,1.0000,1.0000,40
-S3,"S3: TurnTrace Full Headline (Lock + Aspect + Penalty)",0.905,0.83,0.4823,0.9563,0.6305,0.7600,-,-,40
+S3,"S3: TurnTrace Full Headline (Lock + Aspect + Penalty)",0.89,0.8075,0.4647,0.9375,0.6353,0.7675,-,-,40
 S5,"S5: Oracle Gold Rewrite (Upper Bound)",0.995,0.9925,0.5986,1,0.7723,0.7125,0.0045,0.0069,40
 A0,"A0: Legacy Decayed Context Bag (S2 Equivalent)",0.89,0.865,0.5424,0.9875,0.6875,0.8175,-,-,40
-A1,"A1: Entity Soft Boost + Aspect Replacement",0.955,0.9325,0.5936,1,0.6975,0.7000,0.7000,0.8506,40
-A2,"A2: Hard Lock + Aspect Accumulation",0.905,0.875,0.5315,0.9163,0.6174,0.5525,0.0695,0.1795,40
-A3,"A3: Hard Lock + Aspect Replacement (Headline Core)",0.915,0.88,0.5284,0.9563,0.6318,0.6275,0.1335,0.2494,40
-A4,"A4: A3 + Seen-Passage Penalty (beta=0.30)",0.905,0.83,0.4823,0.9563,0.6305,0.7600,0.1430,0.2502,40
-A5,"A5: A3 with Forced CARRY (Decision Isolation)",0.95,0.94,0.5235,0.95,0.6589,0.5850,0.5635,0.9022,40
+A1,"A1: Entity Soft Boost + Aspect Replacement",0.95,0.9175,0.5908,1,0.6991,0.7175,0.5735,0.7960,40
+A2,"A2: Hard Lock + Aspect Accumulation",0.89,0.86,0.5158,0.9163,0.6233,0.5675,0.0765,0.2134,40
+A3,"A3: Hard Lock + Aspect Replacement (Headline Core)",0.895,0.865,0.5106,0.9375,0.6366,0.6350,0.1580,0.3038,40
+A4,"A4: A3 + Seen-Passage Penalty (beta=0.30)",0.89,0.8075,0.4647,0.9375,0.6353,0.7675,0.1710,0.3082,40
+A5,"A5: A3 with Forced CARRY (Decision Isolation)",0.945,0.9425,0.5175,0.95,0.6536,0.5750,0.4895,0.9804,40
 A6,"A6: A3 with Forced RESET (Decision Isolation)",0.83,0.7825,0.433,0.9187,0.6577,0.9275,0.2745,0.5017,40
-R1,"R1: Retrieval Efficiency - Champion Lists ON (r=50)",0.8,0.705,0.4096,0.9363,0.5212,0.5900,0.0000,0.0006,40
-R2,"R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)",0.915,0.8775,0.5277,0.9563,0.6314,0.6300,0.1295,0.2768,40
+R1,"R1: Retrieval Efficiency - Champion Lists ON (r=50)",0.78,0.6875,0.3918,0.9175,0.5253,0.5950,0.0000,0.0008,40
+R2,"R2: Retrieval Efficiency - Index Elimination ON (IDF>=2.50)",0.895,0.8625,0.5099,0.9375,0.6362,0.6375,0.1605,0.3320,40

@@ -1,0 +1,100 @@
+<svg width="880" height="450" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family: Inter, system-ui, sans-serif;">
+  <text x="440" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#111827">TurnTrace Retrieval Performance Benchmark (Headline Systems & Novelty)</text>
+  
+  <!-- Legend -->
+  <rect x="580" y="20" width="14" height="14" fill="#4f46e5" rx="2" />
+  <text x="600" y="32" font-size="12" fill="#374151">nDCG@10</text>
+  <rect x="690" y="20" width="14" height="14" fill="#059669" rx="2" />
+  <text x="710" y="32" font-size="12" fill="#374151">MRR</text>
+
+  <!-- Y-Axis Gridlines -->
+  <line x1="60" y1="60" x2="840" y2="60" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="64" font-size="11" text-anchor="end" fill="#6b7280">1.0</text>
+  
+  <line x1="60" y1="137.5" x2="840" y2="137.5" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="141.5" font-size="11" text-anchor="end" fill="#6b7280">0.75</text>
+
+  <line x1="60" y1="215" x2="840" y2="215" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="219" font-size="11" text-anchor="end" fill="#6b7280">0.50</text>
+
+  <line x1="60" y1="292.5" x2="840" y2="292.5" stroke="#e5e7eb" stroke-dasharray="4" />
+  <text x="50" y="296.5" font-size="11" text-anchor="end" fill="#6b7280">0.25</text>
+
+  <line x1="60" y1="370" x2="840" y2="370" stroke="#9ca3af" stroke-width="1.5" />
+  <text x="50" y="374" font-size="11" text-anchor="end" fill="#6b7280">0.0</text>
+
+  <!-- Bars -->
+  
+      <rect x="68" y="223.897" width="45.5" height="146.103" fill="#4f46e5" rx="3">
+        <title>S0 nDCG@10: 0.4713</title>
+      </rect>
+      <text x="90.75" y="217.897" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.47</text>
+    
+      <rect x="117.5" y="188.185" width="45.5" height="181.815" fill="#059669" rx="3">
+        <title>S0 MRR: 0.5865</title>
+      </rect>
+      <text x="140.25" y="182.185" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.59</text>
+    
+      <text x="125" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S0 (Raw)</text>
+    
+      <rect x="198" y="238.932" width="45.5" height="131.068" fill="#4f46e5" rx="3">
+        <title>S1 nDCG@10: 0.4228</title>
+      </rect>
+      <text x="220.75" y="232.932" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.42</text>
+    
+      <rect x="247.5" y="189.177" width="45.5" height="180.823" fill="#059669" rx="3">
+        <title>S1 MRR: 0.5833</title>
+      </rect>
+      <text x="270.25" y="183.177" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.58</text>
+    
+      <text x="255" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S1 (Concat)</text>
+    
+      <rect x="328" y="222.75" width="45.5" height="147.25" fill="#4f46e5" rx="3">
+        <title>S2 nDCG@10: 0.475</title>
+      </rect>
+      <text x="350.75" y="216.75" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.47</text>
+    
+      <rect x="377.5" y="174.173" width="45.5" height="195.827" fill="#059669" rx="3">
+        <title>S2 MRR: 0.6317</title>
+      </rect>
+      <text x="400.25" y="168.173" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.63</text>
+    
+      <text x="385" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S2 (Legacy)</text>
+    
+      <rect x="458" y="243.582" width="45.5" height="126.41799999999999" fill="#4f46e5" rx="3">
+        <title>A3 nDCG@10: 0.4078</title>
+      </rect>
+      <text x="480.75" y="237.582" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.41</text>
+    
+      <rect x="507.5" y="182.233" width="45.5" height="187.767" fill="#059669" rx="3">
+        <title>A3 MRR: 0.6057</title>
+      </rect>
+      <text x="530.25" y="176.233" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.61</text>
+    
+      <text x="515" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">A3 (Headline)</text>
+    
+      <rect x="588" y="252.41699999999997" width="45.5" height="117.58300000000001" fill="#4f46e5" rx="3">
+        <title>A4 nDCG@10: 0.3793</title>
+      </rect>
+      <text x="610.75" y="246.41699999999997" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.38</text>
+    
+      <rect x="637.5" y="182.977" width="45.5" height="187.023" fill="#059669" rx="3">
+        <title>A4 MRR: 0.6033</title>
+      </rect>
+      <text x="660.25" y="176.977" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.60</text>
+    
+      <text x="645" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">A4 (SeenPen)</text>
+    
+      <rect x="718" y="193.02100000000002" width="45.5" height="176.97899999999998" fill="#4f46e5" rx="3">
+        <title>S5 nDCG@10: 0.5709</title>
+      </rect>
+      <text x="740.75" y="187.02100000000002" font-size="11" text-anchor="middle" fill="#312e81" font-weight="600">0.57</text>
+    
+      <rect x="767.5" y="163.323" width="45.5" height="206.677" fill="#059669" rx="3">
+        <title>S5 MRR: 0.6667</title>
+      </rect>
+      <text x="790.25" y="157.323" font-size="11" text-anchor="middle" fill="#065f46" font-weight="600">0.67</text>
+    
+      <text x="775" y="395" font-size="12" text-anchor="middle" fill="#374151" font-weight="500">S5 (Oracle)</text>
+    
+</svg>
