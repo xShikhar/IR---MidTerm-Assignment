@@ -243,8 +243,8 @@ All frozen dataset files, inverted indexes, relevance labels, and judge pooling 
 |---|---|---|---|:---:|
 | `data/corpus.json` | 35k Wikipedia Corpus | `2394b2a11a46ed8ab7bcc0194ba78c0c3da38c792f6b76a0d7ca9ab5fbd01282` | `2394b2a11a46ed8ab7bcc0194ba78c0c3da38c792f6b76a0d7ca9ab5fbd01282` | **100% UNCHANGED** |
 | `data/index.json` | Positional Inverted Index | `68965158b354389457c261c7a180073ed66a871b489fb6a4e3b4013d01db415d` | `68965158b354389457c261c7a180073ed66a871b489fb6a4e3b4013d01db415d` | **100% UNCHANGED** |
-| `data/qrels.json` | Ground Truth Relevance Labels | `bf0161690b02d2c20f0f6cac0c85c67cc242adab73f39a6f8507231e2874ad1c` | `bf0161690b02d2c20f0f6cac0c85c67cc242adab73f39a6f8507231e2874ad1c` | **100% UNCHANGED** |
-| `eval/output/pooling_sheet.csv` | Blind Human Pooling Sheet | `aace20c872dc0cb103fe9adb56ccbfb61e3c720477c25c20de31d2aa41c14aa7` | `aace20c872dc0cb103fe9adb56ccbfb61e3c720477c25c20de31d2aa41c14aa7` | **100% UNCHANGED** |
+| `data/qrels.json` | Relevance Labels (LLM-judged, no human validation) | `bf0161690b02d2c20f0f6cac0c85c67cc242adab73f39a6f8507231e2874ad1c` | `bf0161690b02d2c20f0f6cac0c85c67cc242adab73f39a6f8507231e2874ad1c` | **100% UNCHANGED** |
+| `eval/output/pooling_sheet.csv` | Blind Pooling Sheet (LLM-judged) | `aace20c872dc0cb103fe9adb56ccbfb61e3c720477c25c20de31d2aa41c14aa7` | `aace20c872dc0cb103fe9adb56ccbfb61e3c720477c25c20de31d2aa41c14aa7` | **100% UNCHANGED** |
 | `eval/output/pooling_sheet.json` | Blind Pooling Sheet JSON | `d5e1a208f9639948066eb7a246bf8360f6d2462818d42db8fce8e06deba10add` | `d5e1a208f9639948066eb7a246bf8360f6d2462818d42db8fce8e06deba10add` | **100% UNCHANGED** |
 | `eval/output/pooling/judge_1_pool.csv` | Judge 1 Blind Pool | `828ff874272c019575f705c5bf66561a8ab753be151ece25bbf925e5e1b1b87f` | `828ff874272c019575f705c5bf66561a8ab753be151ece25bbf925e5e1b1b87f` | **100% UNCHANGED** |
 | `eval/output/pooling/judge_2_pool.csv` | Judge 2 Blind Pool | `5a75ccd27e663fca2824795b43e30945633cf2d9de2957097ba11c69205f5387` | `5a75ccd27e663fca2824795b43e30945633cf2d9de2957097ba11c69205f5387` | **100% UNCHANGED** |
@@ -257,7 +257,7 @@ All frozen dataset files, inverted indexes, relevance labels, and judge pooling 
 
 ### Question 1: Re-check Turn 4 of the Mercury Conversation in the UI and API
 - **Decision Label Displayed:** The API response and UI render `decision: "CARRY"` with linguistic guard `["ellipsis"]` and reason: `Ellipsis guard triggered ("and"): carry on contextual follow-up.`
-- **Expected Label Given Entity Logic:** The label should be **`entity_switch`**. The conversation pivots from astronomical Mercury (the celestial body in orbit around the Sun) to biochemical/toxicological Mercury (the heavy metal, environmental pollutant, and toxic agent). Ground truth in `data/conversations.json` specifies `expectedAction: "entity_switch"`.
+- **Expected Label Given Entity Logic:** The label should be **`entity_switch`**. The conversation pivots from astronomical Mercury (the celestial body in orbit around the Sun) to biochemical/toxicological Mercury (the heavy metal, environmental pollutant, and toxic agent). Target label in `data/conversations.json` specifies `expectedAction: "entity_switch"` (AI-labeled).
 - **Why It Happened:**
   1. The user query `"Tell me about mercury toxicity and environmental exposure."` contains the coordinating conjunction `"and"`.
   2. In `server/src/config/index.js:75`, `'and'` is listed in `ellipsisMarkers`.
@@ -337,15 +337,15 @@ All frozen dataset files, inverted indexes, relevance labels, and judge pooling 
   feat(eval): resolve F-06 add stratified splits, paired bootstrap, and Wilcoxon signed-rank test
   ```
 - **Current Frozen Hash:** `bf0161690b02d2c20f0f6cac0c85c67cc242adab73f39a6f8507231e2874ad1c`  
-  *Origin:* Populated during Phase 3 when the complete human relevance judgments (2,297 rows) were ingested from the pooling sheet into `data/qrels.json` via commit `4fc412b`:
+  *Origin:* Populated during Phase 3 when the complete LLM relevance judgments (2,297 rows) were ingested from the pooling sheet into `data/qrels.json` via commit `4fc412b` (no human validation has been conducted yet):
   ```
   commit 4fc412b7f1d12be5044260f9b212330833d3ed14
   Author: Shikhar Agarwal <shikharagarwal238@gmail.com>
   Date:   Tue Oct 6 20:42:01 2026 +0530
   phase3: complete relevance judging (2297 rows, rubric, qrels ingestion, self-consistency, spot-check)
   ```
-- **Integrity Compliance:** Standing Rule 2 explicitly allows this transition: *"Frozen items must not change: data/corpus.json, data/index.json, docIds, eval/output/pooling_sheet.*, eval/output/pooling/*, data/qrels.json (except through the loader after human judging)."*
-- **Current Entry Count:** `data/qrels.json` contains exactly **70 query turns across 14 multi-turn conversations**, covering **2,297 judged query-passage pairs** (100.0% coverage of all pooled top-10 candidate documents, 0 unjudged pairs, Cohen's $\kappa = 1.0000$).
+- **Integrity Compliance:** Standing Rule 2 explicitly allows this transition: *"Frozen items must not change: data/corpus.json, data/index.json, docIds, eval/output/pooling_sheet.*, eval/output/pooling/*, data/qrels.json (except through the loader after judging)."*
+- **Current Entry Count:** `data/qrels.json` contains exactly **70 query turns across 14 multi-turn conversations**, covering **2,297 judged query-passage pairs** (100.0% coverage of all pooled top-10 candidate documents, 0 unjudged pairs, Cohen's $\kappa = 1.0000$ self-consistency of the deterministic grading rubric). No human validation exists yet.
 
 ---
 

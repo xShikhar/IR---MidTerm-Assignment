@@ -30,7 +30,10 @@ TurnTrace is an inspectable conversational search engine built from first princi
 | Full Trace Inspector UI | Implemented | `client/src/App.jsx` |
 | Evaluation Harness (S0-S5, A0-A6, R1-R2) | Implemented | `eval/src/index.js`, `eval/src/systemsRunner.js` |
 | Statistical Significance Tests (Bootstrap & Wilcoxon) | Implemented | `eval/src/significance.js`, `eval/test/significance.test.js` |
-| Human Judging & Blind Pooling Pipeline | Completed (100% evaluated) | 2,297 judged pairs in `data/qrels.json`; unjudged top-10 fraction is 0.00% |
+| LLM Relevance Judging & Blind Pooling | Completed (100% evaluated) | 2,297 LLM-judged pairs in `data/qrels.json` (no human validation exists yet); unjudged top-10 fraction is 0.00% |
+
+> [!NOTE]
+> **Annotation & Labeling Methodology:** Relevance judgments in `data/qrels.json` were evaluated by an LLM under a strict deterministic rubric, and conversation `expectedAction` transition actions were AI-labeled. No human validation exists yet. Blind human spot-check infrastructure is prepared in `eval/output/spot_check_sheet.csv`.
 
 ## 2. Quickstart
 
@@ -132,7 +135,7 @@ curl -s -X POST http://localhost:3001/api/chat -H "Content-Type: application/jso
 | Duplicate Passages | 39 (0.11%) | Body SHA-256 collision scan |
 
 ### Reproducibility and Documented Limitations
-- **Corpus Freeze:** The 35,000-passage corpus and inverted index are permanently frozen so human judges grade stable document identifiers.
+- **Corpus Freeze:** The 35,000-passage corpus and inverted index are permanently frozen so relevance judgments evaluate stable document identifiers.
 - **Duplicate Disclosure:** 39 passages (0.11%) share identical text due to overlapping Wikipedia summary sections. They are preserved without deduplication to prevent docId re-indexing shifts against existing judging sheets.
 - **Ethics & Licensing:** All text originates from Wikipedia under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and GFDL. Data harvesting used explicit `User-Agent` headers and respected Wikimedia API rate limits. Contains no private personal data. Retrieval operates fully offline after initial fetching.
 
@@ -270,10 +273,10 @@ Evaluation outputs are archived under `eval/output/test_final/`:
 - **Stratified Split (`data/splits.json`):** DEV set contains 6 conversations (30 turns); TEST set contains 8 conversations (40 turns). Both splits cover all 4 domains, topic shifts, and ambiguous entities.
 - **Blind Pooling:** Master pool (1,676 records) and incremental pool (621 records) pooled candidates across S0, S1, S2, S5, A1, A2, A3, A4, A5, A6, and BM25 sorted by `docId` with system origins, scores, and rewritten queries concealed.
 - **Fixed Rubric (`docs/judging_rubric.md`):** Grade 2 (directly answers need in gold rewrite), Grade 1 (partially relevant / background), Grade 0 (off-topic / wrong sense of ambiguous entity).
-- **Qrels Ingestion (`data/qrels.json`):** 70 / 70 turns complete (2,297 judged query-passage pairs). Grade distribution: Grade 0: 710 (30.9%), Grade 1: 1,028 (44.8%), Grade 2: 559 (24.3%).
+- **Qrels Ingestion (`data/qrels.json`):** 70 / 70 turns complete (2,297 LLM-judged query-passage pairs evaluated under the fixed rubric; no human validation exists yet). Grade distribution: Grade 0: 710 (30.9%), Grade 1: 1,028 (44.8%), Grade 2: 559 (24.3%).
 - **Post-Ingestion Coverage:** The unjudged top-10 fraction is **0.00%** across all 13 evaluated systems.
-- **Self-Consistency Reliability:** A 10% deterministic sample (230 rows) re-judged in shuffled presentation yielded a 0.00% grade change rate (Cohen's Kappa $\kappa = 1.0000$).
-- **Human Spot-Check Infrastructure:** `eval/output/spot_check_sheet.csv` contains 100 stratified rows with blank human grade columns; reference key in `spot_check_key.csv`; evaluated via `node server/scripts/evaluateSpotCheck.js`.
+- **Self-Consistency Reliability:** A 10% deterministic sample (230 rows) re-judged in shuffled presentation without cache verified deterministic execution consistency under the fixed rubric (0.00% grade change rate, Cohen's Kappa $\kappa = 1.0000$).
+- **Spot-Check Infrastructure:** `eval/output/spot_check_sheet.csv` contains 100 stratified rows with blank grade columns prepared for future human validation; reference key in `spot_check_key.csv`; evaluated via `node server/scripts/evaluateSpotCheck.js`. (No human validation has been conducted yet).
 
 ---
 
@@ -363,7 +366,7 @@ Evaluated on all 32 multi-turn transitions of the TEST split (Turn 1 excluded as
 - **S1 (Concat):** Mean Jaccard = 0.5223, Spearman $\rho$ with P@10 = +0.0582
 - **S2 (Legacy):** Mean Jaccard = 0.4985, Spearman $\rho$ with P@10 = +0.1516
 - **A3 (Headline):** Mean Jaccard = **0.5914**, Spearman $\rho$ with P@10 = **+0.1865**
-- *Finding:* A3 generates query representations with the highest lexical agreement with human reference rewrites.
+- *Finding:* A3 generates query representations with the highest lexical agreement with gold reference rewrites.
 
 ---
 
@@ -455,10 +458,10 @@ npm run test --workspace=eval     # 20 evaluation tests
 4. **Clarifier High False-Trigger Rate:** The leader/follower cluster clarifier fired on 87.5% of TEST turns (vs 15.0% for trivial title cluster baseline), necessitating disabling it by default.
 5. **Efficiency Recall Trade-Off:** Champion lists at $r=50$ achieve $58.57\%$ Overlap@10 compared to exhaustive search, dropping Recall@20 from 0.5424 to 0.4033; $r=500$ is needed for $94.57\%$ overlap.
 6. **Vocabulary Drift Boundary (`conv_14`):** When queries shift domain (information theory entropy into physical thermodynamics), carried tokens from prior turns can depress relevance.
-7. **Same-Model-Family Evaluation Limit:** Synthesized conversations and LLM relevance assistance share architectural family traits; human spot-check infrastructure is established to address inter-annotator agreement.
+7. **Absence of Human Validation:** Relevance judgments were evaluated by an LLM under a strict rubric, and conversation `expectedAction` transition labels were AI-labeled; no human validation exists yet. Stratified spot-check infrastructure is established in `eval/output/spot_check_sheet.csv` for future human annotators.
 
 ### Course Project Roadmap:
-- Execute external human spot-checks via `eval/output/spot_check_sheet.csv` to calculate inter-annotator Cohen's kappa.
+- Conduct blind human validation via `eval/output/spot_check_sheet.csv` to establish true human-AI inter-annotator agreement and Cohen's kappa.
 - Implement tiered dynamic champion lists where candidate depth $r$ scales with query term IDF.
 - Implement explicit lexical domain-shift boundary detectors to suppress vocabulary drift across cross-discipline terms.
 - Expand corpus to include general Wikipedia articles beyond the four initial domains.

@@ -54,9 +54,12 @@ All frozen dataset files and judging pooling sheets were hashed prior to evaluat
 
 ## 3. Relevance Judging Statistics & Self-Consistency
 
+> [!NOTE]
+> **Methodological Disclaimer:** All relevance judgments in `data/qrels.json` and `eval/output/pooling_sheet.csv` were evaluated by an LLM following the deterministic rubric in `docs/judging_rubric.md`. Transition actions (`expectedAction`) were AI-labeled. **No human validation exists yet.** Stratified spot-check sheets are prepared for future human validation.
+
 ### 3.1 Rubric & Ingestion
 - **Rubric:** `docs/judging_rubric.md` (Grade 2: directly answers need in gold rewrite; Grade 1: useful background; Grade 0: off-topic / wrong sense).
-- **Total Judged Rows:** 2,297 rows ingested into `data/qrels.json`.
+- **Total Judged Rows:** 2,297 rows ingested into `data/qrels.json` (LLM-judged, unvalidated by humans).
 - **Judged Turn Count:** 70 / 70 turns complete (100.0%).
 
 ### 3.2 Grade Distribution
@@ -68,27 +71,27 @@ All frozen dataset files and judging pooling sheets were hashed prior to evaluat
 | **Total** | | **2,297** | **100.00%** |
 
 ### 3.3 Self-Consistency Reliability
-*Evaluated on 10% deterministic sample (230 rows) with re-shuffled presentation:*
+*Evaluated on 10% deterministic sample (230 rows) with re-shuffled presentation without cache:*
 - **Total Rows Re-judged:** 230
 - **Identical Grades:** 230 / 230
 - **Grade Change Rate:** **0.00%**
-- **Cohen's Kappa ($\kappa$):** **1.0000** (Perfect self-consistency under fixed deterministic rubric)
+- **Cohen's Kappa ($\kappa$):** **1.0000** (Measures deterministic repeatability of the automated grading rubric)
 
 ### 3.4 Ambiguous Entity Sense Breakdown
 - **Conversations Evaluated:** `conv_11` (Chemical element vs Roman god Mercury) and `conv_12` (Transformer architecture in deep learning vs Electrical power transformer).
 - **Total Candidate Rows:** 282 rows.
 - **Filtered to Grade 0 Strictly on Polysemous Sense:** 35 rows (12.41%) received Grade 0 because the retrieved text pertained to the alternate semantic sense (e.g. electrical step-down transformers retrieved for attention queries, or mythological Mercury retrieved for toxic metal queries).
 
-### 3.5 Human Spot-Check Infrastructure
+### 3.5 Spot-Check Infrastructure (Prepared for Future Human Validation)
 - **Spot-check sheet:** `eval/output/spot_check_sheet.csv` (100 stratified rows with blank human grade column).
 - **Reference key:** `eval/output/spot_check_key.csv`.
-- **Evaluation script:** `node server/scripts/evaluateSpotCheck.js` (computes observed agreement and Cohen's kappa upon grading).
+- **Evaluation script:** `node server/scripts/evaluateSpotCheck.js` (ready to compute observed agreement and Cohen's kappa once human annotations are performed).
 
 ---
 
 ## 4. Expected-Action Labeling & Decision Classification
 
-All 70 conversation turns were labeled with dialogue action ground-truth (`carry`, `entity_switch`, `reset`) according to `docs/notes/shift_detector_design.md` and imported into `data/conversations.json`.
+All 70 conversation turns were AI-labeled with target dialogue transition actions (`carry`, `entity_switch`, `reset`) according to `docs/notes/shift_detector_design.md` and imported into `data/conversations.json` (no human action labeling has been conducted).
 
 ### 4.1 Label Distribution Across Splits
 - **Overall (all 70 turns):** `carry` = 66 (94.3%), `reset` = 2 (2.9%), `entity_switch` = 2 (2.9%).
@@ -249,7 +252,7 @@ All 70 conversation turns were labeled with dialogue action ground-truth (`carry
 | **A3** | Headline Novelty Core | **0.5914** | **+0.1865** | Post-hoc measurement only |
 | **S5** | Oracle Gold Rewrite Reference | 0.5223 | -0.1297 | Upper bound reference |
 
-*Finding:* System A3 produces query representations with the highest lexical alignment to human reference queries (Mean Jaccard = 0.5914 vs S2 = 0.4985), and exhibits positive rank correlation with precision ($\rho = +0.1865$).
+*Finding:* System A3 produces query representations with the highest lexical alignment to gold reference queries (Mean Jaccard = 0.5914 vs S2 = 0.4985), and exhibits positive rank correlation with precision ($\rho = +0.1865$).
 
 ---
 
