@@ -4,7 +4,7 @@
 **Auditor:** Independent Examiner & Acceptance Verifier (DeepMind Antigravity)  
 **System Evaluated:** TurnTrace Conversational Search Engine  
 **Target Submission Track:** CSD358 Track T2 (Conversational Search Engine)  
-**Deliverable Document:** `audit/FINAL_ACCEPTANCE.md`  
+**Deliverable Document:** `docs/audit/FINAL_ACCEPTANCE.md`  
 
 ---
 

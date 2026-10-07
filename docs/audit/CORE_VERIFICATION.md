@@ -4,7 +4,7 @@
 **Auditor:** Independent Examiner & IR Core Verifier (Antigravity)  
 **System Evaluated:** TurnTrace Conversational Search Engine  
 **Target Track:** CSD358 Track T2 (Conversational and Agentic Search)  
-**Deliverable Document:** `audit/CORE_VERIFICATION.md`  
+**Deliverable Document:** `docs/audit/CORE_VERIFICATION.md`  
 
 ---
 

@@ -72,7 +72,7 @@ All 9 frozen dataset files, index files, qrels, and judge pooling sheets were ve
 
 ### Step 5: Wording Cleanup & Absence of Human Validation
 - **Implementation:**
-  - Updated `README.md`, `audit/CORE_VERIFICATION.md`, `audit/FINAL_ACCEPTANCE.md`, and `docs/RESULTS_FOR_REPORT.md`.
+  - Updated `README.md`, `docs/audit/CORE_VERIFICATION.md`, `docs/audit/FINAL_ACCEPTANCE.md`, and `docs/RESULTS_FOR_REPORT.md`.
   - Replaced terms like "human relevance judging", "ground truth relevance labels", and "blind human judgment".
   - Stated plainly that relevance judgments in `data/qrels.json` were evaluated by an LLM under a strict deterministic rubric, conversation transition actions were AI-labeled, and **no human validation exists yet**.
   - Prepared stratified spot-check sheets in `eval/output/spot_check_sheet.csv` for future human annotators.
