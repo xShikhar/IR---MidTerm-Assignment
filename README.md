@@ -53,34 +53,41 @@ npm install
 ```
 
 2. Obtain dataset:
-- **Path A (Committed Frozen Data & Verification — Recommended):**
-  The evaluated frozen corpus and prebuilt inverted index are archived and committed directly in `data/frozen/`:
-  - Verify archive integrity:
+- **Path A (Primary — Google Drive Dataset Download & Verification):**
+  Download `corpus.json` and `index.json` from the official Google Drive folder:
+  👉 **Google Drive Folder:** [https://drive.google.com/drive/folders/1v6gZbclgtuP-jE0E5L60N5V7Aucx-5RY?usp=drive_link](https://drive.google.com/drive/folders/1v6gZbclgtuP-jE0E5L60N5V7Aucx-5RY?usp=drive_link)
+  
+  Place both downloaded files directly into the `data/` directory (`data/corpus.json` and `data/index.json`).
+  
+  Verify cryptographic SHA-256 checksums to ensure file integrity:
+  - **Linux / macOS (bash):**
+    ```bash
+    sha256sum data/corpus.json data/index.json
+    ```
+  - **Windows (PowerShell):**
+    ```powershell
+    Get-FileHash data/corpus.json, data/index.json -Algorithm SHA256
+    ```
+  - **Automated Cross-Platform Verification:**
     ```bash
     npm run verify:data
     ```
-  - Unpack archives (if `data/corpus.json` or `data/index.json` need restoration):
-    ```bash
-    npm run unpack:data
-    ```
-  - Manual SHA-256 checksum verification:
-    - Windows PowerShell: `Get-FileHash data/corpus.json, data/index.json -Algorithm SHA256`
-    - Linux / macOS: `sha256sum data/corpus.json data/index.json`
-    - Expected SHA-256 hashes:
-      - `corpus.json`: `2394b2a11a46ed8ab7bcc0194ba78c0c3da38c792f6b76a0d7ca9ab5fbd01282`
-      - `index.json`: `68965158b354389457c261c7a180073ed66a871b489fb6a4e3b4013d01db415d`
-- **Path B (Optional Rebuild):** Re-harvest from Wikipedia Action API and re-index:
-```bash
-npm run prepare:data
-npm run build:index
-```
-*(Note: Wikipedia revisions change over time; live re-harvesting may produce minor text or docId variations relative to frozen judging sheets. Path A is strictly recommended for benchmark reproduction).*
+  - **Expected SHA-256 Checksums:**
+    - `corpus.json`: `2394b2a11a46ed8ab7bcc0194ba78c0c3da38c792f6b76a0d7ca9ab5fbd01282`
+    - `index.json`: `68965158b354389457c261c7a180073ed66a871b489fb6a4e3b4013d01db415d`
+
+- **Path B (Optional Rebuild from Scratch):** Re-harvest from Wikipedia Action API and re-index:
+  ```bash
+  npm run prepare:data
+  npm run build:index
+  ```
+  *(Note: Live Wikipedia revisions drift over time; live re-harvesting may produce minor text or docId variations relative to frozen evaluation sheets. Path A is strictly recommended for benchmark reproduction).*
 
 3. Run verification test suite:
 ```bash
 npm test
 ```
-*(Executes 78 tests across server and eval workspaces; all 78 pass).*
+*(Executes 83 tests across server and eval workspaces; all 83 pass).*
 
 4. Run evaluation benchmark:
 ```bash
@@ -164,7 +171,16 @@ Graders can reproduce the conversational pipeline through the Web UI (`http://lo
    - *Decision:* `CARRY` (Locked entity guard triggers because query contains stem `transform`).
    - *Rewrite:* Appends `architectur attent`, illustrating lexical polysemy across machine learning and electrical engineering.
 
-### Walkthrough 3: Documented Boundary & Limitation Case (conv_14)
+### Walkthrough 3: Classical Polysemy & Sense Drift (conv_11, Mercury Case)
+1. **Turn 1: "What is Mercury in our Solar System?"**
+   - Locks entity terms `mercuri` (IDF: 4.2954), `solar` (IDF: 3.8211), `system` (IDF: 2.5804) from planet context.
+2. **Turn 4: "Tell me about mercury toxicity and environmental exposure."**
+   - *Context:* Preceded by astronomical questions about Mercury's orbit and craters.
+   - *Decision:* `CARRY` (Query contains stem `mercuri`, triggering the locked entity guard).
+   - *Aspect Dynamics:* Aspect replacement successfully evicts old astronomical aspects (`solar`, `system`, `orbit`, `crater`) and establishes toxicity aspects (`toxic`, `environment`, `exposur`).
+   - *Limitation / Trace Reality:* Because classical IR operates strictly on inverted index postings without external knowledge bases, both "Mercury (planet)" and "Mercury (element)" share the identical stem `mercuri` in their title zones. Thus, title-zone filtering retains both planet and chemical element documents in the candidate set.
+
+### Walkthrough 4: Documented Boundary & Limitation Case (conv_14)
 - **Turn 4: "Is entropy always conserved in physical processes?"**
   - *Context:* Preceded by Turn 1 ("Claude Shannon information entropy") and Turn 3 ("relation to thermodynamic entropy").
   - *Limitation:* The engine carried `inform` from Turn 1 because aspect replacement requires an explicit new entity switch cue, causing information theory terms to linger into thermodynamics.
@@ -393,15 +409,15 @@ All tunable parameters reside in `server/src/config/index.js` (frozen following 
 ## 9. Testing & Code Quality
 
 ```bash
-# Execute full unit and integration test suite (78 tests, all pass)
+# Execute full unit and integration test suite (83 tests, all pass)
 npm test
 
 # Run individual workspaces
-npm run test --workspace=server   # 58 server tests
+npm run test --workspace=server   # 63 server tests
 npm run test --workspace=eval     # 20 evaluation tests
 ```
 
-- **Test Coverage:** Tokenization, normalizer, Porter stemmer, postings intersection, BM25 scoring, cosine lnc.ltc scoring, top-K heap, Boolean queries, entity extractor, decision detector, title filter fallback, seen penalty, and significance statistics.
+- **Test Coverage:** Tokenization, normalizer, Porter stemmer, postings intersection, BM25 scoring, cosine lnc.ltc scoring, top-K heap, Boolean queries, entity extractor, decision detector, title filter fallback, seen penalty, word-boundary conjunction guards, multi-session tab isolation, and significance statistics.
 - **Data Leakage Gate:** `server/test/dataLeakage.test.js` enforces that zero server runtime files access `goldRewrite` and only system S5 accesses it during evaluation.
 
 ---
@@ -416,24 +432,26 @@ npm run test --workspace=eval     # 20 evaluation tests
 │   ├── src/index.css           # Styling and layout
 │   └── vite.config.js          # Client dev server with /api proxy to backend
 ├── data/                       # Dataset, conversations, and evaluation splits
-│   ├── frozen/                 # Compressed immutable archives (.json.gz and .sha256)
-│   ├── conversations.json      # 14 conversational trees (70 turns)
-│   ├── corpus.json             # 35,000 authentic Wikipedia passages (FROZEN)
-│   ├── index.json              # Inverted index with postings and champion lists (FROZEN)
-│   ├── qrels.json              # Relevance judgments storage (2,297 judged pairs)
+│   ├── conversations.json      # 14 conversational trees (70 turns; AI-labeled expectedAction)
+│   ├── corpus.json             # 35,000 authentic Wikipedia passages (Download via Drive Path A)
+│   ├── index.json              # Inverted index with postings and champion lists (Download via Drive Path A)
+│   ├── qrels.json              # Relevance judgments storage (2,297 LLM-judged pairs; no human validation)
 │   └── splits.json             # Stratified train/dev/test split definition (FROZEN)
 ├── docs/                       # Project documentation and submission materials
+│   ├── audit/                  # Audit verification reports (CORE_VERIFICATION, FINAL_ACCEPTANCE, PROGRESS)
+│   ├── notes/                  # Tuning plans, detector design, and audit notes
 │   ├── report/                 # Chapters 01-07 and compiled TurnTrace_Report.pdf
-│   ├── video-script.md         # 6-minute presentation script matching hackathon specs
+│   ├── video-script.md         # Video presentation script matching hackathon specs
 │   ├── RESULTS_FOR_REPORT.md   # Comprehensive empirical results and statistics compilation
 │   ├── judging_rubric.md       # Relevance grading rubric (Grades 0, 1, 2)
-│   └── notes/                  # Tuning plans, detector design, and audit notes
+│   └── SUBMISSION_CHECKLIST.md # Submission verification checklist
 ├── eval/                       # Independent evaluation workspace
 │   ├── src/metrics.js          # P@K, Recall, MRR, nDCG calculation
 │   ├── src/metrics/            # Novelty@K, Fidelity, and Decision Classification
 │   ├── src/significance.js     # Paired bootstrap & Wilcoxon signed-rank tests
 │   ├── src/systemsRunner.js    # S0-S5, A0-A6, R1-R2 benchmark execution
 │   └── output/test_final/      # Final TEST evaluation artifacts (11 CSV and SVG files)
+├── report_latex/               # Publication-grade LaTeX source files and bibliography
 ├── scripts/                    # Development runner scripts (dev.js, buildReportPdf.js, verifyFrozenData.js)
 ├── server/                     # Core IR engine and API workspace
 │   ├── scripts/                # Data preparation, index building, and sweeps
